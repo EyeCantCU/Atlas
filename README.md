@@ -1,4 +1,4 @@
-# Starting point
+# BlueWhaleOS
 
 [![build-ublue](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml/badge.svg)](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml)
 
