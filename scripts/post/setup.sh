@@ -1,2 +1,2 @@
 set -oue pipefail
-setup-gaming
+just setup-gaming
