@@ -81,6 +81,7 @@ firstboot:
   # This is just an example selection:
   flatpaks:
     - com.brave.Browser
+    - com.discordapp.Discord
     - com.usebottles.bottles
     - com.valvesoftware.Steam
     - com.visualstudio.code
