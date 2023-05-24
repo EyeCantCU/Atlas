@@ -83,6 +83,7 @@ firstboot:
     - com.brave.Browser
     - com.usebottles.bottles
     - com.valvesoftware.Steam
+    - com.visualstudio.code
     - io.freetubeapp.FreeTube
     - net.davidotek.pupgui2
     - org.videolan.VLC
