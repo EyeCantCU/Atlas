@@ -84,4 +84,5 @@ firstboot:
     - com.usebottles.bottles
     - com.valvesoftware.Steam
     - io.freetubeapp.FreeTube
+    - net.davidotek.pupgui2
     - org.videolan.VLC
