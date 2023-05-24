@@ -25,7 +25,6 @@ setup-gaming:
 setup-streaming:
   echo 'Installing streaming applications' \\
   flatpak install -y --user \\
-  com.feaneron.Boatswain \\
   com.obsproject.Studio \\
   com.obsproject.Studio.Plugin.OBSVkCapture \\
   com.obsproject.Studio.Plugin.Gstreamer

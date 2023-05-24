@@ -86,6 +86,7 @@ firstboot:
   flatpaks:
     - com.brave.Browser
     - com.discordapp.Discord
+    - com.feaneron.Boatswain
     - com.github.tchx84.Flatseal
     - com.telegram.desktop
     - com.visualstudio.code
