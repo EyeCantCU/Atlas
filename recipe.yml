@@ -81,5 +81,6 @@ firstboot:
   # This is just an example selection:
   flatpaks:
     - com.brave.Browser
+    - com.usebottles.bottles
     - io.freetubeapp.FreeTube
     - org.videolan.VLC
