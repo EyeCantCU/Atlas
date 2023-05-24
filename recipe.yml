@@ -80,5 +80,6 @@ firstboot:
   # This is just an example selection:
   flatpaks:
     - com.brave.Browser
+    - io.freetubeapp.FreeTube
     - io.github.celluloid_player.Celluloid
     - org.kde.krita
