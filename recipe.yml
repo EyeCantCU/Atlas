@@ -82,6 +82,7 @@ firstboot:
   flatpaks:
     - com.brave.Browser
     - com.discordapp.Discord
+    - com.telegram.desktop
     - com.usebottles.bottles
     - com.valvesoftware.Steam
     - com.visualstudio.code
