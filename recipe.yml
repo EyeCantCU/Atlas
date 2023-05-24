@@ -82,5 +82,6 @@ firstboot:
   flatpaks:
     - com.brave.Browser
     - com.usebottles.bottles
+    - com.valvesoftware.Steam
     - io.freetubeapp.FreeTube
     - org.videolan.VLC
