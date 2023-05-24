@@ -88,9 +88,6 @@ firstboot:
     - com.discordapp.Discord
     - com.github.tchx84.Flatseal
     - com.telegram.desktop
-    - com.usebottles.bottles
-    - com.valvesoftware.Steam
     - com.visualstudio.code
     - io.freetubeapp.FreeTube
-    - net.davidotek.pupgui2
     - org.videolan.VLC
