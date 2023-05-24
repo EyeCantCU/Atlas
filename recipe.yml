@@ -81,4 +81,4 @@ firstboot:
   flatpaks:
     - com.brave.Browser
     - io.freetubeapp.FreeTube
-    - io.github.celluloid_player.Celluloid
+    - org.videolan.VLC
