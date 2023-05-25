@@ -2,9 +2,7 @@
 
 [![build-ublue](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml/badge.svg)](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml)
 
-This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
-
-For more info, check out the [uBlue homepage](https://ublue.it/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+This is my personal build of Universal Blue. Feel free to use it, fork it, or make your own using the provided documentation below. Thanks to both Universal Blue, the Fedora Project, and everyone else involved for making this possible.
 
 ## Getting started
 
