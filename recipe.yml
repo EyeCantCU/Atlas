@@ -49,8 +49,6 @@ rpm:
   # at the "system level" in the final image.
   install:
     - btop
-    - fldigi
-    - flrig
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
     # GNOME's GTK4 theme, Libadwaita. Already included in Silverblue, but not
@@ -63,7 +61,6 @@ rpm:
     # - tilix
     - sdrpp
     - supergfxctl-plasmoid
-    - wsjtx
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:

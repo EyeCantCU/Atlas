@@ -22,12 +22,20 @@ setup-gaming:
   flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
 
 setup-streaming:
-  echo 'Installing streaming applications' \\
+  echo 'Installing streaming applications'
   flatpak install -y --user \\
   org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
   com.obsproject.Studio \\
   com.obsproject.Studio.Plugin.OBSVkCapture \\
   com.obsproject.Studio.Plugin.Gstreamer
+
+setup-ham-radio:
+  echo 'Installing ham programs'
+  flatpak install -y --user \\
+  edu.princeton.physics.WSJTX \\
+  com.w1hkj.fldigi \\
+  com.w1hkj.flrig
+  echo '73 - KK0RX'
 
 setup-upnote:
   echo 'Retrieving UpNote'
