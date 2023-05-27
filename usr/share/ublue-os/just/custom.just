@@ -29,6 +29,11 @@ setup-streaming:
   com.obsproject.Studio.Plugin.OBSVkCapture \\
   com.obsproject.Studio.Plugin.Gstreamer
 
+setup-upnote:
+  echo 'Retrieving UpNote'
+  wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
+  chmod +x ~/Desktop/UpNote.AppImage
+
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
