@@ -45,3 +45,10 @@ setup-upnote:
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
+
+do-it:
+  just setup-flatpaks
+  just setup-gaming
+  just setup-streaming
+  just setup-ham-radio
+  just setup-upnote
