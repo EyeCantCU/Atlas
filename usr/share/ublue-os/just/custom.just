@@ -20,6 +20,8 @@ setup-gaming:
   flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam 
   flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
+  wget https://www.emudeck.com/EmuDeck.desktop -P ~/Desktop
+  chmod +x ~/Desktop/EmuDeck.desktop
 
 setup-streaming:
   echo 'Installing streaming applications'
