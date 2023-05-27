@@ -84,11 +84,11 @@ firstboot:
   # the "just setup-flatpaks" command from our "custom.just" template file.
   # This is just an example selection:
   flatpaks:
-    - com.brave.Browser
-    - com.discordapp.Discord
-    - com.feaneron.Boatswain
-    - com.github.tchx84.Flatseal
-    - com.telegram.desktop
-    - com.visualstudio.code
-    - io.freetubeapp.FreeTube
-    - org.videolan.VLC
+    - Brave: com.brave.Browser
+    - Discord: com.discordapp.Discord
+    - Boatswain: com.feaneron.Boatswain
+    - Flatseal: com.github.tchx84.Flatseal
+    - Telegram: com.telegram.desktop
+    - Visual Studio Code: com.visualstudio.code
+    - FreeTube: io.freetubeapp.FreeTube
+    - VLC: org.videolan.VLC
