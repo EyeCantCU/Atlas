@@ -11,7 +11,6 @@ setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
   flatpak install -y --user \\
   org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \\
-  org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
   org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08 \\
   com.heroicgameslauncher.hgl \\
   com.usebottles.bottles \\
@@ -25,6 +24,7 @@ setup-gaming:
 setup-streaming:
   echo 'Installing streaming applications' \\
   flatpak install -y --user \\
+  org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
   com.obsproject.Studio \\
   com.obsproject.Studio.Plugin.OBSVkCapture \\
   com.obsproject.Studio.Plugin.Gstreamer
