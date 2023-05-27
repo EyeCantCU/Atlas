@@ -100,6 +100,23 @@ screens:
             - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
             - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Boatswain for Streamdeck: com.feaneron.Boatswain
+        Software Development:
+          description: Write functions and stuff.
+          default: false
+          packages:
+            - Visual Studio Code: com.visualstudio.code
+            - CLion: com.jetbrains.CLion
+            - DataGrip: com.jetbrains.DataGrip
+            - GoLand: com.jetbrains.GoLand
+            - IntelliJ IDEA Community:com.jetbrains.IntelliJ-IDEA-Community
+            - IntelliJ IDEA Ultimate: com.jetbrains.IntelliJ-IDEA-Ultimate
+            - PhpStorm: com.jetbrains.PhpStorm
+            - PyCharm-Community: com.jetbrains.PyCharm-Community
+            - PyCharm-Professional: com.jetbrains.PyCharm-Professional
+            - Python 2.7 for PyCharm: com.jetbrains.PyCharm.Extensions.Python2-7
+            - Rider: com.jetbrains.Rider
+            - RubyMine: com.jetbrains.RubyMine
+            - WebStorm: com.jetbrains.WebStorm
 
   final-screen:
     source: yafti.screen.title
