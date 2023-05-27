@@ -5,14 +5,14 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to BlueWhaleOS"
       icon: "/path/to/icon"
       description: |
         This guided installer will help you get started with your new system.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler!
+      title: Hello, there!
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
@@ -55,7 +55,7 @@ screens:
       groups:
         Core GNOME Apps:
           description: Core system applications for the GNOME desktop environment.
-          default: true
+          default: false
           packages:
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
@@ -79,7 +79,7 @@ screens:
             - Weather: org.gnome.Weather
         System Apps:
           description: System applications for all desktop environments.
-          default: true
+          default: false
           packages:
             - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
@@ -130,14 +130,14 @@ screens:
   final-screen:
     source: yafti.screen.title
     values:
-      title: "All done!"
+      title: "Finished!"
       icon: "/path/to/icon"
       links:
         - "Install More Applications":
             run: /usr/bin/gnome-software
         - "Website":
-            run: /usr/bin/xdg-open https://ublue.it
+            run: /usr/bin/xdg-open https://github.com/EyeCantCU/BlueWhaleOS
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       description: |
-        Thanks for trying uBlue, we hope you enjoy it!
+        Thanks for trying BlueWhaleOS, we hope you enjoy it!
