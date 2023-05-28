@@ -24,17 +24,6 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
-# Mesa from git
-RUN rpm-ostree override remove mesa-va-drivers-freeworld
-RUN rpm-ostree override --experimental replace mesa-libglapi mesa-libxatracker mesa-dri-drivers mesa-libgbm mesa-libEGL mesa-libGL \
-        mesa-filesystem mesa-vdpau-drivers mesa-vulkan-drivers --from repo=mesa-git
-RUN rpm-ostree install mesa-va-drivers
-
-# Latest Linux firmware
-RUN git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git /tmp/linux-firmware
-RUN rm -rf /lib/firmware/*
-RUN mv /tmp/linux-firmware/* /lib/firmware/
-
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
