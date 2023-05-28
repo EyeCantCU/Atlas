@@ -25,10 +25,10 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
 # Mesa from git
-rpm-ostree override remove mesa-va-drivers-freeworld
-rpm-ostree override --experimental replace mesa-libglapi mesa-libxatracker mesa-dri-drivers mesa-libgbm mesa-libEGL mesa-libGL \
+RUN rpm-ostree override remove mesa-va-drivers-freeworld
+RUN rpm-ostree override --experimental replace mesa-libglapi mesa-libxatracker mesa-dri-drivers mesa-libgbm mesa-libEGL mesa-libGL \
         mesa-filesystem mesa-vdpau-drivers mesa-vulkan-drivers --from repo=mesa-git
-rpm-ostree install mesa-va-drivers
+RUN rpm-ostree install mesa-va-drivers
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
