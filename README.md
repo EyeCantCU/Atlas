@@ -2,7 +2,7 @@
 
 [![build-ublue](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml/badge.svg)](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml)
 
-This is my personal build of Universal Blue. Feel free to use it, fork it, or make your own using the provided documentation below. Thanks to both Universal Blue, the Fedora Project, and everyone else involved for making this possible.
+This is my personal build of Universal Blue. Feel free to use it, fork it, or make your own using the provided documentation below. Thanks to Universal Blue, the Fedora Project, BakeOS, and everyone else involved for making this possible.
 
 ## Getting started
 
