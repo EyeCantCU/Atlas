@@ -55,7 +55,7 @@ screens:
       groups:
         System Apps:
           description: System applications for all desktop environments.
-          default: false
+          default: true
           packages:
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
@@ -71,7 +71,7 @@ screens:
             - Opera: com.opera.Opera
         Gaming:
           description: "Rock and Stone!"
-          default: false
+          default: true
           packages:
             - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
@@ -120,7 +120,7 @@ screens:
             - WebStorm: com.jetbrains.WebStorm
         Ham Radio:
           description: Software used for ham radio.
-          default: false
+          default: true
           packages:
             - Fldigi: com.w1hkj.fldigi
             - Flrig: com.w1hkj.flrig
