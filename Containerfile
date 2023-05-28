@@ -11,6 +11,7 @@ ARG RECIPE
 # templates on immutable Fedora distros, whereas the normal "/etc" is ONLY meant
 # for manual overrides and editing by the machine's admin AFTER installation!
 # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
+COPY etc /etc
 COPY usr /usr
 
 # Copy the recipe that we're building.

@@ -49,6 +49,7 @@ rpm:
   # at the "system level" in the final image.
   install:
     - btop
+    - duperemove
     - kate
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
