@@ -30,6 +30,12 @@ RUN rpm-ostree override --experimental replace mesa-libglapi mesa-libxatracker m
         mesa-filesystem mesa-vdpau-drivers mesa-vulkan-drivers --from repo=mesa-git
 RUN rpm-ostree install mesa-va-drivers
 
+# Latest Linux firmware
+RUN cd /tmp
+RUN git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+RUN rm -rf /lib/firmware/*
+RUN mv /tmp/linux-firmware/* /lib/firmware/
+
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
