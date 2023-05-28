@@ -31,8 +31,7 @@ RUN rpm-ostree override --experimental replace mesa-libglapi mesa-libxatracker m
 RUN rpm-ostree install mesa-va-drivers
 
 # Latest Linux firmware
-RUN cd /tmp
-RUN git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+RUN git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git /tmp/linux-firmware
 RUN rm -rf /lib/firmware/*
 RUN mv /tmp/linux-firmware/* /lib/firmware/
 
