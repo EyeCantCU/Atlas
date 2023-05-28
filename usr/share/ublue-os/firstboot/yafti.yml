@@ -109,7 +109,7 @@ screens:
             - CLion: com.jetbrains.CLion
             - DataGrip: com.jetbrains.DataGrip
             - GoLand: com.jetbrains.GoLand
-            - IntelliJ IDEA Community:com.jetbrains.IntelliJ-IDEA-Community
+            - IntelliJ IDEA Community: com.jetbrains.IntelliJ-IDEA-Community
             - IntelliJ IDEA Ultimate: com.jetbrains.IntelliJ-IDEA-Ultimate
             - PhpStorm: com.jetbrains.PhpStorm
             - PyCharm-Community: com.jetbrains.PyCharm-Community
