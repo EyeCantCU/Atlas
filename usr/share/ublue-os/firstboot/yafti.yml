@@ -79,6 +79,7 @@ screens:
             - Steam: com.valvesoftware.Steam
             - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
             - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+            - vkBasalt (Post-processing Layer): org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08
             - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
             - Proton Updater for Steam: net.davidotek.pupgui2
         Office:
@@ -117,6 +118,13 @@ screens:
             - Rider: com.jetbrains.Rider
             - RubyMine: com.jetbrains.RubyMine
             - WebStorm: com.jetbrains.WebStorm
+        Ham Radio:
+          description: Software used for ham radio.
+          default: false
+          packages:
+            - Fldigi: com.w1hkj.fldigi
+            - Flrig: com.w1hkj.flrig
+            - WSJTX: edu.princeton.physics.WSJTX
 
   final-screen:
     source: yafti.screen.title
