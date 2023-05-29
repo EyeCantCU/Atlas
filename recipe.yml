@@ -50,6 +50,7 @@ rpm:
   # at the "system level" in the final image.
   install:
     - btop
+    - distrobox
     - duperemove
     - kate
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
@@ -72,6 +73,7 @@ rpm:
     - firefox-langpacks
     - kwrite
     - plasma-welcome
+    - toolbox
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,

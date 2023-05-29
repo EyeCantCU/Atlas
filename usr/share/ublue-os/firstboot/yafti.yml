@@ -69,19 +69,6 @@ screens:
             - Microsoft Edge: com.microsoft.Edge
             - Mozilla Firefox: org.mozilla.firefox
             - Opera: com.opera.Opera
-        Gaming:
-          description: "Rock and Stone!"
-          default: true
-          packages:
-            - Bottles: com.usebottles.bottles
-            - Discord: com.discordapp.Discord
-            - Heroic Games Launcher: com.heroicgameslauncher.hgl
-            - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
-            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-            - vkBasalt (Post-processing Layer): org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08
-            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
-            - Proton Updater for Steam: net.davidotek.pupgui2
         Office:
           description: Boost your productivity.
           default: false
@@ -92,15 +79,6 @@ screens:
             - Slack: com.slack.Slack
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
-        Streaming:
-          description: Stream to the Internet.
-          default: false
-          packages:
-            - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
         Software Development:
           description: Write functions and stuff.
           default: false
