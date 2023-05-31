@@ -96,13 +96,6 @@ screens:
             - Rider: com.jetbrains.Rider
             - RubyMine: com.jetbrains.RubyMine
             - WebStorm: com.jetbrains.WebStorm
-        Ham Radio:
-          description: Software used for ham radio.
-          default: true
-          packages:
-            - Fldigi: com.w1hkj.fldigi
-            - Flrig: com.w1hkj.flrig
-            - WSJTX: edu.princeton.physics.WSJTX
 
   final-screen:
     source: yafti.screen.title

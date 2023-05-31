@@ -7,12 +7,16 @@ setup-flatpaks:
       flatpak install --user --noninteractive flathub $pkg; \
   done
 
+setup-gaming:
+  echo 'Installing bazzite-gaming distrobox image'
+  distrobox create -i ghcr.io/ublue-os/bazzite-arch -n bazzite-arch
+  echo 'Retrieving EmuDeck'
+  wget https://www.emudeck.com/EmuDeck.desktop -P ~/Desktop
+  chmod +x ~/Desktop/EmuDeck.desktop
+
 setup-ham-radio:
-  echo 'Installing ham programs'
-  flatpak install -y --user \\
-  edu.princeton.physics.WSJTX \\
-  com.w1hkj.fldigi \\
-  com.w1hkj.flrig
+  echo 'Installing ham-suse distrobox image'
+  distrobox create -i ghcr.io/eyecantcu/ham-suse -n ham-suse
   echo '73 - KK0RX'
 
 setup-upnote:
@@ -26,5 +30,6 @@ nix-me-up:
 
 do-it:
   just setup-flatpaks
+  just setup-gaming
   just setup-ham-radio
   just setup-upnote
