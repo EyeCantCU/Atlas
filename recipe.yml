@@ -60,6 +60,7 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     - supergfxctl-plasmoid
+    - zsh
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:

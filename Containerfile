@@ -41,4 +41,5 @@ RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         mkdir -p /var/lib/duperemove && \
+        systemctl enable configure-zsh.service && \
         ostree container commit
