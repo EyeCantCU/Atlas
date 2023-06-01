@@ -59,6 +59,7 @@ rpm:
     # apps and binaries require it, so it's a good idea to always include it
     # if you ever download or compile any custom software on your machine.
     - libadwaita
+    - micro
     - supergfxctl-plasmoid
     - util-linux-user
     - zsh
