@@ -1,9 +1,0 @@
-[Unit]
-Description=Configures Zsh at startup. See /usr/share/ublue-os/everyboot/configure-zsh.sh.
-
-[Service]
-Type=oneshot
-ExecStart=/usr/share/ublue-os/everyboot/configure-zsh.sh
-
-[Install]
-WantedBy=multi-user.target
