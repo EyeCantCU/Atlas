@@ -42,4 +42,6 @@ RUN chmod +x /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         mkdir -p /var/lib/duperemove && \
         systemctl enable configure-zsh.service && \
+        sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
+        sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
         ostree container commit
