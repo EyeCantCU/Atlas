@@ -1,29 +1,30 @@
 [kdeglobals][KDE]
-widgetStyle=Breeze
+widgetStyle=kvantum-dark
 
 [kdeglobals][General]
-ColorScheme=BreezeDark
+ColorScheme=Carl
 
 [kdeglobals][Icons]
 Theme=breeze-dark
 
 [plasmarc][Theme]
-name=breeze-dark
+name=Carl
 
 [Wallpaper]
 Image=DarkestHour
 
 [kcminputrc][Mouse]
-cursorTheme=breeze_cursors
+cursorTheme=WhiteSur-cursors
 
 [kwinrc][WindowSwitcher]
-LayoutName=org.kde.breeze.desktop
+LayoutName=preview_stack
 
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.breeze.desktop
 
 [kwinrc][org.kde.kdecoration2]
-library=org.kde.breeze
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__Carl
 
 [KSplash]
 Theme=org.kde.Breeze
