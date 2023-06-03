@@ -17,7 +17,7 @@ Image=DarkestHour
 cursorTheme=WhiteSur-cursors
 
 [kwinrc][WindowSwitcher]
-LayoutName=preview_stack
+LayoutName=org.kde.breeze.desktop
 
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.breeze.desktop
