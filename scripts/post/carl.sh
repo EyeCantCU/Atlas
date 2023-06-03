@@ -1,8 +1,8 @@
 set -oue pipefail
 
 cd /tmp
-wget https://gitlab.com/jomada/carl/-/archive/master/carl-master.tar.gz
-tar xvf carl-master.tar.gz
+wget -q https://gitlab.com/jomada/carl/-/archive/master/carl-master.tar.gz
+tar xf carl-master.tar.gz
 
 SRC_DIR=/tmp/carl-master
 
