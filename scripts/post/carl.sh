@@ -16,20 +16,20 @@ WALLPAPER_DIR="/usr/share/wallpapers"
 
 THEME_NAME=Carl
 
-[[ ! -d ${AURORAE_DIR} ]] && mkdir -p ${AURORAE_DIR}
+[[ ! -d ${AURORAE_DIR}/${THEME_NAME} ]] && mkdir -p ${AURORAE_DIR}/${THEME_NAME}
 [[ ! -d ${COLORSCHEMES_DIR} ]] && mkdir -p ${COLORSCHEMES_DIR}
-[[ ! -d ${GLOBAL_DIR} ]] && mkdir -p ${GLOBAL_DIR}
+[[ ! -d ${GLOBAL_DIR}/${THEME_NAME} ]] && mkdir -p ${GLOBAL_DIR}/${THEME_NAME}
 [[ ! -d ${KONSOLE_DIR} ]] && mkdir -p ${KONSOLE_DIR}
-[[ ! -d ${PLASMA_DIR} ]] && mkdir -p ${PLASMA_DIR}
+[[ ! -d ${PLASMA_DIR}/${THEME_NAME} ]] && mkdir -p ${PLASMA_DIR}/${THEME_NAME}
 
 install() {
   local name=${1}
 
-  cp -rf ${SRC_DIR}/aurorae/${THEME_NAME}/* ${AURORAE_DIR}
+  cp -rf ${SRC_DIR}/aurorae/${THEME_NAME}/* ${AURORAE_DIR}/${THEME_NAME}
   cp -rf ${SRC_DIR}/color-schemes/*.colors ${COLORSCHEMES_DIR}
-  cp -rf ${SRC_DIR}/look-and-feel/${THEME_NAME}/* ${GLOBAL_DIR}
+  cp -rf ${SRC_DIR}/look-and-feel/${THEME_NAME}/* ${GLOBAL_DIR}/${THEME_NAME}
   cp -rf ${SRC_DIR}/konsole/* ${KONSOLE_DIR}
-  cp -rf ${SRC_DIR}/${THEME_NAME}/* ${PLASMA_DIR}
+  cp -rf ${SRC_DIR}/${THEME_NAME}/* ${PLASMA_DIR}/${THEME_NAME}
 }
 
 echo "Installing the ${THEME_NAME} theme for the Plasma Desktop..."
