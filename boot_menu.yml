@@ -1,0 +1,6 @@
+ublue_variants:
+  - label: eyecantcu/bluewhaleos
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: bluewhaleos
+        info: BlueWhaleOS
