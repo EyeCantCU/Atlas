@@ -49,8 +49,11 @@ rpm:
   # performed via rpm-ostree during the image build, and will be pre-installed
   # at the "system level" in the final image.
   install:
+    - bat
     - btop
     - duperemove
+    - exa
+    - fd-find
     - kate
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
