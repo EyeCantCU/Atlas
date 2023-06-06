@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.0.0...v1.1.0) (2023-06-06)
+
+
+### Features
+
+* Include additional cli utilities ([e1e21ff](https://github.com/EyeCantCU/BlueWhaleOS/commit/e1e21ff87133e1c266c213fc7f9e45844c8e2810))
+* Include packages in virtualization group ([01d164e](https://github.com/EyeCantCU/BlueWhaleOS/commit/01d164eef713cac05e9d8749981321c0a7aad91a))
+* Provide flatpaks with access to icons ([fcf4949](https://github.com/EyeCantCU/BlueWhaleOS/commit/fcf4949480ca7bc06fe814aa591dd607bcf9e57a))
+
+
+### Bug Fixes
+
+* Use WhiteSur-cursors as default cursor theme ([d38e763](https://github.com/EyeCantCU/BlueWhaleOS/commit/d38e763bfebd2e1176493094c5bdbb4284471cf9))
+
 ## 1.0.0 (2023-06-05)
 
 
