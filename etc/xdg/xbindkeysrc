@@ -1,0 +1,5 @@
+# Scroll based zoom with super key
+"dbus-send --type=method_call --dest=org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut string:view_zoom_in"
+    m:0x50 + c:133 + b:4
+"dbus-send --type=method_call --dest=org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut string:view_zoom_out"
+    m:0x50 + c:133 + b:5
