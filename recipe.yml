@@ -54,7 +54,11 @@ rpm:
     - duperemove
     - exa
     - fd-find
+    - guestfs-tools
     - kate
+    - libvirt-daemon-config-network
+    - libvirt-daemon-kvm
+    - python3-libguestfs
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
     # GNOME's GTK4 theme, Libadwaita. Already included in Silverblue, but not
@@ -63,8 +67,13 @@ rpm:
     # if you ever download or compile any custom software on your machine.
     - libadwaita
     - micro
+    - qemu-kvm
     - supergfxctl-plasmoid
     - util-linux-user
+    - virt-install
+    - virt-manager
+    - virt-top
+    - virt-viewer
     - zsh
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
