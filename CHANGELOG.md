@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.1.0...v1.2.0) (2023-06-06)
+
+
+### Features
+
+* Adjust SDDM DPI ([9b650ef](https://github.com/EyeCantCU/BlueWhaleOS/commit/9b650efe30acf8a760a7a0668bcf090c632298cb))
+* Enable HiDPI in SDDM ([2543bdc](https://github.com/EyeCantCU/BlueWhaleOS/commit/2543bdcf9451d03adc4be0bcfad90cbc02370b44))
+* Ship xbindkeys and configure scroll based desktop zoom ([05e5d49](https://github.com/EyeCantCU/BlueWhaleOS/commit/05e5d49d55c0a2de28c6494d2efee1c33e561d3b))
+
+
+### Bug Fixes
+
+* Enable WhiteSur cursor in SDDM ([b5201fd](https://github.com/EyeCantCU/BlueWhaleOS/commit/b5201fdfa70df13aafdd8cfb736c9ad38535b36e))
+* Set __GL_YIELD to usleep ([121d0db](https://github.com/EyeCantCU/BlueWhaleOS/commit/121d0dbc05ecf7561f94cd0205f39cb05a410b6c))
+* Use X11 in SDDM ([12cb06b](https://github.com/EyeCantCU/BlueWhaleOS/commit/12cb06bc67d44b16df70b8ddad32d1efebebec3c))
+
 ## [1.1.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.0.0...v1.1.0) (2023-06-06)
 
 
