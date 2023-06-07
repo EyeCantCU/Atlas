@@ -96,6 +96,23 @@ screens:
             - Rider: com.jetbrains.Rider
             - RubyMine: com.jetbrains.RubyMine
             - WebStorm: com.jetbrains.WebStorm
+        Utilities:
+          description: Helpful tools.
+          default: false
+          packages:
+            - Barrier: com.github.debauchee.barrier
+            - Bitwarden: com.bitwarden.desktop
+            - BleachBit: org.bleachbit.BleachBit
+            - Calibre: com.calibre_ebook.calibre
+            - GreenWithEnvy: com.leinardi.gwe
+            - OpenAndroidInstaller: org.openandroidinstaller.OpenAndroidInstaller
+            - Proton Mail Bridge: ch.protonmail.protonmail-bridge
+            - Proton VPN: com.protonvpn.www
+            - ProtonUp-Qt: net.davidotek.pupgui2
+            - qBittorrent: org.qbittorrent.qBittorrent
+            - Safe Eyes: io.github.slgobinath.SafeEyes
+            - Text Pieces: com.github.liferooter.textpieces
+            - Warp: app.drey.Warp
 
   final-screen:
     source: yafti.screen.title
