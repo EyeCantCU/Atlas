@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.2.0...v1.3.0) (2023-06-08)
+
+
+### Features
+
+* Set default panel thickness to 76 ([7952ef7](https://github.com/EyeCantCU/BlueWhaleOS/commit/7952ef7f9634b0af32b89e88783b8468f4765bbf))
+* Show hidden files (last) and full path by default ([18d723a](https://github.com/EyeCantCU/BlueWhaleOS/commit/18d723ab9bd00a9147d55e533243801b204a719a))
+
+
+### Bug Fixes
+
+* Disable often choppy animations ([b61cd26](https://github.com/EyeCantCU/BlueWhaleOS/commit/b61cd262b9ab0a9a715c1e6076875059eef179d0))
+* Enable configure-zsh via just ([a5ea572](https://github.com/EyeCantCU/BlueWhaleOS/commit/a5ea5726dd430c41b41c82a1d06eba5d42204953))
+* Ensure we are using breeze-dark icons ([6a69e0b](https://github.com/EyeCantCU/BlueWhaleOS/commit/6a69e0bcbffadfef6901b971a66118e5e2b85708))
+* Set global scale to 2x ([6e3e903](https://github.com/EyeCantCU/BlueWhaleOS/commit/6e3e903a42125c41692b1a7e52cfbed68babf7f5))
+
 ## [1.2.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.1.0...v1.2.0) (2023-06-07)
 
 
