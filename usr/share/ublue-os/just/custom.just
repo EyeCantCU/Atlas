@@ -24,6 +24,10 @@ setup-upnote:
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
   chmod +x ~/Desktop/UpNote.AppImage
 
+setup-zsh:
+  echo 'Switching to Zsh'
+  systemctl enable configure-zsh.service
+
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
