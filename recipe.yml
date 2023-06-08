@@ -44,6 +44,7 @@ rpm:
   # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/cool-cool-sweat/latte-dock/repo/fedora-38/cool-cool-sweat-latte-dock-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-38/jhyub-supergfxctl-plasmoid-fedora-38.repo
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-38/kylegospo-chatGPT-shell-cli-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/xxmitsu/mesa-git/repo/fedora-38/xxmitsu-mesa-git-fedora-38.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -52,9 +53,11 @@ rpm:
   install:
     - bat
     - btop
+    - chatgpt-shell-cli
     - duperemove
     - exa
     - fd-find
+    - glow
     - guestfs-tools
     - kate
     - latte-dock
