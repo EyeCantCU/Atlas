@@ -105,4 +105,5 @@ firstboot:
     - com.telegram.desktop
     - com.visualstudio.code
     - io.freetubeapp.FreeTube
+    - net.davidotek.pupgui2
     - org.videolan.VLC
