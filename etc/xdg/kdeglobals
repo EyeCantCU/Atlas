@@ -1,6 +1,7 @@
 [KDE]
 LookAndFeelPackage=Carl
 SingleClick=false
+AnimationDurationFactor=0
 
 [General]
 XftHintStyle=hintslight
