@@ -17,3 +17,8 @@ ScaleFactor=2.00
 
 [Icons]
 Theme=breeze-dark
+
+[KFileDialog Settings]
+Show Full Path=true
+Show hidden files=true
+Sort hidden files last=true
