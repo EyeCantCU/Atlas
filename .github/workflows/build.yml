@@ -1,45 +1,21 @@
 name: build-ublue
 on:
-  # Build *every* branch at 10:20pm UTC every day (1 hr delay after "nvidia" builds),
-  # regardless of the branch names. (Not just "live, template and main" branches.)
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+  pull_request:
+    branches:
+      - live
+  merge_group:
   schedule:
-    - cron: "20 22 * * *"
-  # Build automatically after pushing commits or tags to the "live", "template"
-  # or "main" branches, except when the commit only affects "documentation" text files.
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+    - cron: "20 22 * * *" # 22:20 UTC every day
   push:
     branches:
       - live
-      - template
       - main
-    paths-ignore:
-      - "**.md"
-      - "**.txt"
-  # Build pull requests whenever they are opened or updated, to make sure they
-  # work. The build won't be deployed, since we filter out PRs in the deployment
-  # stage. Note that submitted PRs run the workflow of the *fork's* own primary
-  # branch, using the fork's own secrets/environment. Please be sure to sync
-  # your primary branch with upstream's latest workflow before submitting PRs!
-  # For pull requests, we build *any* branch regardless of name, to allow "build
-  # checks" to succeed for typical PR branch names such as "fix-something".
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
-  pull_request:
-    paths-ignore:
-      - "**.md"
-      - "**.txt"
-  # Build when manually triggering this workflow for a branch. This allows you
-  # to build any branch, even if it's not listed in the automated triggers above.
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
   workflow_dispatch:
-
 env:
-  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
   push-ghcr:
-    # Only deploys the branch named "live". Ignores all other branches, to allow
-    # having "development" branches without interfering with GHCR image uploads.
     name: Build and push image
     runs-on: ubuntu-22.04
     permissions:
@@ -49,23 +25,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        recipe:
-          - recipe.yml
-
+        image_name: ['', '-hidpi']
+        major_version: [38]
+        include:
+          - major_version: 38
+            is_latest_version: true
+            is_stable_version: true
     steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
 
-      - name: Add yq for reading recipe.yml
-        uses: mikefarah/yq@v4.34.1
-
-      - name: Gather image data from recipe
+      - name: Matrix Variables
         run: |
-          echo "IMAGE_NAME=$(yq '.name' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "IMAGE_DESCRIPTION=$(yq '.description' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "FEDORA_MAJOR_VERSION=$(yq '.fedora-version' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "BASE_IMAGE_URL=$(yq '.base-image' ./${{ matrix.recipe }})" >> $GITHUB_ENV
+          echo "IMAGE_NAME=${{ format('bluewhaleos{0}', matrix.image_name) }}" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -73,18 +46,25 @@ jobs:
         run: |
           # Generate a timestamp for creating an image version history
           TIMESTAMP="$(date +%Y%m%d)"
-          MAJOR_VERSION="${{ env.FEDORA_MAJOR_VERSION }}"
+          MAJOR_VERSION="${{ matrix.major_version }}"
           COMMIT_TAGS=()
           BUILD_TAGS=()
           # Have tags for tracking builds during pull request
           SHA_SHORT="${GITHUB_SHA::7}"
           COMMIT_TAGS+=("pr-${{ github.event.number }}-${MAJOR_VERSION}")
           COMMIT_TAGS+=("${SHA_SHORT}-${MAJOR_VERSION}")
+          if [[ "${{ matrix.is_latest_version }}" == "true" ]] && \
+             [[ "${{ matrix.is_stable_version }}" == "true" ]]; then
+              COMMIT_TAGS+=("pr-${{ github.event.number }}")
+              COMMIT_TAGS+=("${SHA_SHORT}")
+          fi
 
           BUILD_TAGS=("${MAJOR_VERSION}" "${MAJOR_VERSION}-${TIMESTAMP}")
 
-          BUILD_TAGS+=("${TIMESTAMP}")
-          BUILD_TAGS+=("latest")
+          if [[ "${{ matrix.is_latest_version }}" == "true" ]] && \
+             [[ "${{ matrix.is_stable_version }}" == "true" ]]; then
+              BUILD_TAGS+=("latest")
+          fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "
@@ -104,7 +84,7 @@ jobs:
       - name: Get current version
         id: labels
         run: |
-          ver=$(skopeo inspect docker://quay.io/fedora-ostree-desktops/${{ env.SOURCE_IMAGE }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+          ver=$(skopeo inspect docker://ghcr.io/ublue-os/kinoite-nvidia:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
           echo "VERSION=$ver" >> $GITHUB_OUTPUT
 
       # Build metadata
@@ -117,8 +97,8 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/startingpoint/main/README.md
+            org.opencontainers.image.description=A base ${{ env.IMAGE_NAME }} image with batteries included
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/bluewhaleos/main/main/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
 
       # Build image using Buildah action
@@ -127,14 +107,13 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./Containerfile
+            ${{ format('./Containerfile{0}', matrix.image_name) }}
           image: ${{ env.IMAGE_NAME }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           build-args: |
-            FEDORA_MAJOR_VERSION=${{ env.FEDORA_MAJOR_VERSION }}
-            BASE_IMAGE_URL=${{ env.BASE_IMAGE_URL }}
-            RECIPE=${{ matrix.recipe }}
+            IMAGE_NAME=${{ matrix.image_name }}
+            FEDORA_MAJOR_VERSION=${{ matrix.major_version }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 
@@ -150,7 +129,7 @@ jobs:
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
         id: push
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request'
         env:
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_PASSWORD: ${{ github.token }}
@@ -165,7 +144,7 @@ jobs:
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request'
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -173,10 +152,10 @@ jobs:
 
       # Sign container
       - uses: sigstore/cosign-installer@v3.0.5
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request'
 
       - name: Sign container image
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request'
         run: |
           cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ env.IMAGE_NAME }}@${TAGS}
         env:
@@ -185,6 +164,7 @@ jobs:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
 
       - name: Echo outputs
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request'
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
+
