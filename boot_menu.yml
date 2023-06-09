@@ -4,3 +4,8 @@ ublue_variants:
     flavors:
       - label: bluewhaleos
         info: BlueWhaleOS
+  - label: eyecantcu/bluewhaleos-hidpi
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: bluewhaleos-hidpi
+        info: BlueWhaleOS (HiDPI)
