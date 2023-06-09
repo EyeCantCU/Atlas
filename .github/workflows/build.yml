@@ -49,6 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        image_name: ['', '-hidpi']
         recipe:
           - recipe.yml
 
@@ -113,9 +114,9 @@ jobs:
         id: meta
         with:
           images: |
-            ${{ env.IMAGE_NAME }}
+            ${{ format(env.IMAGE_NAME, matrix.image_name) }}
           labels: |
-            org.opencontainers.image.title=${{ env.IMAGE_NAME }}
+            org.opencontainers.image.title=${{ format(env.IMAGE_NAME, matrix.image_name) }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
             org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/startingpoint/main/README.md
@@ -127,8 +128,8 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./Containerfile
-          image: ${{ env.IMAGE_NAME }}
+            ${{ format('./Containerfile{0}', matrix.image_name) }}
+          image: ${{ format(env.IMAGE_NAME, matrix.image_name) }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           build-args: |
@@ -178,7 +179,7 @@ jobs:
       - name: Sign container image
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
         run: |
-          cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ env.IMAGE_NAME }}@${TAGS}
+          cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ format(env.IMAGE_NAME, matrix.image_name) }}@${TAGS}
         env:
           TAGS: ${{ steps.push.outputs.digest }}
           COSIGN_EXPERIMENTAL: false
