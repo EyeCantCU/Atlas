@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.4.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.3.0...v1.4.0) (2023-06-10)
+
+
+### Features
+
+* Add pre/post-install commands to yafti and clean up a bit ([9af8757](https://github.com/EyeCantCU/BlueWhaleOS/commit/9af8757ba95bcbab014908affa1516354d8f1ca6))
+* Add ProtonUp-Qt to default flatpaks ([58f2432](https://github.com/EyeCantCU/BlueWhaleOS/commit/58f243214447f830b0bcc0262a39a7d643e82b79))
+* Separate hidpi images ([c6af4d2](https://github.com/EyeCantCU/BlueWhaleOS/commit/c6af4d25d7d77ad025492ff9dc12cfd56ced0c7d))
+* Ship chatgpt-shell-cli w/ glow ([6e57fe2](https://github.com/EyeCantCU/BlueWhaleOS/commit/6e57fe26195d6e6bc4c4611fbf8c2fd753145932))
+* Ship latte dock ([9745009](https://github.com/EyeCantCU/BlueWhaleOS/commit/97450090d7cc43e477098d452a5653b27266602b))
+
+
+### Bug Fixes
+
+* Add HiDPI image to the boot menu ([f283dea](https://github.com/EyeCantCU/BlueWhaleOS/commit/f283dea61097b8ddc9bc7a3184e9679bcf99cb56))
+* Add IMAGE_NAME as a build argument ([44a6214](https://github.com/EyeCantCU/BlueWhaleOS/commit/44a621447feccd4261c6d2860b8584942c5c33fd))
+* Lower SDDM DPI to 216 ([10d8b28](https://github.com/EyeCantCU/BlueWhaleOS/commit/10d8b28a7249a26764f1791f334640269cf5a0eb))
+* Sign the images output by build_image ([7f0f5fe](https://github.com/EyeCantCU/BlueWhaleOS/commit/7f0f5fec30824ad83a2bf3afc36c31ffb59d6d95))
+
 ## [1.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.2.0...v1.3.0) (2023-06-08)
 
 
