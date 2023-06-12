@@ -3,7 +3,6 @@ properties:
   mode: "run-on-change"
 actions:
   pre:
-  - run: latte-dock
   - run: xbindkeys -f ~/.config/xbindkeysrc
   - run: flatpak --user override --filesystem=/home/$USER/.icons/:ro
   - run: flatpak --user override --filesystem=/usr/share/icons/:ro
