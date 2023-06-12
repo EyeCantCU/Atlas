@@ -19,6 +19,10 @@ setup-ham-radio:
   distrobox create -i ghcr.io/eyecantcu/ham-suse -n ham-suse --nvidia
   echo '73 - KK0RX'
 
+setup-dev:
+  echo 'Installing dev-arch distrobox image'
+  distrobox create -i ghcr.io/eyecantcu/dev-arch -n dev-arch --nvidia
+
 setup-upnote:
   echo 'Retrieving UpNote'
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
