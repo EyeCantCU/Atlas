@@ -4,5 +4,6 @@ Description=distrobox-upgrade Automatic Update
 [Service]
 Type=simple
 ExecStart=/usr/bin/distrobox-upgrade --all
-ExecStartPost=/usr/bin/distrobox-enter -n bazzite-arch -- '  paru -Syu --noconfirm'
+ExecStartPost=/usr/bin/distrobox-enter -n bazzite-arch -- '  paru -Syu --noconfirm' && \
+              /usr/bin/distrobox-enter -n dev-arch -- '  paru -Syu --noconfirm'
 StandardOutput=null
