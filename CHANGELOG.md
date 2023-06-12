@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.4.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.3.0...v1.4.0) (2023-06-12)
+
+
+### Features
+
+* Add pre/post-install commands to yafti and clean up a bit ([9af8757](https://github.com/EyeCantCU/BlueWhaleOS/commit/9af8757ba95bcbab014908affa1516354d8f1ca6))
+* Add ProtonUp-Qt to default flatpaks ([58f2432](https://github.com/EyeCantCU/BlueWhaleOS/commit/58f243214447f830b0bcc0262a39a7d643e82b79))
+* Separate HiDPI images ([b34acd1](https://github.com/EyeCantCU/BlueWhaleOS/commit/b34acd1ccda0622c5ed3bc7631c56d7d62934e51))
+* Ship chatgpt-shell-cli w/ glow ([6e57fe2](https://github.com/EyeCantCU/BlueWhaleOS/commit/6e57fe26195d6e6bc4c4611fbf8c2fd753145932))
+* Ship Inter fonts ([e79a1a1](https://github.com/EyeCantCU/BlueWhaleOS/commit/e79a1a1f261f17f6e9a7c662f8ac83f981ede02d))
+* Ship latest hosts file from Steven Black for adblocking ([533cc2f](https://github.com/EyeCantCU/BlueWhaleOS/commit/533cc2fd286fd6e666c85348732609f7a6dbbb3c))
+* Ship latte dock ([9745009](https://github.com/EyeCantCU/BlueWhaleOS/commit/97450090d7cc43e477098d452a5653b27266602b))
+
+
+### Bug Fixes
+
+* Don't start latte dock during setup ([b05b16b](https://github.com/EyeCantCU/BlueWhaleOS/commit/b05b16b3a3a8bd1bfab0212ce33442e8b923baf7))
+* Lower SDDM DPI to 216 ([10d8b28](https://github.com/EyeCantCU/BlueWhaleOS/commit/10d8b28a7249a26764f1791f334640269cf5a0eb))
+* Restore - only submit to GHCR on live branch ([0dd0b39](https://github.com/EyeCantCU/BlueWhaleOS/commit/0dd0b3954ab89bc820ca842c0caf58713aaf1091))
+
 ## [1.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.2.0...v1.3.0) (2023-06-08)
 
 
