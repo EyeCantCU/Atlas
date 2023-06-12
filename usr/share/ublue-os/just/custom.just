@@ -24,9 +24,17 @@ setup-upnote:
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
   chmod +x ~/Desktop/UpNote.AppImage
 
-setup-zsh:
+enable-zsh:
   echo 'Switching to Zsh'
-  systemctl enable configure-zsh.service
+  systemctl enable --now configure-zsh.service
+
+disable-zsh:
+  echo 'Disabling Zsh'
+  touch ~/.disablezsh
+  chsh -s $(which bash)
+  systemctl disable --now configure-zsh.service
+  rm -rf ~/.oh-my-zsh
+  rm -rf ~/.zshrc
 
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
