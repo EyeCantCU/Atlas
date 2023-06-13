@@ -24,7 +24,7 @@ setup-ham-radio:
 setup-dev:
   echo 'Installing dev-arch distrobox image'
   distrobox create -i ghcr.io/eyecantcu/dev-arch -n dev-arch --nvidia
-  distrobox-enter -n dev-arch -- '  exit'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app code'
 
 setup-dev-jb:
   echo 'Installing JetBrains IDEs'
