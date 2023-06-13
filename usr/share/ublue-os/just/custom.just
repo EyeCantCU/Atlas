@@ -23,6 +23,24 @@ setup-dev:
   echo 'Installing dev-arch distrobox image'
   distrobox create -i ghcr.io/eyecantcu/dev-arch -n dev-arch --nvidia
 
+setup-dev-jb:
+  echo 'Installing JetBrains IDEs'
+  echo 'Installing Android Studio'
+  distrobox-enter -n dev-arch -- '  paru -S aur/android-studio --noconfirm'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app android-studio'
+  echo 'Installing CLion'
+  distrobox-enter -n dev-arch -- '  paru -S aur/clion --noconfirm'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app clion'
+  echo 'Installing IntelliJ IDEA Ultimate Edition and JRE'
+  distrobox-enter -n dev-arch -- '  paru -S aur/intellij-idea-ultimate-edition --noconfirm'
+  distrobox-enter -n dev-arch -- '  paru -S aur/intellij-idea-ultimate-edition-jre --noconfirm'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app intellij-idea-ultimate-edition'
+  echo 'Installing PyCharm Professional'
+  distrobox-enter -n dev-arch -- '  paru -S aur/pycharm-professional --noconfirm'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app pycharm-professional'
+  echo 'Purging cache'
+  distrobox-enter -n dev-arch -- '  yes | paru -Sccd'
+
 setup-upnote:
   echo 'Retrieving UpNote'
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
