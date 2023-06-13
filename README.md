@@ -2,7 +2,7 @@
 
 [![build-ublue](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml/badge.svg)](https://github.com/eyecantcu/bluewhaleos/actions/workflows/build.yml)
 
-This is my personal build of Universal Blue. Feel free to use it, fork it, or make your own using the provided documentation below. Thanks to Universal Blue, the Fedora Project, BakeOS, and everyone else involved for making this possible.
+BlueWhaleOS is an operating system derived from Fedora Kinoite powered by Universal Blue infrastructure. Its aims are to be as simplistic or extendable as the end user needs it to be through the use of various packaging systems (Flatpaks and AppImages with support for installing Nix) and an array of distrobox images for gaming, ham radio, and software development. Feel free to use it, fork it, or make your own using the provided documentation below. Thanks to Universal Blue, the Fedora Project, BakeOS, and everyone else involved for making this possible.
 
 ## Getting started
 
