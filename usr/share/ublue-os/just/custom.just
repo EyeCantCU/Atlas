@@ -10,6 +10,7 @@ setup-flatpaks:
 setup-gaming:
   echo 'Installing bazzite-gaming distrobox image'
   distrobox create -i ghcr.io/ublue-os/bazzite-arch -n bazzite-arch --nvidia
+  distrobox-enter -n ham-suse -- '  exit'
   echo 'Retrieving EmuDeck'
   wget https://www.emudeck.com/EmuDeck.desktop -P ~/Desktop
   chmod +x ~/Desktop/EmuDeck.desktop
@@ -17,11 +18,13 @@ setup-gaming:
 setup-ham-radio:
   echo 'Installing ham-suse distrobox image'
   distrobox create -i ghcr.io/eyecantcu/ham-suse -n ham-suse --nvidia
+  distrobox-enter -n ham-suse -- '  exit'
   echo '73 - KK0RX'
 
 setup-dev:
   echo 'Installing dev-arch distrobox image'
   distrobox create -i ghcr.io/eyecantcu/dev-arch -n dev-arch --nvidia
+  distrobox-enter -n dev-arch -- '  exit'
 
 setup-dev-jb:
   echo 'Installing JetBrains IDEs'
