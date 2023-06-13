@@ -18,7 +18,7 @@ setup-gaming:
 setup-ham-radio:
   echo 'Installing ham-suse distrobox image'
   distrobox create -i ghcr.io/eyecantcu/ham-suse -n ham-suse --nvidia
-  distrobox-enter -n ham-suse -- '  exit'
+  distrobox-enter -n ham-suse -- '  distrbox-export --app chirp'
   echo '73 - KK0RX'
 
 setup-dev:
