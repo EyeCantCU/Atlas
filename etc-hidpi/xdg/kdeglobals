@@ -19,16 +19,16 @@ ScaleFactor=2.00
 Theme=breeze-dark
 
 [DialogIcons]
-Size=48
+Size=32
 
 [MainToolbarIcons]
 Size=32
 
 [SmallIcons]
-Size=32
+Size=22
 
 [ToolbarIcons]
-Size=32
+Size=22
 
 [KFileDialog Settings]
 Show Full Path=true
