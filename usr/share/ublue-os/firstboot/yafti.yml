@@ -7,7 +7,6 @@ actions:
   - run: flatpak --user override --filesystem=/home/$USER/.icons/:ro
   - run: flatpak --user override --filesystem=/usr/share/icons/:ro
   post:
-  - run: systemctl enable --now configure-zsh.service
 screens:
   first-screen:
     source: yafti.screen.title
