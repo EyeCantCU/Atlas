@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.0.0...v2.0.1) (2023-06-14)
+
+
+### Bug Fixes
+
+* Enable Zsh via autostart.sh instead of yafti ([508c130](https://github.com/EyeCantCU/BlueWhaleOS/commit/508c13061797741bafce64480e56732f58c42abf))
+
 ## [2.0.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v1.4.0...v2.0.0) (2023-06-14)
 
 
