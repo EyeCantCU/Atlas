@@ -15,6 +15,18 @@ toolBarFont=Ubuntu,11,-1,5,50,0,0,0,0,0
 [Icons]
 Theme=breeze-dark
 
+[DialogIcons]
+Size=48
+
+[MainToolbarIcons]
+Size=32
+
+[SmallIcons]
+Size=32
+
+[ToolbarIcons]
+Size=32
+
 [KFileDialog Settings]
 Show Full Path=true
 Show hidden files=true
