@@ -44,6 +44,11 @@ setup-dev-jb:
   echo 'Purging cache'
   distrobox-enter -n dev-arch -- '  yes | paru -Sccd'
 
+setup-deezer:
+  echo 'Retrieving Deezer'
+  wget https://github.com/aunetx/deezer-linux/releases/download/v5.30.520-1/deezer-desktop-5.30.520-x86_64.AppImage -O ~/Desktop/Deezer.AppImage
+  chmod +x ~/Desktop/Deezer.AppImage
+
 setup-upnote:
   echo 'Retrieving UpNote'
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
