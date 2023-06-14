@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.0.1...v2.1.0) (2023-06-14)
+
+
+### Features
+
+* Add just script for Deezer ([1b7f388](https://github.com/EyeCantCU/BlueWhaleOS/commit/1b7f3881051c1e0bc5648322db8b5eddd6b204fa))
+
+
+### Bug Fixes
+
+* Export steam from bazzite-arch, not ham-suse ([38c382b](https://github.com/EyeCantCU/BlueWhaleOS/commit/38c382be6b1221a4aaa02394556f08c2562bf021))
+
 ## [2.0.1](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.0.0...v2.0.1) (2023-06-14)
 
 
