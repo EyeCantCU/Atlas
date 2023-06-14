@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate ISO
-        uses: eyecantcu/isogenerator@v3.3.1
+        uses: eyecantcu/isogenerator@v3.3.2
         id: isogenerator
         with:
           image-name: bluewhaleos
