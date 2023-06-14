@@ -107,6 +107,7 @@ firstboot:
     - com.brave.Browser
     - com.discordapp.Discord
     - com.github.tchx84.Flatseal
+    - com.github.xournalpp.xournalpp
     - com.telegram.desktop
     - com.visualstudio.code
     - io.freetubeapp.FreeTube

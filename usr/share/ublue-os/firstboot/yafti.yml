@@ -119,6 +119,7 @@ screens:
             - Safe Eyes: io.github.slgobinath.SafeEyes
             - Text Pieces: com.github.liferooter.textpieces
             - Warp: app.drey.Warp
+            - Xournal++: flathub com.github.xournalpp.xournalpp
 
   final-screen:
     source: yafti.screen.title
