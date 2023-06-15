@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.1](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.3.0...v2.3.1) (2023-06-15)
+
+
+### Bug Fixes
+
+* Add tera repo ([6ceabb0](https://github.com/EyeCantCU/BlueWhaleOS/commit/6ceabb094b1f7db7153b88e5cc09a1d9a109af34))
+* What we do to one, we have to do to the other ([15092bb](https://github.com/EyeCantCU/BlueWhaleOS/commit/15092bb2e90df0cd4cdcef4cb88ae97a26ad8568))
+
 ## [2.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.2.0...v2.3.0) (2023-06-15)
 
 
