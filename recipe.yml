@@ -65,6 +65,8 @@ rpm:
     - latte-dock
     - libvirt-daemon-config-network
     - libvirt-daemon-kvm
+    - p7zip
+    - p7zip-plugins
     - python3-libguestfs
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
