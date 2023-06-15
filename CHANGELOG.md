@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.1.0...v2.2.0) (2023-06-15)
+
+
+### Features
+
+* Add Greenlight to gaming configuration for xCloud/xHome ([6ce88ee](https://github.com/EyeCantCU/BlueWhaleOS/commit/6ce88eea6c8b3e19d0aa37dd21d763ef04da21e4))
+* Add just scripts to hide/unhide GRUB menu ([614ad5f](https://github.com/EyeCantCU/BlueWhaleOS/commit/614ad5fc512181769bc704c0adcc1f68894f636b))
+* Add Xournal++ ([ff417a5](https://github.com/EyeCantCU/BlueWhaleOS/commit/ff417a5800c21b0cad8fd1617f105066a1ca4563))
+* Configure gestures for touchpads ([681f1af](https://github.com/EyeCantCU/BlueWhaleOS/commit/681f1afd5cea72ee2fb1a42a57a8ceb58ea4a5bb))
+* Make some improvements to configure-zsh ([710550e](https://github.com/EyeCantCU/BlueWhaleOS/commit/710550eec88cd8f866720cd5f6736f8f97c7e371))
+
+
+### Bug Fixes
+
+* Adjust HiDPI icon sizes ([1fde39e](https://github.com/EyeCantCU/BlueWhaleOS/commit/1fde39e91ef67004d676d32b28587807fea85275))
+
 ## [2.1.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.0.1...v2.1.0) (2023-06-14)
 
 
