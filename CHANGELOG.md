@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.2.0...v2.3.0) (2023-06-15)
+
+
+### Features
+
+* Add ddccontrol ([8aa8b03](https://github.com/EyeCantCU/BlueWhaleOS/commit/8aa8b038217c2dcbd3124b0783a38a9d22d36c37))
+* Add Input Remapper ([d6c09f4](https://github.com/EyeCantCU/BlueWhaleOS/commit/d6c09f43b21badf2c88e2198ebf7113df41cee08))
+* Add intelone mono fonts ([dfdcdd1](https://github.com/EyeCantCU/BlueWhaleOS/commit/dfdcdd1f509736f453c16502ea5be60b4f7e3a01))
+* Add p7zip-tools ([06843a5](https://github.com/EyeCantCU/BlueWhaleOS/commit/06843a5f74a8e1eda8d814b44a3f481b807a109f))
+* Add remaining fonts from bluefin ([f4df9ff](https://github.com/EyeCantCU/BlueWhaleOS/commit/f4df9ff0872a7403d727283fda1d48d9da785e8e))
+* Update Nix installer from bluefin ([02db34d](https://github.com/EyeCantCU/BlueWhaleOS/commit/02db34d2d7ff3fff3fc2433d9b06a154ed7b6381))
+
 ## [2.2.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.1.0...v2.2.0) (2023-06-15)
 
 
