@@ -51,8 +51,10 @@ rpm:
   # performed via rpm-ostree during the image build, and will be pre-installed
   # at the "system level" in the final image.
   install:
+    - adobe-source-code-pro-fonts
     - bat
     - btop
+    - cascadiacode-nerd-fonts
     - chatgpt-shell-cli
     - ddccontrol
     - ddccontrol-gtk
@@ -60,13 +62,19 @@ rpm:
     - exa
     - fd-find
     - glow
+    - google-droid-sans-mono-fonts
+    - google-go-mono-fonts
     - guestfs-tools
+    - ibm-plex-mono-fonts
+    - jetbrains-mono-fonts-all
     - kate
     - latte-dock
     - libvirt-daemon-config-network
     - libvirt-daemon-kvm
+    - mozilla-fira-mono-fonts
     - p7zip
     - p7zip-plugins
+    - powerline-fonts
     - python3-libguestfs
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
@@ -78,6 +86,7 @@ rpm:
     - micro
     - qemu-kvm
     - supergfxctl-plasmoid
+    - ubuntumono-nerd-fonts
     - util-linux-user
     - virt-install
     - virt-manager
