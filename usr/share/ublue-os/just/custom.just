@@ -43,7 +43,7 @@ setup-dev-jb:
   distrobox-enter -n dev-arch -- '  distrobox-export --app intellij-idea-ultimate-edition'
   echo 'Installing PyCharm Professional'
   distrobox-enter -n dev-arch -- '  paru -S aur/pycharm-professional --noconfirm'
-  distrobox-enter -n dev-arch -- '  distrobox-export --app pycharm-professional'
+  distrobox-enter -n dev-arch -- '  distrobox-export --app pycharm'
   echo 'Purging cache'
   distrobox-enter -n dev-arch -- '  yes | paru -Sccd'
 
