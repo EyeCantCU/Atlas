@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.4.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.3.0...v2.4.0) (2023-06-15)
+
+
+### Features
+
+* Include cosign in builds ([7c2de2c](https://github.com/EyeCantCU/BlueWhaleOS/commit/7c2de2c34dcf2604499be18c7150540047da5d02))
+
+
+### Bug Fixes
+
+* Add terra repo ([0f98e17](https://github.com/EyeCantCU/BlueWhaleOS/commit/0f98e17ad6175fc547ffe066a5be38cda315c2ff))
+* Build font cache for Ubuntu fonts ([89440f7](https://github.com/EyeCantCU/BlueWhaleOS/commit/89440f7f1fdd0ed276eedf2a8d036542c3304deb))
+* Ensure configure-zsh.sh is executable ([25f20f1](https://github.com/EyeCantCU/BlueWhaleOS/commit/25f20f1a6b6cd2c469939af2ba4f27096ca0c1fc))
+* Remove Plasma Wayland session ([b41763e](https://github.com/EyeCantCU/BlueWhaleOS/commit/b41763e83fa8a35a4b431de7df4240f895499188))
+* What we do to one, we have to do to the other ([fd9fc1d](https://github.com/EyeCantCU/BlueWhaleOS/commit/fd9fc1d4013476ae72644fcc8a4aeb90eed9986e))
+
 ## [2.3.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.2.0...v2.3.0) (2023-06-15)
 
 
