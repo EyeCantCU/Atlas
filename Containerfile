@@ -40,6 +40,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         mkdir -p /var/lib/duperemove && \
+        fc-cache -f /usr/share/fonts/ubuntu && \
         systemctl enable configure-zsh.service && \
         systemctl enable input-remapper.service && \
         systemctl enable libvirtd.service && \
