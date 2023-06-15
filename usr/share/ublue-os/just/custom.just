@@ -10,6 +10,7 @@ setup-flatpaks:
 setup-gaming:
   echo 'Installing bazzite-gaming distrobox image'
   distrobox create -i ghcr.io/ublue-os/bazzite-arch -n bazzite-arch --nvidia
+  distrobox-enter -n bazzite-arch -- '  paru -S zsh --noconfirm'
   distrobox-enter -n bazzite-arch -- '  distrobox-export --app steam'
   echo 'Retrieving EmuDeck'
   wget https://www.emudeck.com/EmuDeck.desktop -P ~/Desktop
