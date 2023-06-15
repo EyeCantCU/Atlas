@@ -66,6 +66,7 @@ rpm:
     - google-go-mono-fonts
     - guestfs-tools
     - ibm-plex-mono-fonts
+    - input-remapper
     - jetbrains-mono-fonts-all
     - kate
     - latte-dock

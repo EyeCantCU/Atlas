@@ -41,6 +41,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         mkdir -p /var/lib/duperemove && \
         systemctl enable configure-zsh.service && \
+        systemctl enable input-remapper.service && \
         systemctl enable libvirtd.service && \
         sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
         sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
