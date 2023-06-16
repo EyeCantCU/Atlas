@@ -110,6 +110,7 @@ screens:
             - Bitwarden: com.bitwarden.desktop
             - BleachBit: org.bleachbit.BleachBit
             - Calibre: com.calibre_ebook.calibre
+            - Chiaki: re.chiaki.Chiaki
             - GreenWithEnvy: com.leinardi.gwe
             - OpenAndroidInstaller: org.openandroidinstaller.OpenAndroidInstaller
             - Proton Mail Bridge: ch.protonmail.protonmail-bridge
