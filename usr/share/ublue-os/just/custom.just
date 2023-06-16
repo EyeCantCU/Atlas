@@ -84,8 +84,12 @@ disable-zsh:
   rm -rf ~/.zshrc
 
 nix-me-up:
-  echo 'Setting phasers to kill. Installing nix.'
-  /usr/bin/ublue-nix-install
+  echo 'Setting phasers to kill. Installing Nix.'
+  curl -s https://raw.githubusercontent.com/dnkmmr69420/nix-installer-scripts/main/installer-scripts/silverblue-nix-installer.sh | bash
+
+nix-it-off:
+  echo 'Disengaging phasers. Removing Nix.'
+  curl -s https://raw.githubusercontent.com/dnkmmr69420/nix-installer-scripts/main/uninstaller-scripts/silverblue-nix-uninstaller.sh | bash
 
 hide-grub-menu:
   #!/usr/bin/env bash
