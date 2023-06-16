@@ -75,6 +75,12 @@ screens:
             - Microsoft Edge: com.microsoft.Edge
             - Mozilla Firefox: org.mozilla.firefox
             - Opera: com.opera.Opera
+        Music:
+          description: 30/30-150...
+          default: false
+          packages:
+            - Spotify: com.spotify.Client
+            - Tidal-hifi: com.mastermindzh.tidal-hifi
         Office:
           description: Boost your productivity.
           default: false
