@@ -58,6 +58,19 @@ setup-upnote:
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
   chmod +x ~/Desktop/UpNote.AppImage
 
+setup-wallpapers: 
+  #!/usr/bin/env bash   
+  wallpapers=~/.local/share/wallpapers
+  cd /tmp
+  wget https://github.com/EyeCantCU/distro-wallpapers/archive/refs/heads/main.tar.gz
+  tar xvf main.tar.gz
+  rm -rf main.tar.gz    
+  cd distro-wallpapers-main
+  mkdir -p ${wallpapers}
+  cp -r  * ${wallpapers}
+  cp .. 
+  rm -rf distro-wallpapers-main
+
 enable-zsh:
   echo 'Switching to Zsh'
   systemctl enable --now configure-zsh.service
