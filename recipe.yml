@@ -44,7 +44,6 @@ rpm:
   # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/cool-cool-sweat/latte-dock/repo/fedora-38/cool-cool-sweat-latte-dock-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-38/eyecantcu-android-udev-rules-fedora-38.repo
-    - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-38/jhyub-supergfxctl-plasmoid-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-38/kylegospo-chatGPT-shell-cli-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/xxmitsu/mesa-git/repo/fedora-38/xxmitsu-mesa-git-fedora-38.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
@@ -89,7 +88,6 @@ rpm:
     - libadwaita
     - micro
     - qemu-kvm
-    - supergfxctl-plasmoid
     - ubuntumono-nerd-fonts
     - util-linux-user
     - virt-install
