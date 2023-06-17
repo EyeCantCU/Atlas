@@ -43,6 +43,7 @@ rpm:
   # Example (which also demonstrates version number expansion):
   # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/cool-cool-sweat/latte-dock/repo/fedora-38/cool-cool-sweat-latte-dock-fedora-38.repo
+    - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-38/eyecantcu-android-udev-rules-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-38/jhyub-supergfxctl-plasmoid-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-38/kylegospo-chatGPT-shell-cli-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/xxmitsu/mesa-git/repo/fedora-38/xxmitsu-mesa-git-fedora-38.repo
@@ -52,6 +53,8 @@ rpm:
   # at the "system level" in the final image.
   install:
     - adobe-source-code-pro-fonts
+    - android-tools
+    - android-udev-rules
     - bat
     - btop
     - cascadiacode-nerd-fonts
