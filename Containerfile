@@ -5,11 +5,16 @@
 # in the cloud. The ARGs have default values, but changing those
 # does nothing if the image is built in the cloud.
 
-ARG FEDORA_MAJOR_VERSION=38
-# Warning: changing this might not do anything for you. Read comment above.
-ARG BASE_IMAGE_URL=ghcr.io/ublue-os/kinoite-nvidia
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-main}"
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-$BASE_IMAGE_NAME-$IMAGE_FLAVOR}"
+ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-38}"
 
-FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS bluewhaleos
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
@@ -40,14 +45,29 @@ COPY scripts /tmp/scripts
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
-        /tmp/scripts/build.sh && \
-        rm -rf /tmp/* /var/* && \
-        mkdir -p /var/lib/duperemove && \
-        fc-cache -f /usr/share/fonts/ubuntu && \
-        chmod +x /etc/profile.d/configure-zsh.sh && \
-        systemctl enable configure-zsh.service && \
-        systemctl enable input-remapper.service && \
-        systemctl enable libvirtd.service && \
-        sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
-        sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
-        ostree container commit
+    /tmp/scripts/build.sh && \
+    rm -rf /tmp/* /var/* && \
+    mkdir -p /var/lib/duperemove && \
+    fc-cache -f /usr/share/fonts/ubuntu && \
+    chmod +x /etc/profile.d/configure-zsh.sh && \
+    systemctl enable configure-zsh.service && \
+    systemctl enable input-remapper.service && \
+    systemctl enable libvirtd.service && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
+    sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
+    ostree container commit && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp
+
+# BlueWhaleOS HiDPI
+FROM bluewhaleos as bluewhaleos-hidpi
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
+
+# Copy HiDPI modifications
+COPY etc-hidpi /etc
+
+RUN rm -rf /tmp/* /var/* && \
+    mkdir -p /var/lib/duperemove && \
+    ostree container commit
