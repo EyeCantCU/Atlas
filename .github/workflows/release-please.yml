@@ -9,7 +9,7 @@ permissions:
   actions: read
   packages: write
   pull-requests: write
-      
+
 name: Release Please
 jobs:
   release-please:
@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate ISO
-        uses: ublue-os/isogenerator@v2.0.2
+        uses: eyecantcu/isogenerator@v3.1.0
         id: isogenerator
         with:
           image-name: bluewhaleos

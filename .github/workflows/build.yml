@@ -15,7 +15,7 @@ on:
     paths-ignore:
       - '**.md'
       - '**.txt'
-  merge_group:    
+  merge_group:
   workflow_dispatch:
 env:
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -38,7 +38,7 @@ jobs:
           - major_version: 38
             is_latest_version: true
             is_stable_version: true
-    steps: 
+    steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
@@ -91,10 +91,10 @@ jobs:
               echo "${TAG}"
           done
           echo "alias_tags=${alias_tags[*]}" >> $GITHUB_OUTPUT
-          
+
       - name: Get Current Fedora Version
         id: labels
-        run: |  
+        run: |
           ver=$(skopeo inspect docker://ghcr.io/ublue-os/kinoite-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
           echo "VERSION=$ver" >> $GITHUB_OUTPUT
 
