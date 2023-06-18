@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.5.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.4.0...v2.5.0) (2023-06-18)
+
+
+### Features
+
+* Add Chiaki to yafti for PS5 streaming ([fd2b6fd](https://github.com/EyeCantCU/BlueWhaleOS/commit/fd2b6fde43ac85d75f486fc230d95ebec131f3b4))
+* Add just script to install wallpapers from various distros ([177cc1d](https://github.com/EyeCantCU/BlueWhaleOS/commit/177cc1d9752c06ebb36356afd5e0b5568485c783))
+* Add main (non-Nvidia) images and consolidate build system ([9f97a90](https://github.com/EyeCantCU/BlueWhaleOS/commit/9f97a907a9fe3f7f9476174f72402b2d65e20dce))
+* Add music tab to yafti with Spotify and Tidal-hifi ([9017482](https://github.com/EyeCantCU/BlueWhaleOS/commit/90174821c0cfff52c7d2e0abce153f2400db8b53))
+* Ship Android tools and udev rules ([3e7e103](https://github.com/EyeCantCU/BlueWhaleOS/commit/3e7e10328f7d1c79d92a43c8fcb95ba2eb0d0c35))
+* Use upstream Nix (un)installation scripts ([ba31b28](https://github.com/EyeCantCU/BlueWhaleOS/commit/ba31b28ea02aaa7a88dd4873e702e1e9ecb121d1))
+
+
+### Bug Fixes
+
+* Export pycharm-professional as pycharm ([2f897c4](https://github.com/EyeCantCU/BlueWhaleOS/commit/2f897c4ee6ec3d66ba1028cdffa18723e9ade9af))
+* How on Earth? ([78d4b64](https://github.com/EyeCantCU/BlueWhaleOS/commit/78d4b6444ba50da59f812e99772bf10a62168497))
+* Include Zsh in bazzite-arch ([4c79337](https://github.com/EyeCantCU/BlueWhaleOS/commit/4c7933784728bff8741fd82110247a4c969e5f4d))
+
 ## [2.4.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.3.0...v2.4.0) (2023-06-15)
 
 
