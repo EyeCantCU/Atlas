@@ -45,6 +45,7 @@ rpm:
     - https://copr.fedorainfracloud.org/coprs/cool-cool-sweat/latte-dock/repo/fedora-38/cool-cool-sweat-latte-dock-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-38/eyecantcu-android-udev-rules-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-38/kylegospo-chatGPT-shell-cli-fedora-38.repo
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-38/kylegospo-system76-scheduler-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/xxmitsu/mesa-git/repo/fedora-38/xxmitsu-mesa-git-fedora-38.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -88,6 +89,7 @@ rpm:
     - libadwaita
     - micro
     - qemu-kvm
+    - system76-scheduler
     - ubuntumono-nerd-fonts
     - util-linux-user
     - virt-install
