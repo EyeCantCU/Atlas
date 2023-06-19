@@ -72,14 +72,27 @@ setup-wallpapers:
   rm -rf distro-wallpapers-main
 
 enable-zsh:
+  #!/bin/bash
   echo 'Switching to Zsh'
-  systemctl enable --now configure-zsh.service
+  # Retrieve oh-my-zsh with plugins if the user doesn't have them
+  if [ ! -d ~/.oh-my-zsh ]; then
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  fi;
+  # If users shell isn't found to be Zsh according to /etc/passwd, ask to change it
+  if [ -z $(cat /etc/passwd | grep $USER | grep zsh) ]; then
+    echo "$USER's default shell is not Zsh according to /etc/passwd." && \
+    chsh -s $(which zsh) && \
+    echo "You may need to sign out and back in for this to apply."
+  fi;
+  # Set permissions for Zsh
+  chown $USER:$USER ~/.oh-my-zsh ~/.zshrc -R
 
 disable-zsh:
   echo 'Disabling Zsh'
   touch ~/.disablezsh
   chsh -s $(which bash)
-  systemctl disable --now configure-zsh.service
   rm -rf ~/.oh-my-zsh
   rm -rf ~/.zshrc
 
