@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.6.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.5.0...v2.6.0) (2023-06-20)
+
+
+### Features
+
+* Add system76-scheduler ([1ed1887](https://github.com/EyeCantCU/BlueWhaleOS/commit/1ed1887f024c10662bea738b5492bed8a30ab5f4))
+* Kill configure-zsh service and move functionality to just ([76f8888](https://github.com/EyeCantCU/BlueWhaleOS/commit/76f888856658b51d268cc8d370df5ba54c6b9137))
+
+
+### Bug Fixes
+
+* Remove latte dock ([3800be2](https://github.com/EyeCantCU/BlueWhaleOS/commit/3800be2b3d88d46c36fc3dd2bc2abc92c4f31d94))
+* Remove mesa-git ([87cc67a](https://github.com/EyeCantCU/BlueWhaleOS/commit/87cc67a0adb9880c3898f488d2cc52b26d745189))
+
 ## [2.5.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.4.0...v2.5.0) (2023-06-18)
 
 
