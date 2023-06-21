@@ -49,6 +49,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
     fc-cache -f /usr/share/fonts/ubuntu && \
+    fc-cache -f /usr/share/fonts/inter && \
     systemctl enable input-remapper.service && \
     systemctl enable libvirtd.service && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
