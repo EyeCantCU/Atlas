@@ -87,6 +87,7 @@ rpm:
     - micro
     - qemu-kvm
     - system76-scheduler
+    - ubuntu-nerd-fonts
     - ubuntumono-nerd-fonts
     - util-linux-user
     - virt-install
