@@ -13,7 +13,7 @@ smallestReadableFont=Ubuntu,9,-1,5,50,0,0,0,0,0
 toolBarFont=Ubuntu,11,-1,5,50,0,0,0,0,0
 
 [KScreen]
-ScaleFactor=2.00
+ScaleFactor=2.50
 
 [Icons]
 Theme=breeze-dark
