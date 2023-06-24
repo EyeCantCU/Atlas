@@ -65,7 +65,7 @@ ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
 # Copy HiDPI modifications
-COPY etc-hidpi /etc
+COPY hidpi/etc /etc
 
 RUN rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
