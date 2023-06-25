@@ -89,6 +89,7 @@ rpm:
     - libadwaita
     - micro
     - qemu-kvm
+    - steamdeck-kde-themes
     - system76-scheduler
     - ubuntu-nerd-fonts
     - ubuntumono-nerd-fonts
