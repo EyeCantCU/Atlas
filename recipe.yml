@@ -45,6 +45,7 @@ rpm:
     - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-38/eyecantcu-android-udev-rules-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-38/kylegospo-bazzite-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-38/kylegospo-chatGPT-shell-cli-fedora-38.repo
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/hl2linux-selinux/repo/fedora-38/kylegospo-hl2linux-selinux-fedora-38.repo
     - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-38/kylegospo-system76-scheduler-fedora-38.repo
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -67,6 +68,7 @@ rpm:
     - google-droid-sans-mono-fonts
     - google-go-mono-fonts
     - guestfs-tools
+    - hl2linux-selinux
     - ibm-plex-mono-fonts
     - input-remapper
     - jetbrains-mono-fonts-all
