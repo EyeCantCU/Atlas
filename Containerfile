@@ -43,6 +43,9 @@ COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
+# Test drive new update system
+COPY --from=ghcr.io/gerblesh/ublue-updater:latest /rpms/ublue-updater.noarch.rpm /tmp
+
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
     /tmp/scripts/build.sh && \
