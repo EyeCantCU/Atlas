@@ -72,7 +72,6 @@ rpm:
     - ibm-plex-mono-fonts
     - input-remapper
     - jetbrains-mono-fonts-all
-    - kate
     - libvirt-daemon-config-network
     - libvirt-daemon-kvm
     - mozilla-fira-mono-fonts
@@ -107,7 +106,6 @@ rpm:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
     - firefox
     - firefox-langpacks
-    - kwrite
     - plasma-welcome
     - toolbox
 # Configuration for the "first boot" experience, which is available after login.
