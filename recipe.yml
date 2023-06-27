@@ -108,7 +108,6 @@ rpm:
     - firefox-langpacks
     - plasma-welcome
     - toolbox
-    - ublue-os-update-services
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,
