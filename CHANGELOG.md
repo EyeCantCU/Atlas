@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.7.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.6.0...v2.7.0) (2023-06-27)
+
+
+### Features
+
+* Configure ZRAM ([6503592](https://github.com/EyeCantCU/BlueWhaleOS/commit/6503592b05e5e0b0a276c9d9f27a907614e55be6))
+* Include SELinux fix for games using the hl2 engine ([6a0cfd8](https://github.com/EyeCantCU/BlueWhaleOS/commit/6a0cfd83f5a8f2c528bf15a059c8f288d01cc179))
+* Include Steam Deck KDE themes ([a9872a8](https://github.com/EyeCantCU/BlueWhaleOS/commit/a9872a84ff5ee5b5390af16f21a225023170896c))
+* Ship DevPod ([182c328](https://github.com/EyeCantCU/BlueWhaleOS/commit/182c32868ef0dd5e1c83f9109b5ed93c89c325b1))
+* Ship ubuntu-nerd-fonts ([b675f2e](https://github.com/EyeCantCU/BlueWhaleOS/commit/b675f2e502dfffbf42c865aa4cdbc199e4693f87))
+* Ship Wallpaper Engine KDE plugin ([4919130](https://github.com/EyeCantCU/BlueWhaleOS/commit/49191304bbd2fdc70d284ffc9c0abfbe674023c5))
+* Test drive new updater ([5d9a0a1](https://github.com/EyeCantCU/BlueWhaleOS/commit/5d9a0a18d250d181ab6021f624fd88912b8a3069))
+
+
+### Bug Fixes
+
+* Drop git linux firmware ([9ad78f5](https://github.com/EyeCantCU/BlueWhaleOS/commit/9ad78f58c8528928b3dbe07bf019695ba61cb8c7))
+* Increase scale factor to 2.5x in HiDPI configurations ([1dc70f3](https://github.com/EyeCantCU/BlueWhaleOS/commit/1dc70f34c9d34cd0dc2b972fd508d8b8fda104fb))
+* Refresh font cache for Inter fonts ([9f074a7](https://github.com/EyeCantCU/BlueWhaleOS/commit/9f074a7eb5e396de4c620d67e512aedfedf7fdd9))
+
 ## [2.6.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.5.0...v2.6.0) (2023-06-20)
 
 
