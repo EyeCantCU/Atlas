@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.7.0...v2.8.0) (2023-06-27)
+
+
+### Features
+
+* Add nanorc with sane defaults ([5c0fac9](https://github.com/EyeCantCU/BlueWhaleOS/commit/5c0fac961e7ae512b16b37cc27d0a54034e19c97))
+
 ## [2.7.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.6.0...v2.7.0) (2023-06-27)
 
 
