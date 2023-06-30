@@ -73,6 +73,7 @@ rpm:
     - ibm-plex-mono-fonts
     - input-remapper
     - jetbrains-mono-fonts-all
+    - latte-dock-nightly
     - libvirt-daemon-config-network
     - libvirt-daemon-kvm
     - mozilla-fira-mono-fonts
