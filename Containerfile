@@ -47,6 +47,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
     fc-cache -f /usr/share/fonts/ubuntu && \
     systemctl enable input-remapper.service && \
     systemctl enable libvirtd.service && \
+    systemctl enable touchegg.service && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
     ostree container commit && \
