@@ -91,6 +91,7 @@ rpm:
     - qemu-kvm
     - steamdeck-kde-themes
     - system76-scheduler
+    - touchegg
     - ubuntu-nerd-fonts
     - ubuntumono-nerd-fonts
     - util-linux-user
