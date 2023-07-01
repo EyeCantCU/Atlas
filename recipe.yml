@@ -1,80 +1,83 @@
-scripts:
-  # "Pre" scripts run very early in the build, immediately after your custom
-  # repos have been imported (so that you can access those repos if necessary).
-  pre:
-    # Automatically runs script files within "scripts/pre/".
-    - autorun.sh
-  # "Post" scripts run at the end of the build process.
-  post:
-    # Automatically runs script files within "scripts/post/".
-    - autorun.sh
-# Custom RPM configuration.
-# These changes will be integrated into your custom image at the "system level".
-rpm:
-  # A list of urls of ".repo" files that should be added to your system.
-  # This is the proper way to add custom COPR repos to your image.
-  # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers,
-  # so that your repos automatically use your image's actual Fedora version,
-  # which greatly simplifies future maintenance of your custom recipe.
-  repos:
-    - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%FEDORA_VERSION%/kylegospo-bazzite-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-%FEDORA_VERSION%/kylegospo-chatGPT-shell-cli-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/hl2linux-selinux/repo/fedora-%FEDORA_VERSION%/kylegospo-hl2linux-selinux-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%FEDORA_VERSION%/kylegospo-system76-scheduler-fedora-%FEDORA_VERSION%.repo
-  # These RPMs will be installed from your enabled repositories.
-  install:
-    - adobe-source-code-pro-fonts
-    - android-tools
-    - android-udev-rules
-    - bat
-    - btop
-    - cascadiacode-nerd-fonts
-    - chatgpt-shell-cli
-    - ddccontrol
-    - ddccontrol-gtk
-    - duperemove
-    - exa
-    - fd-find
-    - gamescope
-    - glow
-    - google-droid-sans-mono-fonts
-    - google-go-mono-fonts
-    - guestfs-tools
-    - hl2linux-selinux
-    - ibm-plex-mono-fonts
-    - input-remapper
-    - jetbrains-mono-fonts-all
-    - latte-dock-nightly
-    - libvirt-daemon-config-network
-    - libvirt-daemon-kvm
-    - mozilla-fira-mono-fonts
-    - p7zip
-    - p7zip-plugins
-    - powerline-fonts
-    - python3-libguestfs
-    # GNOME's GTK4 theme, many native apps and binaries require it.
-    - libadwaita
-    - libgcc
-    - micro
-    - qemu-kvm
-    - steamdeck-kde-themes
-    - system76-scheduler
-    - touchegg
-    - ubuntu-nerd-fonts
-    - ubuntumono-nerd-fonts
-    - util-linux-user
-    - virt-install
-    - virt-manager
-    - virt-top
-    - virt-viewer
-    - wallpaper-engine-kde-plugin
-    - xbindkeys
-    - zenity
-    - zsh
-  # These RPMs will be removed from the system image.
-  remove:
-    - firefox
-    - firefox-langpacks
-    - plasma-welcome
-    - toolbox
+main:
+  scripts:
+    # "Pre" scripts run after your custom repos have been imported.
+    pre:
+      - lastversion.sh
+      - terra.sh
+    # "Post" scripts run at the end of the build process.
+    post:
+      - appimagelauncher.sh
+      - carl.sh
+      - devpod.sh
+      - distrobox.sh
+      - hosts.sh
+      - opengamepadui.sh
+      - rm-plasma-wayland.sh
+      - whitesur-cursors.sh
+      - yafti.sh
+  # Custom RPM configuration.
+  rpm:
+    # A list of urls of ".repo" files that should be added to your system.
+    # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%FEDORA_VERSION%/kylegospo-bazzite-fedora-%FEDORA_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-%FEDORA_VERSION%/kylegospo-chatGPT-shell-cli-fedora-%FEDORA_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/hl2linux-selinux/repo/fedora-%FEDORA_VERSION%/kylegospo-hl2linux-selinux-fedora-%FEDORA_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%FEDORA_VERSION%/kylegospo-system76-scheduler-fedora-%FEDORA_VERSION%.repo
+    # These RPMs will be installed from your enabled repositories.
+    install:
+      - adobe-source-code-pro-fonts
+      - android-tools
+      - android-udev-rules
+      - bat
+      - btop
+      - cascadiacode-nerd-fonts
+      - chatgpt-shell-cli
+      - ddccontrol
+      - ddccontrol-gtk
+      - duperemove
+      - exa
+      - fd-find
+      - gamescope
+      - glow
+      - google-droid-sans-mono-fonts
+      - google-go-mono-fonts
+      - guestfs-tools
+      - hl2linux-selinux
+      - ibm-plex-mono-fonts
+      - input-remapper
+      - jetbrains-mono-fonts-all
+      - latte-dock-nightly
+      - libvirt-daemon-config-network
+      - libvirt-daemon-kvm
+      - mozilla-fira-mono-fonts
+      - p7zip
+      - p7zip-plugins
+      - powerline-fonts
+      - python3-libguestfs
+      # GNOME's GTK4 theme, many native apps and binaries require it.
+      - libadwaita
+      - libgcc
+      - micro
+      - qemu-kvm
+      - steamdeck-kde-themes
+      - system76-scheduler
+      - touchegg
+      - ubuntu-nerd-fonts
+      - ubuntumono-nerd-fonts
+      - util-linux-user
+      - virt-install
+      - virt-manager
+      - virt-top
+      - virt-viewer
+      - wallpaper-engine-kde-plugin
+      - xbindkeys
+      - zenity
+      - zsh
+    # These RPMs will be removed from the system image.
+    remove:
+      - firefox
+      - firefox-langpacks
+      - plasma-welcome
+      - toolbox
