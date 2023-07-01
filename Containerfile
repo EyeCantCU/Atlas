@@ -38,8 +38,8 @@ COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/ubuntu
 COPY scripts /tmp/scripts
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN chmod +x /tmp/scripts/build.sh main && \
-    /tmp/scripts/build.sh && \
+RUN chmod +x /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh main && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
     fc-cache -f /usr/share/fonts/intel-one-mono && \
@@ -76,8 +76,8 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
 COPY scripts /tmp/scripts
 
-RUN chmod +x /tmp/scripts/build.sh surface && \
-    /tmp/scripts/build.sh && \
+RUN chmod +x /tmp/scripts/build.sh && \
+    /tmp/scripts/build.sh surface && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
     ostree container commit
