@@ -7,6 +7,7 @@ wget https://github.com/linux-surface/linux-surface/releases/download/silverblue
 
 rpm-ostree override replace ./surface-kernel.rpm \
   --remove kernel-core \
+  --remove kernel-devel-matched \
   --remove kernel-modules \
   --remove kernel-modules-extra \
   --remove libwacom \
