@@ -81,3 +81,13 @@ main:
       - firefox-langpacks
       - plasma-welcome
       - toolbox
+surface:
+  scripts:
+    pre:
+    post:
+      - surface.sh
+  rpm:
+    repos:
+      - https://pkg.surfacelinux.com/fedora/linux-surface.repo
+    install:
+    remove:

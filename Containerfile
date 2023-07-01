@@ -64,4 +64,20 @@ COPY hidpi/etc /etc
 
 RUN rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
+    ostree container commit && \
+    mkdir -p /var/tmp && \
+    chmod -R 1777 /var/tmp
+
+# Surface images
+FROM bluewhaleos-hidpi as bluewhaleos-surface
+
+ARG IMAGE_NAME="${IMAGE_NAME}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
+
+COPY scripts /tmp/scripts
+
+RUN chmod +x /tmp/scripts/build.sh surface && \
+    /tmp/scripts/build.sh && \
+    rm -rf /tmp/* /var/* && \
+    mkdir -p /var/lib/duperemove && \
     ostree container commit
