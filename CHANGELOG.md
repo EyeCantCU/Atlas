@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.8.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.7.0...v2.8.0) (2023-07-02)
+
+
+### Features
+
+* Add latte dock nightly from Terra ([387371c](https://github.com/EyeCantCU/BlueWhaleOS/commit/387371c68334d63fa306ba95bb4bbc9820588914))
+* Build for Surface devices ([9ab49ae](https://github.com/EyeCantCU/BlueWhaleOS/commit/9ab49ae97e9fb75557bcd3f41358b261890bbbf0))
+* Implement touchegg gestures ([132d221](https://github.com/EyeCantCU/BlueWhaleOS/commit/132d221832043a826f0ff2e486463919aa64e0dd))
+* **just:** Enable Zsh plugins during setup ([914d858](https://github.com/EyeCantCU/BlueWhaleOS/commit/914d858b86803cbc6cab454c07503ea8aee1ae19))
+* Pull in fonts from bling ([d475aa6](https://github.com/EyeCantCU/BlueWhaleOS/commit/d475aa6d328293efca4760012509386be4225442))
+* **recipe:** Allow for multiple build types ([764a44b](https://github.com/EyeCantCU/BlueWhaleOS/commit/764a44bf6c9ab38ac3957e8ef7ae64eb329cb56b))
+* **surface:** Add to boot menu ([110134b](https://github.com/EyeCantCU/BlueWhaleOS/commit/110134b8d0478f26a13274094e6dbbcf0bedb12b))
+* **system76-scheduler:** Pull kwin and dbus-proxy integration from Bazzite ([aff0b7e](https://github.com/EyeCantCU/BlueWhaleOS/commit/aff0b7eeec65732ae95a1bf46e12f1601f85ca9a))
+* **touchegg:** Enable service ([0985ba6](https://github.com/EyeCantCU/BlueWhaleOS/commit/0985ba61f26cbdbdbad335184833a4634b5df3c3))
+
+
+### Bug Fixes
+
+* **build:** Actually apply build type ([cd974a6](https://github.com/EyeCantCU/BlueWhaleOS/commit/cd974a609f1ebf786c1ab85bf1070bde5a286444))
+* **surface:** Remove kernel-devel-matched ([39ccf84](https://github.com/EyeCantCU/BlueWhaleOS/commit/39ccf8409658fe327ce892454be4c364e91e15ce))
+* **surface:** Try install-to-root ([da4b189](https://github.com/EyeCantCU/BlueWhaleOS/commit/da4b18975823fdbfd44d51617a61c2a66a3b28c1))
+
 ## [2.7.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.6.0...v2.7.0) (2023-06-27)
 
 
