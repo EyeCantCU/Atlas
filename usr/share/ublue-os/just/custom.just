@@ -62,6 +62,13 @@ setup-wallpapers:
   cp .. 
   rm -rf distro-wallpapers-main
 
+enable-system76-scheduler:
+  git clone https://github.com/maxiberta/kwin-system76-scheduler-integration.git --single-branch /tmp/kwin-system76-scheduler-integration
+  kpackagetool5 --type=KWin/Script -i /tmp/kwin-system76-scheduler-integration
+  systemctl --user enable --now com.system76.Scheduler.dbusproxy.service
+  systemctl enable --now com.system76.Scheduler.service
+  kcmshell5 kwinscripts
+
 enable-zsh:
   #!/bin/bash
   echo 'Switching to Zsh'
