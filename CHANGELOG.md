@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.8.0...v2.9.0) (2023-07-02)
+
+
+### Features
+
+* **sysctl:** Bring inline with Bazzite ([1456af8](https://github.com/EyeCantCU/BlueWhaleOS/commit/1456af83d0ce0b1a8c40d2d4ca4f78124de1cd51))
+
 ## [2.8.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.7.0...v2.8.0) (2023-07-01)
 
 
