@@ -12,7 +12,6 @@ main:
       - distrobox.sh
       - hosts.sh
       - opengamepadui.sh
-      - rm-plasma-wayland.sh
       - whitesur-cursors.sh
       - yafti.sh
   # Custom RPM configuration.
@@ -63,7 +62,6 @@ main:
       - qemu-kvm
       - steamdeck-kde-themes
       - system76-scheduler
-      - touchegg
       - ubuntu-nerd-fonts
       - ubuntumono-nerd-fonts
       - util-linux-user

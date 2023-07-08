@@ -47,30 +47,14 @@ RUN chmod +x /tmp/scripts/build.sh && \
     fc-cache -f /usr/share/fonts/ubuntu && \
     systemctl enable input-remapper.service && \
     systemctl enable libvirtd.service && \
-    systemctl enable touchegg.service && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
     ostree container commit && \
     mkdir -p /var/tmp && \
     chmod -R 1777 /var/tmp
 
-# BlueWhaleOS HiDPI
-FROM bluewhaleos as bluewhaleos-hidpi
-
-ARG IMAGE_NAME="${IMAGE_NAME}"
-ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
-
-# Copy HiDPI modifications
-COPY hidpi/etc /etc
-
-RUN rm -rf /tmp/* /var/* && \
-    mkdir -p /var/lib/duperemove && \
-    ostree container commit && \
-    mkdir -p /var/tmp && \
-    chmod -R 1777 /var/tmp
-
 # Surface images
-FROM bluewhaleos-hidpi as bluewhaleos-surface
+FROM bluewhaleos as bluewhaleos-surface
 
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
