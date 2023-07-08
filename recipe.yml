@@ -12,7 +12,6 @@ main:
       - distrobox.sh
       - hosts.sh
       - opengamepadui.sh
-      - whitesur-cursors.sh
       - yafti.sh
   # Custom RPM configuration.
   rpm:
