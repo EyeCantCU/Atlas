@@ -7,7 +7,6 @@ tar xf carl-master.tar.gz
 SRC_DIR=/tmp/carl-master
 
 # Destination directory
-AURORAE_DIR="/usr/share/aurorae/themes"
 COLORSCHEMES_DIR="/usr/share/color-schemes"
 GLOBAL_DIR="/usr/share/plasma/look-and-feel"
 KONSOLE_DIR="/usr/share/konsole"
@@ -16,7 +15,6 @@ WALLPAPER_DIR="/usr/share/wallpapers"
 
 THEME_NAME=Carl
 
-[[ ! -d ${AURORAE_DIR}/${THEME_NAME} ]] && mkdir -p ${AURORAE_DIR}/${THEME_NAME}
 [[ ! -d ${COLORSCHEMES_DIR} ]] && mkdir -p ${COLORSCHEMES_DIR}
 [[ ! -d ${GLOBAL_DIR}/${THEME_NAME} ]] && mkdir -p ${GLOBAL_DIR}/${THEME_NAME}
 [[ ! -d ${KONSOLE_DIR} ]] && mkdir -p ${KONSOLE_DIR}
@@ -25,7 +23,6 @@ THEME_NAME=Carl
 install() {
   local name=${1}
 
-  cp -rf ${SRC_DIR}/aurorae/${THEME_NAME}/* ${AURORAE_DIR}/${THEME_NAME}
   cp -rf ${SRC_DIR}/color-schemes/*.colors ${COLORSCHEMES_DIR}
   cp -rf ${SRC_DIR}/look-and-feel/${THEME_NAME}/* ${GLOBAL_DIR}/${THEME_NAME}
   cp -rf ${SRC_DIR}/konsole/* ${KONSOLE_DIR}
