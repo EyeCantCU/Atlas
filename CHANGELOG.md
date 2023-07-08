@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.1](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.9.0...v2.9.1) (2023-07-08)
+
+
+### Bug Fixes
+
+* Remove HiDPI images from boot menu ([f1aadd5](https://github.com/EyeCantCU/BlueWhaleOS/commit/f1aadd5bd9f1c6380bafe435f4a761761212de7f))
+
 ## [2.9.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.8.0...v2.9.0) (2023-07-08)
 
 
