@@ -30,9 +30,9 @@ COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 # Fonts
 ARG FONTS=/usr/share/fonts
 RUN mkdir -p ${FONTS}/{intel-one-mono,inter,ubuntu}
-COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/intel-one-mono
-COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/inter
-COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}/ubuntu
+COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS}/*intel*/* ${FONTS}/intel-one-mono
+COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS}/*Inter*/* ${FONTS}/inter
+COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS}/*ubuntu*/* ${FONTS}/ubuntu
 
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
