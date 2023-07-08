@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.8.0...v2.9.0) (2023-07-08)
+
+
+### Features
+
+* Drop HiDPI images and X11 config ([060cfdf](https://github.com/EyeCantCU/BlueWhaleOS/commit/060cfdfd8910614a866d26715e3ea03bbd03b13e))
+
 ## [2.8.0](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.7.0...v2.8.0) (2023-07-02)
 
 
