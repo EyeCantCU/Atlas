@@ -69,6 +69,10 @@ enable-system76-scheduler:
   systemctl enable --now com.system76.Scheduler.service
   kcmshell5 kwinscripts
 
+enable-sddm-hidpi:
+  sudo echo '[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true' > /etc/sddm.conf.d/hidpi.conf
+  sudo echo '[X11]\nServerArguments=-nolisten tcp -dpi 216' > /etc/sddm.conf.d/dpi.conf
+
 enable-zsh:
   #!/bin/bash
   echo 'Switching to Zsh'
