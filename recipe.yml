@@ -21,7 +21,6 @@ main:
       - https://copr.fedorainfracloud.org/coprs/eyecantcu/android-udev-rules/repo/fedora-%FEDORA_VERSION%/eyecantcu-android-udev-rules-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%FEDORA_VERSION%/kylegospo-bazzite-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-%FEDORA_VERSION%/kylegospo-chatGPT-shell-cli-fedora-%FEDORA_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/hl2linux-selinux/repo/fedora-%FEDORA_VERSION%/kylegospo-hl2linux-selinux-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin/repo/fedora-%FEDORA_VERSION%/kylegospo-wallpaper-engine-kde-plugin-fedora-%FEDORA_VERSION%.repo
     # These RPMs will be installed from your enabled repositories.
     install:
@@ -42,7 +41,6 @@ main:
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - guestfs-tools
-      - hl2linux-selinux
       - ibm-plex-mono-fonts
       - input-remapper
       - jetbrains-mono-fonts-all
