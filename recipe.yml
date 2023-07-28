@@ -29,8 +29,6 @@ main:
       - btop
       - cascadiacode-nerd-fonts
       - chatgpt-shell-cli
-      - ddccontrol
-      - ddccontrol-gtk
       - duperemove
       - exa
       - fd-find
