@@ -22,8 +22,8 @@ COPY usr /usr
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 
 # Image signing
-COPY cosign.pub /etc/pki/containers/ublue-os.pub
-RUN sed -i 's/ublue-os/eyecantcu/g' /etc/containers/registries.d/ublue-os.yaml
+COPY cosign.pub /usr/etc/pki/containers/ublue-os.pub
+RUN sed -i 's/ublue-os/eyecantcu/g' /usr/etc/containers/registries.d/ublue-os.yaml
 
 # "yq" used in build.sh to read recipe.yml.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
