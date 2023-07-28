@@ -9,6 +9,28 @@ install-bazzite-arch:
     distrobox assemble create --file /usr/share/ublue-os/distrobox/bazzite-arch
   fi
 
+install-dev-arch:
+  #!/usr/bin/env bash
+  KARGS=$(rpm-ostree kargs)
+  if grep 'nvidia' <<< ${KARGS}; then
+    echo 'Installing Dev Arch (Nvidia)...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/dev-arch-nvidia
+  else
+    echo 'Installing Dev Arch...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/dev-arch
+  fi
+
+install-ham-suse:
+  #!/usr/bin/env bash
+  KARGS=$(rpm-ostree kargs)
+  if grep 'nvidia' <<< ${KARGS}; then
+    echo 'Installing Ham SUSE (Nvidia)...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/ham-suse-nvidia
+  else
+    echo 'Installing Ham SUSE...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/ham-suse
+  fi
+
 export-steamcmd:
   distrobox-enter -n bazzite-arch -- '  distrobox-export --bin steamcmd --export-path ~/.steam'
   ln -s ~/.steam/steamcmd ~/.steam/steamcmd.sh
