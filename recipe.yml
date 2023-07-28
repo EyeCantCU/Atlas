@@ -22,7 +22,6 @@ main:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%FEDORA_VERSION%/kylegospo-bazzite-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-%FEDORA_VERSION%/kylegospo-chatGPT-shell-cli-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/hl2linux-selinux/repo/fedora-%FEDORA_VERSION%/kylegospo-hl2linux-selinux-fedora-%FEDORA_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%FEDORA_VERSION%/kylegospo-system76-scheduler-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/wallpaper-engine-kde-plugin/repo/fedora-%FEDORA_VERSION%/kylegospo-wallpaper-engine-kde-plugin-fedora-%FEDORA_VERSION%.repo
     # These RPMs will be installed from your enabled repositories.
     install:
@@ -61,7 +60,6 @@ main:
       - micro
       - qemu-kvm
       - steamdeck-kde-themes
-      - system76-scheduler
       #- ubuntu-nerd-fonts
       #- ubuntumono-nerd-fonts
       - util-linux-user
