@@ -3,7 +3,7 @@ main:
     # "Pre" scripts run after your custom repos have been imported.
     pre:
       - lastversion.sh
-      #- terra.sh
+      - terra.sh
     # "Post" scripts run at the end of the build process.
     post:
       - appimagelauncher.sh
@@ -27,7 +27,7 @@ main:
       - android-udev-rules
       - bat
       - btop
-      #- cascadiacode-nerd-fonts
+      - cascadiacode-nerd-fonts
       - chatgpt-shell-cli
       - ddccontrol
       - ddccontrol-gtk
@@ -41,7 +41,7 @@ main:
       - guestfs-tools
       - ibm-plex-mono-fonts
       - jetbrains-mono-fonts-all
-      #- latte-dock-nightly
+      - latte-dock-nightly
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
       - mozilla-fira-mono-fonts
@@ -55,8 +55,8 @@ main:
       - micro
       - qemu-kvm
       - steamdeck-kde-themes
-      #- ubuntu-nerd-fonts
-      #- ubuntumono-nerd-fonts
+      - ubuntu-nerd-fonts
+      - ubuntumono-nerd-fonts
       - util-linux-user
       - virt-install
       - virt-manager
