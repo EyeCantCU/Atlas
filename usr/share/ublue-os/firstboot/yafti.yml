@@ -36,6 +36,23 @@ screens:
           - Export Lutris: distrobox-enter -n bazzite-arch -- '  distrobox-export --app lutris'
           - Export Protontricks: distrobox-enter -n bazzite-arch -- '  distrobox-export --app protontricks'
           - Autostart Steam: cp ~/.local/share/applications/bazzite-arch-steam.desktop ~/.config/autostart/bazzite-arch-steam-silent.desktop && sed -i 's@/usr/bin/steam-runtime  %U@/usr/bin/steam-runtime -silent %U@g' ~/.config/autostart/bazzite-arch-steam-silent.desktop
+        Dev Arch Distrobox:
+          description: This will install an Arch distrobox configured for development. VS Code will then be exported.
+          default: true
+          condition:
+            run: distrobox list | grep -v dev-arch
+          packages:
+          - Install Bazzite Arch: just --unstable install-dev-arch
+          - Export VS Code: distrobox-enter -n dev-arch -- '  distrobox-export --app code'
+        Ham SUSE Distrobox:
+          description: This will install a SUSE distrobox configured for ham radio. CHIRP and WSJTX will then be exported.
+          default: true
+          condition:
+            run: distrobox list | grep -v ham-suse
+          packages:
+          - Install Ham SUSE: just --unstable install-ham-suse
+          - Export CHIRP: distrobox-enter -n ham-suse -- '  distrobox-export --app chirp'
+          - Export WSJTX: distrobox-enter -n ham-suse -- '  distrobox-export --app wsjtx'
         Automatic Duplicate File Removal:
           description: Flattens duplicate files to take up no more space than a single copy, a considerable space savings for wine prefixes and compatdata
           default: true
