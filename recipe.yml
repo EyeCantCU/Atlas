@@ -41,7 +41,6 @@ main:
       - google-go-mono-fonts
       - guestfs-tools
       - ibm-plex-mono-fonts
-      - input-remapper
       - jetbrains-mono-fonts-all
       #- latte-dock-nightly
       - libvirt-daemon-config-network

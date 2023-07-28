@@ -42,7 +42,6 @@ RUN chmod +x /tmp/scripts/build.sh && \
     fc-cache -f /usr/share/fonts/intel-one-mono && \
     fc-cache -f /usr/share/fonts/inter && \
     fc-cache -f /usr/share/fonts/ubuntu && \
-    systemctl enable input-remapper.service && \
     systemctl enable libvirtd.service && \
     if grep "nvidia" <<< ${IMAGE_NAME}; then \
         systemctl enable supergfxd.service \
