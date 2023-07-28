@@ -244,6 +244,7 @@ screens:
           - GreenWithEnvy (Nvidia GPU Overclocking): com.leinardi.gwe
           - JamesDSP: me.timschneeberger.jdsp4linux
           - KeePassXC: org.keepassxc.KeePassXC
+          - OpenAndroidInstaller: org.openandroidinstaller.OpenAndroidInstaller
           - OpenRGB: org.openrgb.OpenRGB
           - qBittorrent: org.qbittorrent.qBittorrent
           - Syncthing: com.github.zocker_160.SyncThingy
