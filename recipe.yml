@@ -75,10 +75,6 @@ main:
       - zsh
     # These RPMs will be removed from the system image.
     remove:
-      - firefox
-      - firefox-langpacks
-      - plasma-welcome
-      - toolbox
 surface:
   scripts:
     pre:
