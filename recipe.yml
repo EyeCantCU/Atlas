@@ -68,6 +68,7 @@ main:
       - zsh
     # These RPMs will be removed from the system image.
     remove:
+      - steamdeck-kde-presets-desktop
 surface:
   scripts:
     pre:
