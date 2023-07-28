@@ -33,6 +33,29 @@ get-greenlight:
   wget https://github.com/unknownskl/greenlight/releases/download/v2.0.0-beta8/Greenlight-2.0.0-beta8.AppImage -O ~/Desktop/Greenlight.AppImage
   chmod +x ~/Desktop/Greenlight.AppImage
 
+get-deezer:
+  echo 'Retrieving Deezer'
+  wget https://github.com/aunetx/deezer-linux/releases/download/v5.30.520-1/deezer-desktop-5.30.520-x86_64.AppImage -O ~/Desktop/Deezer.AppImage
+  chmod +x ~/Desktop/Deezer.AppImage
+
+get-upnote:
+  echo 'Retrieving UpNote'
+  wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
+  chmod +x ~/Desktop/UpNote.AppImage
+
+get-wallpapers: 
+  #!/usr/bin/env bash   
+  wallpapers=~/.local/share/wallpapers
+  cd /tmp
+  wget https://github.com/EyeCantCU/distro-wallpapers/archive/refs/heads/main.tar.gz
+  tar xvf main.tar.gz
+  rm -rf main.tar.gz    
+  cd distro-wallpapers-main
+  mkdir -p ${wallpapers}
+  cp -r  * ${wallpapers}
+  cp .. 
+  rm -rf distro-wallpapers-main
+
 enable-system76-scheduler:
   git clone https://github.com/maxiberta/kwin-system76-scheduler-integration.git --depth 1 /tmp/kwin-system76-scheduler-integration
   kpackagetool5 --type=KWin/Script -i /tmp/kwin-system76-scheduler-integration
@@ -48,6 +71,35 @@ enable-wallpaper-engine:
 
 set-btrfs-flags:
   sudo sed -i 's/compress=zstd:1/noatime,lazytime,commit=120,compress-force=zstd:1,space_cache=v2,discard=async/g' /etc/fstab
+
+enable-sddm-hidpi:
+  sudo echo '[Wayland]\nEnableHiDPI=true\n\n[X11]\nEnableHiDPI=true' > /etc/sddm.conf.d/hidpi.conf
+  sudo echo '[X11]\nServerArguments=-nolisten tcp -dpi 216' > /etc/sddm.conf.d/dpi.conf
+
+enable-zsh:
+  #!/bin/bash
+  echo 'Switching to Zsh'
+  # Retrieve oh-my-zsh with plugins if the user doesn't have them
+  if [ ! -d ~/.oh-my-zsh ]; then
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
+  fi;
+  # If users shell isn't found to be Zsh according to /etc/passwd, ask to change it
+  if [ -z $(cat /etc/passwd | grep $USER | grep zsh) ]; then
+    echo "$USER's default shell is not Zsh according to /etc/passwd." && \
+    chsh -s $(which zsh) && \
+    echo "You may need to sign out and back in for this to apply."
+  fi;
+  # Set permissions for Zsh
+  chown $USER:$USER ~/.oh-my-zsh ~/.zshrc -R
+
+disable-zsh:
+  echo 'Disabling Zsh'
+  chsh -s $(which bash)
+  rm -rf ~/.oh-my-zsh
+  rm -rf ~/.zshrc
 
 zram-on:
   #!/usr/bin/env bash
