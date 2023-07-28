@@ -15,6 +15,9 @@ screens:
       title: Configure BlueWhaleOS
       show_terminal: true
       package_manager: yafti.plugin.run
+      package_manager_defaults:
+        user: true
+        system: false
       groups:
         Bazzite Arch Distrobox:
           description: This will install an Arch distrobox configured for gaming. Steam and Lutris will then be exported.
