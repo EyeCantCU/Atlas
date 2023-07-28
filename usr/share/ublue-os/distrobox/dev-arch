@@ -1,0 +1,8 @@
+[dev-arch]
+image=ghcr.io/eyecantcu/dev-arch
+init=false
+nvidia=false
+pull=true
+root=false
+replace=false
+start_now=true

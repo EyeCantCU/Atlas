@@ -1,0 +1,8 @@
+[ham-suse]
+image=ghcr.io/eyecantcu/ham-suse
+init=false
+nvidia=false
+pull=true
+root=false
+replace=false
+start_now=true
