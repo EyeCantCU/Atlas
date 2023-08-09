@@ -7,7 +7,6 @@ main:
     # "Post" scripts run at the end of the build process.
     post:
       - appimagelauncher.sh
-      - carl.sh
       - devpod.sh
       - distrobox.sh
       - hosts.sh
@@ -52,7 +51,6 @@ main:
       - libgcc
       - micro
       - qemu-kvm
-      - steamdeck-kde-themes
       - ubuntu-nerd-fonts
       - ubuntumono-nerd-fonts
       - util-linux-user
@@ -65,7 +63,6 @@ main:
       - zsh
     # These RPMs will be removed from the system image.
     remove:
-      - steamdeck-kde-presets-desktop
 surface:
   scripts:
     pre:
