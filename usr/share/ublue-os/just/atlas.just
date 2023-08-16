@@ -1,0 +1,64 @@
+install-dev-arch:
+  #!/usr/bin/env bash
+  KARGS=$(rpm-ostree kargs)
+  if grep 'nvidia' <<< ${KARGS}; then
+    echo 'Installing Dev Arch (Nvidia)...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/dev-arch-nvidia
+  else
+    echo 'Installing Dev Arch...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/dev-arch
+  fi
+
+install-ham-suse:
+  #!/usr/bin/env bash
+  KARGS=$(rpm-ostree kargs)
+  if grep 'nvidia' <<< ${KARGS}; then
+    echo 'Installing Ham SUSE (Nvidia)...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/ham-suse-nvidia
+  else
+    echo 'Installing Ham SUSE...'
+    distrobox assemble create --file /usr/share/ublue-os/distrobox/ham-suse
+  fi
+
+get-upnote:
+  echo 'Retrieving UpNote'
+  wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
+  chmod +x ~/Desktop/UpNote.AppImage
+
+get-wallpapers:
+  #!/usr/bin/env bash
+  wallpapers=~/.local/share/wallpapers
+  cd /tmp
+  wget https://github.com/EyeCantCU/distro-wallpapers/archive/refs/heads/main.tar.gz
+  tar xvf main.tar.gz
+  rm -rf main.tar.gz    
+  cd distro-wallpapers-main
+  mkdir -p ${wallpapers}
+  cp -r  * ${wallpapers}
+  cp .. 
+  rm -rf distro-wallpapers-main
+
+enable-zsh:
+  #!/usr/bin/env bash
+  echo 'Switching to Zsh'
+  # Retrieve oh-my-zsh with plugins if the user doesn't have them
+  if [ ! -d ~/.oh-my-zsh ]; then
+    curl -s https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
+  fi;
+  # If users shell isn't found to be Zsh according to /etc/passwd, ask to change it
+  if [ -z $(cat /etc/passwd | grep $USER | grep zsh) ]; then
+    echo "$USER's default shell is not Zsh according to /etc/passwd." && \
+    chsh -s $(which zsh) && \
+    echo "You may need to sign out and back in for this to apply."
+  fi;
+  # Set permissions for Zsh
+  chown $USER:$USER ~/.oh-my-zsh ~/.zshrc -R
+
+disable-zsh:
+  echo 'Disabling Zsh'
+  chsh -s $(which bash)
+  rm -rf ~/.oh-my-zsh
+  rm -rf ~/.zshrc
