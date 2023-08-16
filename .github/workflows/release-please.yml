@@ -40,7 +40,7 @@ jobs:
         uses: eyecantcu/isogenerator@v3.1.0
         id: isogenerator
         with:
-          image-name: bluewhaleos
+          image-name: atlas
           installer-repo: releases
           installer-major-version: 38
           boot-menu-path: boot_menu.yml

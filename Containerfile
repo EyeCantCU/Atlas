@@ -1,4 +1,4 @@
-# BlueWhaleOS Containerfile
+# Atlas Containerfile
 
 ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-bazzite-gnome}"
 ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-''}"
@@ -6,7 +6,7 @@ ARG SOURCE_IMAGE="${SOURCE_IMAGE:-$BASE_IMAGE_NAME$IMAGE_FLAVOR}"
 ARG BASE_IMAGE="ghcr.io/eyecantcu/${SOURCE_IMAGE}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-38}"
 
-FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS bluewhaleos
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS atlas
 
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
@@ -57,7 +57,7 @@ RUN chmod +x /tmp/scripts/build.sh && \
     chmod -R 1777 /var/tmp
 
 # Surface images
-FROM bluewhaleos as bluewhaleos-surface
+FROM atlas as atlas-surface
 
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"

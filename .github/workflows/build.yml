@@ -32,7 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         image_flavor: ['', -nvidia]
-        base_name: [bluewhaleos, bluewhaleos-surface]
+        base_name: [atlas, atlas-surface]
         major_version: [38]
         include:
           - major_version: 38
@@ -112,8 +112,8 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=An adaptable Fedora Kinoite image with electrolytes.
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/bluewhaleos/main/README.md
+            org.opencontainers.image.description=A modification of Bazzite.
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/atlas/main/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
 
       # Build image using Buildah action

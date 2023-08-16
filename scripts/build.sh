@@ -18,7 +18,7 @@ get_yaml_string() {
 FEDORA_VERSION="$(cat /usr/lib/os-release | grep -Po '(?<=VERSION_ID=)\d+')"
 
 # Welcome.
-echo "Building BlueWhaleOS (${BUILD_TYPE}), based on Fedora ${FEDORA_VERSION}."
+echo "Building Atlas (${BUILD_TYPE}), based on Bazzite ${FEDORA_VERSION}."
 
 # Add custom repos.
 get_yaml_array repos ".${BUILD_TYPE}.rpm.repos[]"

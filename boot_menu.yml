@@ -1,21 +1,21 @@
 ublue_variants:
-  - label: eyecantcu/bluewhaleos
+  - label: eyecantcu/atlas
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: bluewhaleos
-        info: BlueWhaleOS
-  - label: eyecantcu/bluewhaleos-surface
+      - label: atlas
+        info: Atlas
+  - label: eyecantcu/atlas-surface
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: bluewhaleos-surface
-        info: BlueWhaleOS Surface
-  - label: eyecantcu/bluewhaleos-nvidia
+      - label: atlas-surface
+        info: Atlas Surface
+  - label: eyecantcu/atlas-nvidia
     ks: /kickstart/ublue-os-nvidia.ks
     flavors:
-      - label: bluewhaleos-nvidia
-        info: BlueWhaleOS (Nvidia)
-  - label: eyecantcu/bluewhaleos-surface-nvidia
+      - label: atlas-nvidia
+        info: Atlas (Nvidia)
+  - label: eyecantcu/atlas-surface-nvidia
     ks: /kickstart/ublue-os-nvidia.ks
     flavors:
-      - label: bluewhaleos-surface-nvidia
-        info: BlueWhaleOS Surface (Nvidia)
+      - label: atlas-surface-nvidia
+        info: Atlas Surface (Nvidia)
