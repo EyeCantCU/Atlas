@@ -96,9 +96,9 @@ jobs:
         id: labels
         run: |
           if [[ -z "${{ matrix.image_flavor }}" ]]; then
-              ver=$(skopeo inspect docker://ghcr.io/eyecantcu/bazzite-gnome:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
           else
-              ver=$(skopeo inspect docker://ghcr.io/eyecantcu/bazzite-gnome-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
           fi
           echo "VERSION=$ver" >> $GITHUB_OUTPUT
 
