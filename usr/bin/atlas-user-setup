@@ -10,6 +10,10 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   echo 'Disabling magnifier tracking'
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
+
+  if [[ $IMAGE_FLAVOR == "nvidia" ]]; then
+    gnome-extensions enable supergfxctl-gex@asus-linux.org
+  fi
 fi
 
 # Prevent future executions
