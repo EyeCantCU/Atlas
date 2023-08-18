@@ -33,6 +33,7 @@ main:
       - fd-find
       - gamescope
       - glow
+      - gnome-shell-extension-dash-to-dock
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - guestfs-tools
