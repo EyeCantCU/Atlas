@@ -4,6 +4,9 @@ source /etc/default/bazzite
 if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   echo 'Running setup for Atlas'
 
+  echo 'Enabling GNOME extensions'
+  gnome-extensions enable blur-my-shell@aunetx
+
   echo 'Disabling magnifier tracking'
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
