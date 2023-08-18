@@ -6,6 +6,7 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
 
   echo 'Enabling GNOME extensions'
   gnome-extensions enable blur-my-shell@aunetx
+  gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
   echo 'Disabling magnifier tracking'
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
