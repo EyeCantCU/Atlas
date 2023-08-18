@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source /etc/default/bazzite
+
+if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
+  echo 'Running setup for Atlas'
+
+  echo 'Disabling magnifier tracking'
+  gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
+  gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
+fi
+
+# Prevent future executions
+echo "Writing state file"
+touch $HOME/.altas-configured

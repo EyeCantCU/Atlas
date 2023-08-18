@@ -1,0 +1,12 @@
+[Unit]
+Description=Configure Atlas for current user
+Requires=xdg-desktop-autostart.target
+ConditionPathExists=!%h/.atlas-configured
+After=bazzite-user-setup.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/atlas-user-setup
+
+[Install]
+WantedBy=default.target
