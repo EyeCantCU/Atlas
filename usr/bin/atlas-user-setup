@@ -42,6 +42,7 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
 
   echo 'Configuring time and location settings'
+  gsettings set org.gnome.desktop.datetime automatic-timezone true
   gsettings set org.gnome.desktop.interface clock-show-weekday true
   gsettings set org.gnome.desktop.calendar show-weekdate true
 
