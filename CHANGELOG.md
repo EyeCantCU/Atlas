@@ -1,5 +1,66 @@
 # Changelog
 
+## [3.0.0](https://github.com/EyeCantCU/Atlas/compare/v2.9.1...v3.0.0) (2023-08-19)
+
+
+### Features
+
+* Add and enable appindicator extension by default ([aa7aab6](https://github.com/EyeCantCU/Atlas/commit/aa7aab6d580ffa52044cc9c2c274021d216f1e89))
+* Add dash2dock extension ([8e22f5b](https://github.com/EyeCantCU/Atlas/commit/8e22f5bc436660fe16ee75aeb19c90061d705548))
+* Add dependencies for Pano extension ([cf04218](https://github.com/EyeCantCU/Atlas/commit/cf04218cc8f242017375b22df857fb15b7a4095a))
+* Add just script to enable SDDM HiDPI ([7fe3514](https://github.com/EyeCantCU/Atlas/commit/7fe351472492a1892f64a3070cd95a503d9a38d9))
+* Add just scripts back ([d8390dc](https://github.com/EyeCantCU/Atlas/commit/d8390dc5930699b037467ccc2f6bf5addd1b7d3b))
+* Add user setup script that disables magnifier tracking by default ([dfc7e0f](https://github.com/EyeCantCU/Atlas/commit/dfc7e0f9710fdb93c1dcb3d8f7a2a68c53aac72e))
+* Configure signing ([188fe35](https://github.com/EyeCantCU/Atlas/commit/188fe359f0c7a74cb4618d2527be94315123d49c))
+* Continue using X11 for SDDM ([504362b](https://github.com/EyeCantCU/Atlas/commit/504362bcfae6c038f53c637d55b97b9448bc2548))
+* **distrobox:** Add configs for dev-arch and ham-suse ([3751e68](https://github.com/EyeCantCU/Atlas/commit/3751e6863c0a44a9ba5a5ebf8de2df38194168c2))
+* Enable supergfxd by default on Nvidia images ([e9d9a44](https://github.com/EyeCantCU/Atlas/commit/e9d9a449d576c9a2ef3ba8faf7f962cd663ae6bc))
+* **just:** Add just scripts to assemble dev-arch and ham-suse ([3b4b6f3](https://github.com/EyeCantCU/Atlas/commit/3b4b6f3ecf8ef94081f12fc00685763806e96db2))
+* **just:** Rebase on Bazzite config ([49ea2e9](https://github.com/EyeCantCU/Atlas/commit/49ea2e9e1c0e700f9954f8b1d4001163c72bb400))
+* **just:** Restore just scripts excluding distrobox ones ([cfd5d29](https://github.com/EyeCantCU/Atlas/commit/cfd5d296ab60408733857fd8c43903f165edcb77))
+* Rebase on Bazzite ([c4247d6](https://github.com/EyeCantCU/Atlas/commit/c4247d6e1c70654ba91f7aea157c03fac5fa260e))
+* Switch to GNOME ([51191ee](https://github.com/EyeCantCU/Atlas/commit/51191ee6205180b19a2913cb6e76f232bbba5924))
+* **temp:** Test Bazzite fork ([0cf381e](https://github.com/EyeCantCU/Atlas/commit/0cf381e4c901e4a5ca6e6c465c3fd5ea1fec1868))
+* Use larger Ubuntu Nerd fonts and bring over fontconfig ([f1d33fc](https://github.com/EyeCantCU/Atlas/commit/f1d33fcd0aa4db7330930b83bfe4732887e7eea6))
+* **user-setup:** Enable blur my shell extension by default ([202f324](https://github.com/EyeCantCU/Atlas/commit/202f324854cc7e07eba672b6f2aefd429580af1b))
+* **user-setup:** Enable dash2dock by default ([f015e1d](https://github.com/EyeCantCU/Atlas/commit/f015e1d6593ae87d4e3ca3de49a986b8c1d98db0))
+* **user-setup:** Enable supergfxctl-gex on Nvidia by default ([c456561](https://github.com/EyeCantCU/Atlas/commit/c456561285036be30805ea4f2206b724adf47e4b))
+* **yafti:** Add ham-suse and dev-arch ([a982edb](https://github.com/EyeCantCU/Atlas/commit/a982edb4bb0d303a97a3018260aa97f66e5e771f))
+* **yafti:** Add Open Android Installer back to utilities ([1484009](https://github.com/EyeCantCU/Atlas/commit/1484009395a043dd562748d925f20e42176dd63d))
+* **yafti:** Give flatpaks icon access ([a40d771](https://github.com/EyeCantCU/Atlas/commit/a40d7716c0f920ea2f289a956dada5490ce9644e))
+* **yafti:** Install as user ([b3402ed](https://github.com/EyeCantCU/Atlas/commit/b3402ed5b5ee5d218ef398098578b21b0956311b))
+* **yafti:** Rebase on Bazzite ([351aa22](https://github.com/EyeCantCU/Atlas/commit/351aa22df59e7776c173ec209b4c3f8cd566c4b8))
+* **yafti:** Reintroduce Software Development section ([3ca55b7](https://github.com/EyeCantCU/Atlas/commit/3ca55b796c694c12c484262a3cbfe03fdbef4fb1))
+
+
+### Bug Fixes
+
+* **carl:** Drop Aurorae window decorations ([7b4328f](https://github.com/EyeCantCU/Atlas/commit/7b4328fe3151352db36fb1ca2d3524c913dadfb1))
+* Drop WhiteSur cursors ([f065855](https://github.com/EyeCantCU/Atlas/commit/f065855d0b35a0df5a355bb452d8337d5395323a))
+* **enable-zsh:** Fix plugins being skipped ([be79e8e](https://github.com/EyeCantCU/Atlas/commit/be79e8ebdea3b93c98a58894e25d94da77c43716))
+* **fonts:** Copying fonts from bling has been fixed ([a56daad](https://github.com/EyeCantCU/Atlas/commit/a56daadb6f31622b9072dcb41cfc9d39ffea3741))
+* **fonts:** Properly copy over and address skewed naming issues ([a0b48a0](https://github.com/EyeCantCU/Atlas/commit/a0b48a0a5288da0d68c0aa47ea322690b6edf3c3))
+* **kwin:** Remove GL_YIELD workaround used for Nvidia under X11 ([86c1f72](https://github.com/EyeCantCU/Atlas/commit/86c1f72636755cf3375955eddce61222e46999d1))
+* Properly set service timeout ([5a13ab9](https://github.com/EyeCantCU/Atlas/commit/5a13ab969ea24af12edbff1e6a93597d6fed6778))
+* **recipe:** Remove redundant removals ([a446a9f](https://github.com/EyeCantCU/Atlas/commit/a446a9f8fff08de8f7f42ec355a1e54bfd954545))
+* **recipe:** Remove Steam Deck KDE presets for desktop configs ([78f5d8e](https://github.com/EyeCantCU/Atlas/commit/78f5d8ebe60778a50e403fecbbceb3d2059d6a2a))
+* **recipe:** Remove yafti script ([57591f6](https://github.com/EyeCantCU/Atlas/commit/57591f623114e672fc11443cc47a0500ec56cb1b))
+* **signing:** Move to /usr ([1d4e877](https://github.com/EyeCantCU/Atlas/commit/1d4e877b19441cdbd6ac2ab3c061f234dde0c9db))
+* **signing:** Move to Containerfile ([306c700](https://github.com/EyeCantCU/Atlas/commit/306c7000b68152ce17966cddf2aa0f2cddc74f0b))
+* **terra:** Temp disable ([715a8d9](https://github.com/EyeCantCU/Atlas/commit/715a8d9be09e19a6c34a60ca8736c3ed11e0153d))
+* Use new Wallpaper Engine plugin Copr ([3d81fc5](https://github.com/EyeCantCU/Atlas/commit/3d81fc5e7096d82acf59b13ccac5cdf00e6b3a4c))
+* **yafti:** Remove firstboot launcher configuration ([a0dcc9d](https://github.com/EyeCantCU/Atlas/commit/a0dcc9d8d06c76268d813c9a2a34fe9a60ce57e0))
+
+
+### Reverts
+
+* "feat(temp): Test Bazzite fork" ([d44a195](https://github.com/EyeCantCU/Atlas/commit/d44a19502ff5b22f8f7665e83d599dbc34d886cd))
+
+
+### Miscellaneous Chores
+
+* release 3.0.0 ([d56597a](https://github.com/EyeCantCU/Atlas/commit/d56597a4a239f51e28edb57b6c157456f2eb2522))
+
 ## [2.9.1](https://github.com/EyeCantCU/BlueWhaleOS/compare/v2.9.0...v2.9.1) (2023-07-08)
 
 
