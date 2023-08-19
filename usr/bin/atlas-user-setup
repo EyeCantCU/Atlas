@@ -43,6 +43,7 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
 
   echo 'Configuring time and location settings'
   gsettings set org.gnome.desktop.interface clock-show-weekday true
+  gsettings set org.gnome.desktop.calendar show-weekdate true
 
   if [[ $IMAGE_FLAVOR == "nvidia" ]]; then
     gnome-extensions enable supergfxctl-gex@asus-linux.org
