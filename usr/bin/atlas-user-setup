@@ -27,7 +27,10 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
 
   echo 'Configuring fonts'
   gsettings set org.gnome.desktop.interface font-antialiasing rgba
+  gsettings set org.gnome.desktop.interface font-name 'Inter 11'
+  gsettings set org.gnome.desktop.interface document-font-name 'Inter 11'
   gsettings set org.gnome.desktop.interface monospace-font-name 'IntelOne Mono 10'
+  gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Inter weight=660 11'
 
   echo 'Configuring GNOME extensions'
   gsettings set org.gnome.extensions.dash-to-dock intellihide false
