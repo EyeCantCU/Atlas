@@ -41,6 +41,8 @@ main:
       - ibm-plex-mono-fonts
       - jetbrains-mono-fonts-all
       - latte-dock-nightly
+      - libgda
+      - libgda-sqlite
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
       - mozilla-fira-mono-fonts
