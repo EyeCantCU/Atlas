@@ -11,22 +11,19 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
   gsettings set org.gnome.desktop.peripherals.touchpad tap-and-drag-lock true
 
-  echo 'Configuring theming'
-  gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
-  gsettings set org.gnome.mutter center-new-windows true
-  gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,maximize,close
-  gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-  gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-  gradience-cli flatpak-overrides -e both
-  sudo flatpak override --filesystem=xdg-config/gtk-4.0
-  sudo flatpak override --filesystem=xdg-config/gtk-3.0
-
   echo 'Enabling GNOME extensions'
   gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
   gnome-extensions enable blur-my-shell@aunetx
   gnome-extensions enable caffeine@patapon.info
   gnome-extensions enable dash-to-dock@micxgx.gmail.com
   gnome-extensions enable places-menu@gnome-shell-extensions.gcampax.github.com
+  gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+
+  echo 'Configuring theming'
+  gsettings set org.gnome.mutter center-new-windows true
+  gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,maximize,close
+  gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 
   echo 'Configuring GNOME extensions'
   gsettings set org.gnome.extensions.dash-to-dock intellihide false
