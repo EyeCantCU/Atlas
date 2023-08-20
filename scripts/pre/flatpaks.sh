@@ -9,6 +9,7 @@ sed -i 's/org.mozilla.firefox\n//g' ${INSTALL}
 echo ch.protonmail.protonmail-bridge >> ${INSTALL}
 echo com.bitwarden.desktop >> ${INSTALL}
 echo com.brave.Browser >> ${INSTALL}
+echo com.github.debauchee.barrier >> ${INSTALL}
 echo com.github.wwmm.easyeffects >> ${INSTALL}
 echo com.protonvpn.www >> ${INSTALL}
 echo com.raggesilver.BlackBox >> ${INSTALL}
