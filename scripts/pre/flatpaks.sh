@@ -12,6 +12,7 @@ echo com.brave.Browser >> ${INSTALL}
 echo com.calibre_ebook.calibre >> ${INSTALL}
 echo com.discordapp.Discord >> ${INSTALL}
 echo com.github.debauchee.barrier >> ${INSTALL}
+echo com.github.iwalton3.jellyfin-media-player >> ${INSTALL}
 echo com.github.wwmm.easyeffects >> ${INSTALL}
 echo com.github.zocker_160.SyncThingy >> ${INSTALL}
 echo com.mastermindzh.tidal-hifi >> ${INSTALL}
