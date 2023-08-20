@@ -17,6 +17,7 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gnome-extensions enable caffeine@patapon.info
   gnome-extensions enable dash-to-dock@micxgx.gmail.com
   gnome-extensions enable drive-menu@gnome-shell-extensions.gcampax.github.com
+  gnome-extensions enable hide-universal-access@akiirui.github.io
   gnome-extensions enable pano@elhan.io
   gnome-extensions enable places-menu@gnome-shell-extensions.gcampax.github.com
   gnome-extensions enable rounded-window-corners@yilozt
