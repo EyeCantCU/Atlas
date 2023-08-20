@@ -3,7 +3,6 @@ main:
     # "Pre" scripts run after your custom repos have been imported.
     pre:
       - flatpaks.sh
-      - lastversion.sh
       - terra.sh
     # "Post" scripts run at the end of the build process.
     post:
