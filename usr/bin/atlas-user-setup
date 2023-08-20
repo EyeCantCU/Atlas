@@ -11,6 +11,10 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gnome-extensions enable dash-to-dock@micxgx.gmail.com
   gnome-extensions enable places-menu@gnome-shell-extensions.gcampax.github.com
 
+  echo 'Configuring GNOME extensions'
+  gsettings set org.gnome.extensions.dash-to-dock transparency-mode 'FIXED'
+  gsettings set org.gnome.extensions.dash-to-dock background-opacity 0.25
+
   echo 'Disabling magnifier tracking'
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
   gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
