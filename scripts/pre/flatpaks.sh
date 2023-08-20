@@ -19,5 +19,6 @@ echo com.mastermindzh.tidal-hifi >> ${INSTALL}
 echo com.protonvpn.www >> ${INSTALL}
 echo com.raggesilver.BlackBox >> ${INSTALL}
 echo com.usebottles.bottles >> ${INSTALL}
+echo io.freetubeapp.FreeTube >> ${INSTALL}
 echo org.qbittorrent.qBittorrent >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
