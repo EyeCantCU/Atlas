@@ -9,7 +9,6 @@ main:
     post:
       - appimagelauncher.sh
       - devpod.sh
-      - distrobox.sh
       - gnome-ext.sh
       - hosts.sh
   # Custom RPM configuration.
