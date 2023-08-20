@@ -11,5 +11,6 @@ echo com.brave.Browser >> ${INSTALL}
 echo com.github.wwmm.easyeffects >> ${INSTALL}
 echo com.protonvpn.www >> ${INSTALL}
 echo com.raggesilver.BlackBox >> ${INSTALL}
+echo com.usebottles.bottles >> ${INSTALL}
 echo org.qbittorrent.qBittorrent >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
