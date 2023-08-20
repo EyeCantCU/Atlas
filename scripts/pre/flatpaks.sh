@@ -13,6 +13,7 @@ echo com.calibre_ebook.calibre >> ${INSTALL}
 echo com.discordapp.Discord >> ${INSTALL}
 echo com.github.debauchee.barrier >> ${INSTALL}
 echo com.github.wwmm.easyeffects >> ${INSTALL}
+echo com.mastermindzh.tidal-hifi >> ${INSTALL}
 echo com.protonvpn.www >> ${INSTALL}
 echo com.raggesilver.BlackBox >> ${INSTALL}
 echo com.usebottles.bottles >> ${INSTALL}
