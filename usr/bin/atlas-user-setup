@@ -25,6 +25,9 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gsettings set org.gnome.desktop.interface color-scheme prefer-dark
   gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 
+  echo 'Configuring fonts'
+  gsettings set org.gnome.desktop.interface font-antialiasing rgba
+
   echo 'Configuring GNOME extensions'
   gsettings set org.gnome.extensions.dash-to-dock intellihide false
   gsettings set org.gnome.extensions.dash-to-dock custom-theme-shrink true
