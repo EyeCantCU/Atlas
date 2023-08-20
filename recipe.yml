@@ -35,6 +35,7 @@ main:
       - glow
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-drive-menu
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - guestfs-tools
