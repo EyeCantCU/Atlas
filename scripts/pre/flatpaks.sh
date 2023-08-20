@@ -6,4 +6,5 @@ INSTALL='/etc/flatpak/install'
 sed -i 's/org.mozilla.firefox\n//g' ${INSTALL}
 
 # Install
+echo com.brave.Browser >> ${INSTALL}
 echo com.raggesilver.BlackBox >> ${INSTALL}
