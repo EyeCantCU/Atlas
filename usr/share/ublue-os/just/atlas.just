@@ -27,7 +27,7 @@ get-upnote:
 
 get-wallpapers:
   #!/usr/bin/env bash
-  wallpapers=~/.local/share/wallpapers
+  wallpapers=~/Pictures/Backgrounds
   cd /tmp
   wget https://github.com/EyeCantCU/distro-wallpapers/archive/refs/heads/main.tar.gz
   tar xvf main.tar.gz
