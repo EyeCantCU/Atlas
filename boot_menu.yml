@@ -4,16 +4,16 @@ ublue_variants:
     flavors:
       - label: atlas
         info: Atlas
-  - label: eyecantcu/atlas-surface
-    ks: /kickstart/ublue-os.ks
-    flavors:
-      - label: atlas-surface
-        info: Atlas Surface
   - label: eyecantcu/atlas-nvidia
     ks: /kickstart/ublue-os-nvidia.ks
     flavors:
       - label: atlas-nvidia
         info: Atlas (Nvidia)
+  - label: eyecantcu/atlas-surface
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: atlas-surface
+        info: Atlas Surface
   - label: eyecantcu/atlas-surface-nvidia
     ks: /kickstart/ublue-os-nvidia.ks
     flavors:
