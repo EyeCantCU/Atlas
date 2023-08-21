@@ -41,7 +41,6 @@ main:
       - guestfs-tools
       - ibm-plex-mono-fonts
       - jetbrains-mono-fonts-all
-      - latte-dock-nightly
       - libgda
       - libgda-sqlite
       - libvirt-daemon-config-network
