@@ -22,3 +22,4 @@ echo com.usebottles.bottles >> ${INSTALL}
 echo io.freetubeapp.FreeTube >> ${INSTALL}
 echo org.qbittorrent.qBittorrent >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
+echo us.zoom.Zoom >> ${INSTALL}
