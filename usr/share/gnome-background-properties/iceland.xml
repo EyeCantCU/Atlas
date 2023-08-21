@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>Iceland</name>
+    <filename>/usr/share/backgrounds/atlas/iceland.jpg</filename>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#051F2B</pcolor>
+    <scolor>#13364B</scolor>
+  </wallpaper>
+</wallpapers>
