@@ -46,8 +46,8 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gsettings set org.gnome.desktop.background picture-uri-dark file:///usr/share/backgrounds/atlas/iceland.jpg
 
   echo 'Disabling magnifier tracking'
-  gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.focus-tracking none
-  gsettings set org.gnome.software org.gnome.desktop.a11y.magnifier.caret-tracking none
+  gsettings set org.gnome.desktop.a11y.magnifier focus-tracking none
+  gsettings set org.gnome.desktop.a11y.magnifier caret-tracking none
 
   echo 'Configuring time and location settings'
   gsettings set org.gnome.desktop.datetime automatic-timezone true
