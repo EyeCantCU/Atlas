@@ -10,7 +10,6 @@ main:
       - devpod.sh
       - gnome-ext.sh
       - hosts.sh
-      - tabby.sh
   # Custom RPM configuration.
   rpm:
     # A list of urls of ".repo" files that should be added to your system.
