@@ -4,6 +4,9 @@ source /etc/default/bazzite
 if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   echo 'Running setup for Atlas'
 
+  echo 'Disabling fractional scaling'
+  gsettings set org.gnome.mutter experimental-features "['variable-refresh-rate']"
+
   echo 'Configuring touchpad'
   gsettings set org.gnome.desktop.peripherals.touchpad speed 0.6
   gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
