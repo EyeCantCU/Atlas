@@ -21,3 +21,11 @@ rm -f /tmp/rounded-window-corners@yilozt.shell-extension.zip
 # Hide Universal Access
 git clone https://github.com/akiirui/hide-universal-access ${EXTENSIONS}/hide-universal-access@akiirui.github.io --single-branch --no-tags --depth 1
 rm -rf ${EXTENSIONS}/hide-universal-access@akiirui.github.io/.git
+
+# Grand Theft Focus
+git clone https://github.com/zalckos/GrandTheftFocus /tmp/GrandTheftFocus
+cd /tmp/GrandTheftFocus
+git reset --hard 8b96f7f
+mv grand-theft-focus@zalckos.github.com ${EXTENSIONS}
+cd /
+rm -rf /tmp/GrandTheftFocus
