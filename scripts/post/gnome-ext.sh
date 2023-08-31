@@ -29,3 +29,12 @@ git reset --hard 8b96f7f
 mv grand-theft-focus@zalckos.github.com ${EXTENSIONS}
 cd /
 rm -rf /tmp/GrandTheftFocus
+
+# Reboot to UEFI
+git clone https://github.com/UbayGD/reboottouefi /tmp/reboottouefi
+cd /tmp/reboottouefi
+mkdir -p ${EXTENSIONS}/reboottouefi@ubaygd.com/po
+cp -r src/{extension.js,metadata.json} ${EXTENSIONS}/reboottouefi@ubaygd.com
+cp -r po/* ${EXTENSIONS}/reboottouefi@ubaygd.com/po
+cd /
+rm -rf /tmp/reboottouefi
