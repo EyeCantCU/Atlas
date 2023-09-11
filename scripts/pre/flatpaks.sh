@@ -1,6 +1,6 @@
 set -oue pipefail
 
-INSTALL='/etc/flatpak/install'
+INSTALL='/usr/etc/flatpak/install'
 
 # Remove
 sed -i 's/org.mozilla.firefox\n//g' ${INSTALL}
@@ -22,7 +22,3 @@ echo com.usebottles.bottles >> ${INSTALL}
 echo io.freetubeapp.FreeTube >> ${INSTALL}
 echo org.qbittorrent.qBittorrent >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
-
-# Copy to /usr for permanence
-mkdir -p /usr/etc/flatpak
-cp -r /etc/flatpak/* /usr/etc/flatpak/
