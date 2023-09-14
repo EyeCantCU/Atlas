@@ -1,5 +1,64 @@
 # Changelog
 
+## [3.1.0](https://github.com/EyeCantCU/Atlas/compare/v3.0.0...v3.1.0) (2023-09-14)
+
+
+### Features
+
+* Add and enable extension that hides the Universal Access button ([2ce55da](https://github.com/EyeCantCU/Atlas/commit/2ce55da9a0dbeda9cb64e180075c622eb30cfd07))
+* Add and enable Pano clipboard extension ([de72525](https://github.com/EyeCantCU/Atlas/commit/de725257013634794680a6d5552b96cef27704f1))
+* Add and enable Rounded Window Corners extension ([3d0ebc6](https://github.com/EyeCantCU/Atlas/commit/3d0ebc635ae0a51ea14bcb1e24eb297367a1d5b3))
+* **extensions:** Add Reboot to UEFI ([ffb24b9](https://github.com/EyeCantCU/Atlas/commit/ffb24b94b3bf0d5cd7ef757d6390fa7f8b7befe7))
+* **extensions:** Ship Grand Theft Focus ([1b7f8f0](https://github.com/EyeCantCU/Atlas/commit/1b7f8f05bb5cb945e3be60adde019b7772a5fb49))
+* **flatpaks:** Add Zoom ([c19ff17](https://github.com/EyeCantCU/Atlas/commit/c19ff1795a273c09b30efae2aeb1716a0558a5d1))
+* **flatpaks:** Bundle ProtonVPN and ProtonMail bridge ([1d9f907](https://github.com/EyeCantCU/Atlas/commit/1d9f907eaf4c1a0a13bd170869568caaeffee825))
+* **flatpaks:** Include Blackbox terminal ([b49359a](https://github.com/EyeCantCU/Atlas/commit/b49359aaa71ae5b623c05ddb4b7f2d704eda5fd9))
+* **flatpaks:** Include Brave Browser ([3dd56dc](https://github.com/EyeCantCU/Atlas/commit/3dd56dc1de31845379f3ea2ae40db018c7441129))
+* **flatpaks:** Include Easy Effects ([26ed4fe](https://github.com/EyeCantCU/Atlas/commit/26ed4fe0ecc6fe42257f47fa514f92597e5d776a))
+* **flatpaks:** Include qBittorrent ([66b6d59](https://github.com/EyeCantCU/Atlas/commit/66b6d59958e48533ac7d19d21ac6df4adbe4435a))
+* **flatpaks:** Include VLC ([1ba22cd](https://github.com/EyeCantCU/Atlas/commit/1ba22cd3c1b495e737c6825d36479e251849bd62))
+* **flatpaks:** Ship Barrier ([1f154e0](https://github.com/EyeCantCU/Atlas/commit/1f154e0a069263a8277d672acc65a1b5974ce31d))
+* **flatpaks:** Ship Bitwarden ([8092a36](https://github.com/EyeCantCU/Atlas/commit/8092a366e4f13cef6609ba982ee9ede98e41bf66))
+* **flatpaks:** Ship Bottles for Windows games and software ([6eb7731](https://github.com/EyeCantCU/Atlas/commit/6eb773191d47f70e6d67dfc8aeadf30f80c8ee6b))
+* **flatpaks:** Ship Calibre ([c9c75b7](https://github.com/EyeCantCU/Atlas/commit/c9c75b7427f3c9966c41a6012a2aac258f3aee97))
+* **flatpaks:** Ship Discord ([56599d4](https://github.com/EyeCantCU/Atlas/commit/56599d48b5860644d807a29de83d9e4b66f70945))
+* **flatpaks:** Ship FreeTube ([9f9bdb7](https://github.com/EyeCantCU/Atlas/commit/9f9bdb7a7d901027f50b1c950ff216b9f92742a7))
+* **flatpaks:** Ship Jellyfin Media Player ([2b2b5b4](https://github.com/EyeCantCU/Atlas/commit/2b2b5b4f53433565b3fce1b9da71f1a04b0bbca3))
+* **flatpaks:** Ship SyncThing ([270e961](https://github.com/EyeCantCU/Atlas/commit/270e9610f43ef3f0e7f65bcc75480f2cb03a22bb))
+* **flatpaks:** Ship Tidal HiFi ([8fcf919](https://github.com/EyeCantCU/Atlas/commit/8fcf919075fd9580d47c5cba01babed5c5241ce9))
+* Layer telnet ([a495f6f](https://github.com/EyeCantCU/Atlas/commit/a495f6f83e57b79adbcf270b2d678a75acc75524))
+* **scripts:** Layer Tabby ([743d6b6](https://github.com/EyeCantCU/Atlas/commit/743d6b687dbee22893ddb974aba763a0841099c8))
+* **user-setup:** Add and enable drive menu extension ([e06d731](https://github.com/EyeCantCU/Atlas/commit/e06d73120e1222d9d608458b69211aaafa962db7))
+* **user-setup:** Always use 24hr clock format ([8e50fdd](https://github.com/EyeCantCU/Atlas/commit/8e50fdd408ff5b681a98a166ae1155b7b04749d1))
+* **user-setup:** Automatically choose location for weather ([b6ee568](https://github.com/EyeCantCU/Atlas/commit/b6ee568ce2bc42873d758c355ecc0ee1b7640908))
+* **user-setup:** Enable automatic timezone switching ([d80bc0c](https://github.com/EyeCantCU/Atlas/commit/d80bc0cc3d5e6d0e6233c557139971b87cd3d722))
+* **user-setup:** Enable Caffeine extension ([948c7d6](https://github.com/EyeCantCU/Atlas/commit/948c7d6b0caa81d898eb01a5cdcac7a924aa2417))
+* **user-setup:** Enable dark theme by default and configure gradience ([dc8cd72](https://github.com/EyeCantCU/Atlas/commit/dc8cd72a56d1134e64ea2bb436415b9be8909e66))
+* **user-setup:** Enable places menu extension ([97b2b5f](https://github.com/EyeCantCU/Atlas/commit/97b2b5fe6c9690df3242f2ad2d394e4d819fde57))
+* **user-setup:** Set sane touchpad defaults ([b2d68f6](https://github.com/EyeCantCU/Atlas/commit/b2d68f6370dbfc085994f2e845c8e7196f064c82))
+* **user-setup:** Show day of the week next to date ([3511e99](https://github.com/EyeCantCU/Atlas/commit/3511e997c05d4df2dad2570c62eb16c27ca0fbc3))
+* **user-setup:** Show week number in calendar ([9336053](https://github.com/EyeCantCU/Atlas/commit/93360537f4a51c009f802841be159c19a802feef))
+* **user-setup:** Use 'Iceland' background from Linux Mint 18.1 'Serena' ([bbcb6ef](https://github.com/EyeCantCU/Atlas/commit/bbcb6efe9faedcab53b8780d472fece0bc6eab28))
+* **user-setup:** Use IntelOne Mono as the monospace font ([f933c62](https://github.com/EyeCantCU/Atlas/commit/f933c6281036c7af41e84bf72d75141204987a73))
+* **user-setup:** Use rgba font antialiasing instead of grayscale ([f4ddd00](https://github.com/EyeCantCU/Atlas/commit/f4ddd00fac51abdc94100cf4be7cc7c723dbce65))
+* **user-setup:** Use the Inter font across the desktop ([89b2049](https://github.com/EyeCantCU/Atlas/commit/89b204928e59d300447fe4739b82c792b87735a0))
+
+
+### Bug Fixes
+
+* Don't override Ublue signing ([b1960e1](https://github.com/EyeCantCU/Atlas/commit/b1960e197e553bc92f709735967df23091708b90))
+* **flatpaks:** Lists are now in /usr ([38ba06c](https://github.com/EyeCantCU/Atlas/commit/38ba06c3a4e1a0efea9976591642cd204fb7331e))
+* **just:** Copy wallpapers to Pictures ([2c89369](https://github.com/EyeCantCU/Atlas/commit/2c89369b217aacfac29c65ddb048a60fbb1f8a54))
+* Ship caffeine ([5a52164](https://github.com/EyeCantCU/Atlas/commit/5a52164c64b4e34cbca9529dcddda849d0c650a2))
+* **tabby:** Attempt to fix installation ([d060f55](https://github.com/EyeCantCU/Atlas/commit/d060f55fd3a887536a6b4fc0caccf1287dd3c12c))
+* **tabby:** Move to just script ([6ed7dab](https://github.com/EyeCantCU/Atlas/commit/6ed7dab4be14fa488a6ccc94b7c97bf02a6d9220))
+* **ublue-os-just:** Make executable ([5abca77](https://github.com/EyeCantCU/Atlas/commit/5abca770d2bc88513b84aeb2f464e531b7140d12))
+* **user-setup:** Correct magnifier settings ([f650de9](https://github.com/EyeCantCU/Atlas/commit/f650de95772f85e56b245156ef9c0f30bda70421))
+* **user-setup:** Disable fractional scaling ([2ff3bb9](https://github.com/EyeCantCU/Atlas/commit/2ff3bb9b52d3108fc932240772cac95c786793a6))
+* **user-setup:** Don't center new windows, this breaks programs launching in the foreground ([5cbe58a](https://github.com/EyeCantCU/Atlas/commit/5cbe58a602cd3b183e5c27860df8d046f0532b10))
+* **user-setup:** Properly apply dash2dock settings ([4a43024](https://github.com/EyeCantCU/Atlas/commit/4a430240f21d70e4d39f22a9c789322831df376e))
+* **user-setup:** Remove gradience configuration ([6d80349](https://github.com/EyeCantCU/Atlas/commit/6d8034933cda8b397e357021b9bef493a3e4d253))
+
 ## [3.0.0](https://github.com/EyeCantCU/Atlas/compare/v2.9.1...v3.0.0) (2023-08-19)
 
 
