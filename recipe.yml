@@ -33,6 +33,7 @@ main:
       - gamescope
       - glow
       - gnome-shell-extension-appindicator
+      - gnome-shell-extension-caffeine
       - gnome-shell-extension-dash-to-dock
       - gnome-shell-extension-drive-menu
       - google-droid-sans-mono-fonts
