@@ -11,15 +11,8 @@ FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS atlas
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
-# The default recipe set to the recipe's default filename
-ARG RECIPE=./recipe.yml
-
 # Copy static configurations and component files.
-COPY etc /etc
-COPY usr /usr
-
-# Copy the recipe that we're building.
-COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
+COPY system_files /
 
 # "yq" used in build.sh to read recipe.yml.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
@@ -28,15 +21,10 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 
 # Fonts
-ARG FONTS=/usr/share/fonts
-COPY --from=ghcr.io/ublue-os/bling:latest /files${FONTS} ${FONTS}
-
-# Copy the build script and all custom scripts.
-COPY scripts /tmp/scripts
+COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/share/fonts /usr/share/fonts
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN chmod +x /tmp/scripts/build.sh && \
-    /tmp/scripts/build.sh main && \
+RUN /tmp/scripts/build.sh main && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
     fc-cache -f /usr/share/fonts/intel-one-mono && \
@@ -60,10 +48,9 @@ FROM atlas as atlas-surface
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
-COPY scripts /tmp/scripts
+COPY system_files/tmp/scripts /tmp/scripts
 
-RUN chmod +x /tmp/scripts/build.sh && \
-    /tmp/scripts/build.sh surface && \
+RUN /tmp/scripts/build.sh surface && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
     ostree container commit
