@@ -7,11 +7,13 @@ IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 
 if [[ -z "$IMAGE_FLAVOR" ]]; then
   IMAGE_FLAVOR="main"
+else
+  IMAGE_FLAVOR="nvidia"
 fi
 
 if [[ "$BASE_IMAGE_NAME" = "bazzite" ]]; then
   BASE_IMAGE_NAME="kinoite"
-elif [[ "$BASE_IMAGE_NAME" = "bazzite-gnome" ]]; then
+else
   BASE_IMAGE_NAME="silverblue"
 fi
 
