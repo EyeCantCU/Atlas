@@ -40,19 +40,17 @@ main:
       - guestfs-tools
       - ibm-plex-mono-fonts
       - jetbrains-mono-fonts-all
+      - libgcc
       - libgda
       - libgda-sqlite
       - libvirt-daemon-config-network
       - libvirt-daemon-kvm
+      - micro
       - mozilla-fira-mono-fonts
       - p7zip
       - p7zip-plugins
       - powerline-fonts
       - python3-libguestfs
-      # GNOME's GTK4 theme, many native apps and binaries require it.
-      - libadwaita
-      - libgcc
-      - micro
       - qemu-kvm
       - telnet
       - ubuntu-nerd-fonts
