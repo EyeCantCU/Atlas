@@ -5,6 +5,16 @@ set -oue pipefail
 IMAGE_INFO="/usr/share/ublue-os/image-info.json"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 
+if [[ -z "$IMAGE_FLAVOR" ]]; then
+  IMAGE_FLAVOR="main"
+fi
+
+if [[ "$BASE_IMAGE_NAME" = "bazzite" ]]; then
+  BASE_IMAGE_NAME="kinoite"
+elif [[ "$BASE_IMAGE_NAME" = "bazzite-gnome" ]]; then
+  BASE_IMAGE_NAME="silverblue"
+fi
+
 case $FEDORA_MAJOR_VERSION in
   38)
     IMAGE_TAG="latest"
