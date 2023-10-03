@@ -19,11 +19,14 @@ unzip /tmp/rounded-window-corners@yilozt.shell-extension.zip -d ${EXTENSIONS}/ro
 rm -f /tmp/rounded-window-corners@yilozt.shell-extension.zip
 
 # Hide Universal Access
-git clone https://github.com/akiirui/hide-universal-access ${EXTENSIONS}/hide-universal-access@akiirui.github.io --single-branch --no-tags --depth 1
-cd ${EXTENSIONS}/hide-universal-access@akiirui.github.io
+git clone https://github.com/akiirui/hide-universal-access /tmp/hide-universal-access
+cd /tmp/hide-universal-access
 git reset --hard f11787f
+mkdir -p ${EXTENSIONS}/hide-universal-access@akiirui.github.io
+rm -rf .git
+cp -rf * ${EXTENSIONS}/hide-universal-access@akiirui.github.io
 cd /
-rm -rf ${EXTENSIONS}/hide-universal-access@akiirui.github.io/.git
+rm -rf /tmp/hide-universal-access
 
 # Grand Theft Focus
 git clone https://github.com/zalckos/GrandTheftFocus /tmp/GrandTheftFocus
