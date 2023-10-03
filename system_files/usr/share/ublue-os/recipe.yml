@@ -3,6 +3,7 @@ main:
     # "Pre" scripts run after your custom repos have been imported.
     pre:
       - flatpaks.sh
+      - image-info.sh
       - terra.sh
     # "Post" scripts run at the end of the build process.
     post:
@@ -69,6 +70,7 @@ main:
 surface:
   scripts:
     pre:
+      - image-info.sh
     post:
       - surface.sh
   rpm:
