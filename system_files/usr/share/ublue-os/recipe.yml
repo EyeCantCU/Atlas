@@ -2,6 +2,7 @@ main:
   scripts:
     # "Pre" scripts run after your custom repos have been imported.
     pre:
+      - charm.sh
       - flatpaks.sh
       - image-info.sh
       - terra.sh
