@@ -7,7 +7,6 @@ main:
       - terra.sh
     # "Post" scripts run at the end of the build process.
     post:
-      - appimagelauncher.sh
       - devpod.sh
       - gnome-ext.sh
       - hosts.sh
