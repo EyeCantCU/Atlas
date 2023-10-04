@@ -2,9 +2,6 @@ set -oue pipefail
 
 INSTALL='/usr/etc/flatpak/install'
 
-# Remove
-sed -i 's/org.mozilla.firefox\n//g' ${INSTALL}
-
 # Install
 echo ch.protonmail.protonmail-bridge >> ${INSTALL}
 echo com.bitwarden.desktop >> ${INSTALL}
