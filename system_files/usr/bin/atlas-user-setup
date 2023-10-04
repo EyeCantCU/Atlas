@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-source /etc/default/bazzite
+
+IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
+BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
 
 if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   echo 'Running setup for Atlas'
