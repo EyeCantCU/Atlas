@@ -44,19 +44,3 @@ RUN /tmp/scripts/build.sh main && \
     ostree container commit && \
     mkdir -p /var/tmp && \
     chmod -R 1777 /var/tmp
-
-# Surface images
-FROM atlas as atlas-surface
-
-ARG IMAGE_NAME="${IMAGE_NAME}"
-ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-''}"
-ARG IMAGE_VENDOR="eyecantcu"
-ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME}"
-ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
-
-COPY system_files/tmp/scripts /tmp/scripts
-
-RUN /tmp/scripts/build.sh surface && \
-    rm -rf /tmp/* /var/* && \
-    mkdir -p /var/lib/duperemove && \
-    ostree container commit

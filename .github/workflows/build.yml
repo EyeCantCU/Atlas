@@ -31,8 +31,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: ['', -nvidia]
-        base_name: [atlas, atlas-surface]
+        image_flavor: ['', -nvidia, -surface, -surface-nvidia]
+        base_name: [atlas]
         major_version: [38]
         include:
           - major_version: 38

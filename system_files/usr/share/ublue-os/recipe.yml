@@ -65,14 +65,3 @@ main:
       - zsh
     # These RPMs will be removed from the system image.
     remove:
-surface:
-  scripts:
-    pre:
-      - image-info.sh
-    post:
-      - surface.sh
-  rpm:
-    repos:
-      - https://pkg.surfacelinux.com/fedora/linux-surface.repo
-    install:
-    remove:
