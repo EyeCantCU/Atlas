@@ -23,8 +23,6 @@ COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/share/fonts /usr/share/font
 # Run the build script, then clean up temp files and finalize container build.
 RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
-    COSIGN_VERSION=$(curl https://api.github.com/repos/sigstore/cosign/releases/latest | grep tag_name | cut -d : -f2 | tr -d "v\", ") && \
-    rpm-ostree install https://github.com/sigstore/cosign/releases/latest/download/cosign-${COSIGN_VERSION}.x86_64.rpm && \
     /tmp/scripts/build.sh main && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
