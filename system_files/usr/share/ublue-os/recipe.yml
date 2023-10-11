@@ -9,6 +9,7 @@ main:
     # "Post" scripts run at the end of the build process.
     post:
       - devpod.sh
+      - fonts.sh
       - gnome-ext.sh
       - hosts.sh
   # Custom RPM configuration.

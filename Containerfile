@@ -17,18 +17,12 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 # Copy static configurations and component files.
 COPY system_files /
 
-# Fonts
-COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/share/fonts /usr/share/fonts
-
 # Run the build script, then clean up temp files and finalize container build.
 RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
     /tmp/scripts/build.sh main && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \
-    fc-cache -f /usr/share/fonts/intel-one-mono && \
-    fc-cache -f /usr/share/fonts/inter && \
-    fc-cache -f /usr/share/fonts/ubuntu && \
     systemctl enable --global atlas-user-setup.service && \
     systemctl enable libvirtd.service && \
     if grep "nvidia" <<< ${IMAGE_NAME}; then \
