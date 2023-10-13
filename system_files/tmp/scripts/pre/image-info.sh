@@ -18,7 +18,7 @@ else
 fi
 
 case $FEDORA_MAJOR_VERSION in
-  38)
+  39)
     IMAGE_TAG="latest"
     ;;
   *)
