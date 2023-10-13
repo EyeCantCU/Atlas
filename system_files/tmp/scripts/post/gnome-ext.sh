@@ -21,7 +21,6 @@ rm -f /tmp/rounded-window-corners@yilozt.shell-extension.zip
 # Hide Universal Access
 git clone https://github.com/akiirui/hide-universal-access /tmp/hide-universal-access
 cd /tmp/hide-universal-access
-git reset --hard f11787f
 mkdir -p ${EXTENSIONS}/hide-universal-access@akiirui.github.io
 rm -rf .git
 cp -rf * ${EXTENSIONS}/hide-universal-access@akiirui.github.io
@@ -31,7 +30,6 @@ rm -rf /tmp/hide-universal-access
 # Grand Theft Focus
 git clone https://github.com/zalckos/GrandTheftFocus /tmp/GrandTheftFocus
 cd /tmp/GrandTheftFocus
-git reset --hard 8b96f7f
 mv grand-theft-focus@zalckos.github.com ${EXTENSIONS}
 cd /
 rm -rf /tmp/GrandTheftFocus
@@ -39,7 +37,6 @@ rm -rf /tmp/GrandTheftFocus
 # Reboot to UEFI
 git clone https://github.com/UbayGD/reboottouefi /tmp/reboottouefi
 cd /tmp/reboottouefi
-git reset --hard 8c27aa5
 mkdir -p ${EXTENSIONS}/reboottouefi@ubaygd.com/po
 cp -r src/{extension.js,metadata.json} ${EXTENSIONS}/reboottouefi@ubaygd.com
 cp -r po/* ${EXTENSIONS}/reboottouefi@ubaygd.com/po
