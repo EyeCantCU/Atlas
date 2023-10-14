@@ -28,6 +28,7 @@ main:
       - cascadiacode-nerd-fonts
       - chatgpt-shell-cli
       - duperemove
+      - eza
       - fd-find
       - gamescope
       - glow
