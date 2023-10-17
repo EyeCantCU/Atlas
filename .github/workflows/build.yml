@@ -33,17 +33,11 @@ jobs:
         image_flavor: ['', -nvidia, -surface, -surface-nvidia]
         base_name: [atlas]
         base_image_name: [kinoite, silverblue]
-        bazzite_image_name: [bazzite, bazzite-gnome]
         major_version: [39]
         include:
           - major_version: 39
             is_latest_version: true
             is_stable_version: true
-        exclude:
-          - base_image_name: kinoite
-            bazzite_image_name: bazzite-gnome
-          - base_image_name: silverblue
-            bazzite_image_name: bazzite
     steps:
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v6
@@ -63,6 +57,7 @@ jobs:
           else
               echo "IMAGE_NAME=${{ format('{0}{1}{2}', matrix.base_name, '${DESKTOP}', matrix.image_flavor) }}" >> $GITHUB_ENV
           fi
+          echo "BAZZITE_IMAGE_NAME=${{ format('{0}{1}', 'bazzite', '${DESKTOP}') }}" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -143,7 +138,7 @@ jobs:
             IMAGE_NAME=${{ env.IMAGE_NAME }}
             IMAGE_FLAVOR=${{ matrix.image_flavor }}
             BASE_IMAGE_NAME=${{ matrix.base_image_name }}
-            BAZZITE_IMAGE_NAME=${{ matrix.bazzite_image_name }}
+            BAZZITE_IMAGE_NAME=${{ env.BAZZITE_IMAGE_NAME }}
             FEDORA_MAJOR_VERSION=${{ matrix.major_version }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
