@@ -19,3 +19,23 @@ ublue_variants:
     flavors:
       - label: atlas-surface-nvidia
         info: Atlas Surface (Nvidia)
+  - label: eyecantcu/atlas-gnome
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: atlas-gnome
+        info: Atlas GNOME
+  - label: eyecantcu/atlas-gnome-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: atlas-gnome-nvidia
+        info: Atlas GNOME (Nvidia)
+  - label: eyecantcu/atlas-gnome-surface
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: atlas-gnome-surface
+        info: Atlas GNOME Surface
+  - label: eyecantcu/atlas-gnome-surface-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: atlas-gnome-surface-nvidia
+        info: Atlas GNOME Surface (Nvidia)
