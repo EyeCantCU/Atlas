@@ -68,6 +68,7 @@ kinoite:
   rpm:
     repos:
     install:
+      - latte-dock-nightly
     remove:
 silverblue:
   scripts:
