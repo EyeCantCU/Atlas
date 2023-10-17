@@ -23,7 +23,17 @@ echo "Building Atlas (${BUILD_TYPE}), based on Bazzite ${FEDORA_VERSION}."
 # Add custom repos.
 get_yaml_array repos ".${BUILD_TYPE}.rpm.repos[]"
 if [[ ${#repos[@]} -gt 0 ]]; then
-    echo "-- Adding repos defined in recipe.yml --"
+    echo "-- Adding ${BUILD_TYPE} repos defined in recipe.yml --"
+    for repo in "${repos[@]}"; do
+        repo="${repo//%FEDORA_VERSION%/${FEDORA_VERSION}}"
+        wget "${repo}" -P "/etc/yum.repos.d/"
+    done
+    echo "---"
+fi
+
+get_yaml_array repos ".${BASE_IMAGE_NAME}.rpm.repos[]"
+if [[ ${#repos[@]} -gt 0 ]]; then
+    echo "-- Adding ${BASE_IMAGE_NAME} repos defined in recipe.yml --"
     for repo in "${repos[@]}"; do
         repo="${repo//%FEDORA_VERSION%/${FEDORA_VERSION}}"
         wget "${repo}" -P "/etc/yum.repos.d/"
@@ -39,7 +49,16 @@ run_scripts() {
     script_mode="$1"
     get_yaml_array buildscripts ".${BUILD_TYPE}.scripts.${script_mode}[]"
     if [[ ${#buildscripts[@]} -gt 0 ]]; then
-        echo "-- Running [${script_mode}] scripts defined in recipe.yml --"
+        echo "-- Running $BUILD_TYPE [${script_mode}] scripts defined in recipe.yml --"
+        for script in "${buildscripts[@]}"; do
+            echo "Running [${script_mode}]: ${script}"
+            "/tmp/scripts/${script_mode}/${script}" "${script_mode}"
+        done
+        echo "---"
+    fi
+    get_yaml_array buildscripts ".${BASE_IMAGE_NAME}.scripts.${script_mode}[]"
+    if [[ ${#buildscripts[@]} -gt 0 ]]; then
+        echo "-- Running $BASE_IMAGE_NAME [${script_mode}] scripts defined in recipe.yml --"
         for script in "${buildscripts[@]}"; do
             echo "Running [${script_mode}]: ${script}"
             "/tmp/scripts/${script_mode}/${script}" "${script_mode}"
@@ -52,7 +71,15 @@ run_scripts "pre"
 # Remove RPMs.
 get_yaml_array remove_rpms ".${BUILD_TYPE}.rpm.remove[]"
 if [[ ${#remove_rpms[@]} -gt 0 ]]; then
-    echo "-- Removing RPMs defined in recipe.yml --"
+    echo "-- Removing ${BUILD_TYPE} RPMs defined in recipe.yml --"
+    echo "Removing: ${remove_rpms[@]}"
+    rpm-ostree override remove "${remove_rpms[@]}"
+    echo "---"
+fi
+
+get_yaml_array remove_rpms ".${BASE_IMAGE_NAME}.rpm.remove[]"
+if [[ ${#remove_rpms[@]} -gt 0 ]]; then
+    echo "-- Removing ${BASE_IMAGE_NAME} RPMs defined in recipe.yml --"
     echo "Removing: ${remove_rpms[@]}"
     rpm-ostree override remove "${remove_rpms[@]}"
     echo "---"
@@ -61,7 +88,15 @@ fi
 # Install RPMs.
 get_yaml_array install_rpms ".${BUILD_TYPE}.rpm.install[]"
 if [[ ${#install_rpms[@]} -gt 0 ]]; then
-    echo "-- Installing RPMs defined in recipe.yml --"
+    echo "-- Installing ${BUILD_TYPE} RPMs defined in recipe.yml --"
+    echo "Installing: ${install_rpms[@]}"
+    rpm-ostree install "${install_rpms[@]}"
+    echo "---"
+fi
+
+get_yaml_array install_rpms ".${BASE_IMAGE_NAME}.rpm.install[]"
+if [[ ${#install_rpms[@]} -gt 0 ]]; then
+    echo "-- Installing ${BASE_IMAGE_NAME} RPMs defined in recipe.yml --"
     echo "Installing: ${install_rpms[@]}"
     rpm-ostree install "${install_rpms[@]}"
     echo "---"

@@ -11,12 +11,6 @@ else
   IMAGE_FLAVOR="nvidia"
 fi
 
-if [[ "$BASE_IMAGE_NAME" = "bazzite" ]]; then
-  BASE_IMAGE_NAME="kinoite"
-else
-  BASE_IMAGE_NAME="silverblue"
-fi
-
 case $FEDORA_MAJOR_VERSION in
   39)
     IMAGE_TAG="latest"

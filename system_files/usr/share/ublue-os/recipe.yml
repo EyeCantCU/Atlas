@@ -10,7 +10,6 @@ main:
     post:
       - devpod.sh
       - fonts.sh
-      - gnome-ext.sh
       - hosts.sh
   # Custom RPM configuration.
   rpm:
@@ -32,10 +31,6 @@ main:
       - fd-find
       - gamescope
       - glow
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-caffeine
-      - gnome-shell-extension-dash-to-dock
-      - gnome-shell-extension-drive-menu
       - google-droid-sans-mono-fonts
       - google-go-mono-fonts
       - guestfs-tools
@@ -65,4 +60,25 @@ main:
       - zenity
       - zsh
     # These RPMs will be removed from the system image.
+    remove:
+kinoite:
+  scripts:
+    pre:
+    post:
+  rpm:
+    repos:
+    install:
+    remove:
+silverblue:
+  scripts:
+    pre:
+    post:
+      - gnome-ext.sh
+  rpm:
+    repos:
+    install:
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-drive-menu
     remove:

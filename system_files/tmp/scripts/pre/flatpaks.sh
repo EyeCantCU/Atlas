@@ -14,8 +14,11 @@ echo com.github.wwmm.easyeffects >> ${INSTALL}
 echo com.github.zocker_160.SyncThingy >> ${INSTALL}
 echo com.mastermindzh.tidal-hifi >> ${INSTALL}
 echo com.protonvpn.www >> ${INSTALL}
-echo com.raggesilver.BlackBox >> ${INSTALL}
 echo com.usebottles.bottles >> ${INSTALL}
 echo io.freetubeapp.FreeTube >> ${INSTALL}
-echo org.qbittorrent.qBittorrent >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
+
+if [[ "${BASE_IMAGE_NAME}" = "silverblue" ]]; then
+  echo com.raggesilver.BlackBox >> ${INSTALL}
+  echo org.qbittorrent.qBittorrent >> ${INSTALL}
+fi
