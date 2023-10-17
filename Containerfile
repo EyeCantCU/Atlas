@@ -16,7 +16,7 @@ ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
 # Copy static configurations and component files.
-COPY system_files /
+COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
