@@ -5,12 +5,6 @@ set -oue pipefail
 IMAGE_INFO="/usr/share/ublue-os/image-info.json"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 
-if [[ -z "$IMAGE_FLAVOR" ]]; then
-  IMAGE_FLAVOR="main"
-else
-  IMAGE_FLAVOR="nvidia"
-fi
-
 case $FEDORA_MAJOR_VERSION in
   39)
     IMAGE_TAG="latest"

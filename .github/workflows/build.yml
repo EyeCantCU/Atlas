@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: ['', -nvidia, -surface, -surface-nvidia]
+        image_flavor: [main, nvidia, surface, surface-nvidia]
         base_name: [atlas]
         base_image_name: [kinoite, silverblue]
         major_version: [39]
@@ -49,15 +49,16 @@ jobs:
       - name: Matrix Variables
         run: |
           DESKTOP=""
-          if [[ "${{ matrix.base_image_name }}" =~ "silverblue" ]]; then
+          if [[ "${{ matrix.base_image_name }}" = "silverblue" ]]; then
               DESKTOP="-gnome"
           fi
-          if [[ -z "${{ matrix.image_flavor }}" ]]; then
+          if [[ "${{ matrix.image_flavor }}" = "main" ]]; then
               echo "IMAGE_NAME=${{ format('{0}{1}', matrix.base_name, '${DESKTOP}') }}" >> $GITHUB_ENV
+              echo "SOURCE_IMAGE=${{ format('{0}{1}', 'bazzite', '${DESKTOP}') }}" >> $GITHUB_ENV
           else
               echo "IMAGE_NAME=${{ format('{0}{1}{2}', matrix.base_name, '${DESKTOP}', matrix.image_flavor) }}" >> $GITHUB_ENV
+              echo "SOURCE_IMAGE=${{ format('{0}{1}-{2}', 'bazzite', '${DESKTOP}', matrix.image_flavor) }}" >> $GITHUB_ENV
           fi
-          echo "BAZZITE_IMAGE_NAME=${{ format('{0}{1}', 'bazzite', '${DESKTOP}') }}" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -103,10 +104,18 @@ jobs:
       - name: Get Current Fedora Version
         id: labels
         run: |
-          if [[ -z "${{ matrix.image_flavor }}" ]]; then
-              ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+          if [[ "${{ matrix.image_flavor }}" = "main" ]]; then
+              if [[ "${{ matrix.base_image_name }}" = "kinoite" ]]; then
+                  ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              else
+                  ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              fi
           else
-              ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              if [[ "${{ matrix.base_image_name }}" = "kinoite" ]]; then
+                  ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              else
+                  ver=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome-${{ matrix.image_flavor }}:${{ matrix.major_version }} | jq -r '.Labels["org.opencontainers.image.version"]')
+              fi
           fi
           echo "VERSION=$ver" >> $GITHUB_OUTPUT
 
@@ -138,7 +147,7 @@ jobs:
             IMAGE_NAME=${{ env.IMAGE_NAME }}
             IMAGE_FLAVOR=${{ matrix.image_flavor }}
             BASE_IMAGE_NAME=${{ matrix.base_image_name }}
-            BAZZITE_IMAGE_NAME=${{ env.BAZZITE_IMAGE_NAME }}
+            SOURCE_IMAGE=${{ env.SOURCE_IMAGE }}
             FEDORA_MAJOR_VERSION=${{ matrix.major_version }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
