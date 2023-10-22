@@ -5,7 +5,6 @@ INSTALL='/usr/etc/flatpak/install'
 # Install
 echo ch.protonmail.protonmail-bridge >> ${INSTALL}
 echo com.bitwarden.desktop >> ${INSTALL}
-echo com.brave.Browser >> ${INSTALL}
 echo com.calibre_ebook.calibre >> ${INSTALL}
 echo com.discordapp.Discord >> ${INSTALL}
 echo com.github.debauchee.barrier >> ${INSTALL}
