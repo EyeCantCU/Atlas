@@ -69,6 +69,10 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   fi
 fi
 
+if grep -qz "thoriubuntu" <<< $(distrobox list); then
+  just install-thorium
+fi
+
 # Give flatpaks icon access
 flatpak --user override --filesystem=/home/$USER/.icons/:ro
 flatpak --user override --filesystem=/usr/share/icons/:ro
