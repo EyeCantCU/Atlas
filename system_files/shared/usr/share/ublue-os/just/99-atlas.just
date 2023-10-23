@@ -7,7 +7,11 @@ install-thorium:
   else
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --yes
   fi
-  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser dmz-cursor-theme -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app thorium-browser"'
+  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser -y && distrobox-export --app thorium-browser"'
+
+thorium-hidpi-fixes:
+  distrobox-enter -n thoriubuntu -- 'bash -c "sudo apt install dmz-cursor-theme -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme"'
+  sed -i 's/Exec=.*/& --force-device-scale-factor=2/g' ~/.local/share/applications/thoriubuntu-thorium-browser.desktop
 
 install-dev-arch:
   #!/usr/bin/env bash
