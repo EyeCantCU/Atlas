@@ -1,4 +1,4 @@
-install-thorium
+install-thorium:
   #!/usr/bin/env bash
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
   IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
@@ -7,7 +7,7 @@ install-thorium
   else
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --yes
   fi
-  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser -y && distrobox-export --app thorium-browser"'
+  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser dmz-cursor-theme -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app thorium-browser"'
 
 install-dev-arch:
   #!/usr/bin/env bash
