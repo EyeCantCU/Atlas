@@ -8,6 +8,9 @@ install-thorium:
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --yes
   fi
   distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser -y && distrobox-export --app thorium-browser"'
+  if [[ "${IMAGE_FLAVOR}" =~ "nvidia" && "${BASE_IMAGE_NAME}" =~ "silverblue" ]]; then
+    sed -i 's/Exec=.*/& --ozone-platform=x11/g' ~/.local/share/applications/thoriubuntu-thorium-browser.desktop
+  fi
 
 thorium-hidpi-fixes:
   distrobox-enter -n thoriubuntu -- 'bash -c "sudo apt install dmz-cursor-theme -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme"'
