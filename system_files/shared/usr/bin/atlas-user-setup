@@ -3,6 +3,7 @@
 IMAGE_INFO="/usr/share/ublue-os/image-info.json"
 IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
 BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
+SYS_ID="$(cat /sys/devices/virtual/dmi/id/product_name)"
 
 if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   echo 'Running setup for Atlas'
@@ -64,7 +65,7 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gsettings set org.gnome.desktop.calendar show-weekdate true
   gsettings set org.gnome.shell.weather automatic-location true
 
-  if [[ $IMAGE_FLAVOR == "nvidia" ]]; then
+  if [[ "${SYS_ID}" =~ "XPS 17 9700" ]]; then
     gnome-extensions enable supergfxctl-gex@asus-linux.org
   fi
 fi
