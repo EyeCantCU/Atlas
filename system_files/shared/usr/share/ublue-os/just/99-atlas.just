@@ -2,6 +2,7 @@ install-thorium:
   #!/usr/bin/env bash
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
   IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
+  SYS_ID="$(cat /sys/devices/virtual/dmi/id/product_name)"
   if [[ "${IMAGE_FLAVOR}" =~ "nvidia" ]]; then
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --nvidia --yes
   else
@@ -10,6 +11,9 @@ install-thorium:
   distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser -y && distrobox-export --app thorium-browser"'
   if [[ "${IMAGE_FLAVOR}" =~ "nvidia" && "${BASE_IMAGE_NAME}" =~ "silverblue" ]]; then
     sed -i 's/Exec=.*/& --ozone-platform=x11/g' ~/.local/share/applications/thoriubuntu-thorium-browser.desktop
+  fi
+  if [[ "${SYS_ID}" =~ "XPS 17 9700" ]]; then
+    ujust thorium-hidpi-fixes
   fi
 
 thorium-hidpi-fixes:
