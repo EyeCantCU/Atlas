@@ -8,7 +8,7 @@ install-thorium:
   else
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --yes
   fi
-  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser dmz-cursor-theme -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app thorium-browser"'
+  distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser dmz-cursor-theme pipewire wireplumber libspa-0.2-bluetooth -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app thorium-browser"'
   if [[ "${XDG_SESSION_TYPE}" == "wayland" ]]; then
     sed -i 's/Exec=.*/& --ozone-platform=wayland --disable-features=WaylandFractionalScaleV1/g' ~/.local/share/applications/thoriubuntu-thorium-browser.desktop
   fi
