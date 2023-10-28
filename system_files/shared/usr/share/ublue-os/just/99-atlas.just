@@ -2,7 +2,6 @@ install-thorium:
   #!/usr/bin/env bash
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
   IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
-  SYS_ID="$(cat /sys/devices/virtual/dmi/id/product_name)"
   if [[ "${IMAGE_FLAVOR}" =~ "nvidia" ]]; then
     distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n thoriubuntu --nvidia --yes
   else
