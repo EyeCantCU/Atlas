@@ -12,6 +12,7 @@ install-thorium:
   if [[ "${XDG_SESSION_TYPE}" == "wayland" ]]; then
     sed -i 's/Exec=.*/& --ozone-platform=wayland --disable-features=WaylandFractionalScaleV1/g' ~/.local/share/applications/thoriubuntu-thorium-browser.desktop
   fi
+  xdg-settings set default-web-browser thoriubuntu-thorium-browser.desktop
 
 install-dev-arch:
   #!/usr/bin/env bash
