@@ -9,6 +9,7 @@ main:
     # "Post" scripts run at the end of the build process.
     post:
       - devpod.sh
+      - distrobox.sh
       - fonts.sh
       - hosts.sh
   # Custom RPM configuration.
@@ -61,6 +62,7 @@ main:
       - zsh
     # These RPMs will be removed from the system image.
     remove:
+      - distrobox
 kinoite:
   scripts:
     pre:
