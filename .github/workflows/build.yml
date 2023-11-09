@@ -1,7 +1,7 @@
 name: Build and Push Image
 on:
   schedule:
-    - cron: '20 09 * * *' # 09:30 UTC every day
+    - cron: '30 17 * * *' # 17:30 UTC every day
   pull_request:
     branches:
       - main
