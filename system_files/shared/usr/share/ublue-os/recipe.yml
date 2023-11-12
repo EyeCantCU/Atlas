@@ -48,6 +48,7 @@ main:
       - p7zip
       - p7zip-plugins
       - powerline-fonts
+      - proton-vpn-gnome-desktop
       - python3-libguestfs
       - qemu-kvm
       - telnet
