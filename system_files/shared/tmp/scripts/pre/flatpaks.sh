@@ -1,6 +1,6 @@
 set -oue pipefail
 
-INSTALL='/usr/etc/flatpak/install'
+INSTALL='/usr/share/ublue-os/bazzite/flatpak/install'
 
 # Install
 echo ch.protonmail.protonmail-bridge >> ${INSTALL}
