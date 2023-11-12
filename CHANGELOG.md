@@ -1,5 +1,58 @@
 # Changelog
 
+## [3.2.0](https://github.com/EyeCantCU/Atlas/compare/v3.1.0...v3.2.0) (2023-11-12)
+
+
+### Features
+
+* Add and enable Proton VPN repo ([a4350ff](https://github.com/EyeCantCU/Atlas/commit/a4350ff90e6685f55a85c16e9129fec7f4c8d7bb))
+* Add just shortcut to install Thorium browser and install it during user setup ([c3b7748](https://github.com/EyeCantCU/Atlas/commit/c3b7748957eb51f31545a116cf174c34b58d378a))
+* Bring back KDE images ([f07761e](https://github.com/EyeCantCU/Atlas/commit/f07761ef04057ccaf6301c11c5cf23bc57522126))
+* **flatpaks:** Add remove lists for KDE/GNOME ([34666a4](https://github.com/EyeCantCU/Atlas/commit/34666a41cdcc0641170eae10dc46fc7766e7feec))
+* Generate image info ([63e224e](https://github.com/EyeCantCU/Atlas/commit/63e224e62bbb51fb66c86ae52f902ee820be84c3))
+* Install Proton VPN app ([df125c0](https://github.com/EyeCantCU/Atlas/commit/df125c054e6dda737206cd4a0a2490be5184d690))
+* **just:** Add script to retrieve DevPod ([3864abf](https://github.com/EyeCantCU/Atlas/commit/3864abf393117619a696c5a7eab518132e9fa648))
+* **kinoite:** Install kommit ([114feef](https://github.com/EyeCantCU/Atlas/commit/114feefbb89e19c49c52608fde7a038272fba60d))
+* **kinoite:** Restore latte dock nightly ([1289d08](https://github.com/EyeCantCU/Atlas/commit/1289d08a8a524a5002c166b19157ef1123733057))
+* Move to Bazzite 39 ([5889ba6](https://github.com/EyeCantCU/Atlas/commit/5889ba6d8190f0e072ddbc411985ecbe56f23afc))
+* Re-enable DoT and SNTP ([6f74330](https://github.com/EyeCantCU/Atlas/commit/6f74330eb90262a81e7af285461d5eb5f9124b91))
+* Restore distrobox-git ([553b473](https://github.com/EyeCantCU/Atlas/commit/553b47393df502e41878a368e9ade80d1f6141ea))
+* Ship eza, a replacement for ls built on exa ([8378219](https://github.com/EyeCantCU/Atlas/commit/83782195935a83cd037aa6d3b696b6fc46dedfdf))
+* **user-setup:** Give flatpaks icon access ([58a8b70](https://github.com/EyeCantCU/Atlas/commit/58a8b705a961f76bf708addb84ad86aeed2f0749))
+
+
+### Bug Fixes
+
+* **ci:** Correct image name formatting ([c703c94](https://github.com/EyeCantCU/Atlas/commit/c703c94262e54b0ae9d96315d0cc01a884162c41))
+* **ci:** Correctly apply image flavor to image name ([b072b43](https://github.com/EyeCantCU/Atlas/commit/b072b430b12ddefaba82ddf82a061446d14ca58f))
+* **devpod:** Drop DevPod RPM, keep CLI ([6d295eb](https://github.com/EyeCantCU/Atlas/commit/6d295eb19f034010c8adb38850f9ede38877e4be))
+* **distrobox-git:** Install from last commit ([38477cb](https://github.com/EyeCantCU/Atlas/commit/38477cbc5d4803781357d80d76f7d13710b83bc6))
+* **distrobox-git:** Install to /usr ([1935b78](https://github.com/EyeCantCU/Atlas/commit/1935b78d9b68ced9fa1655d6d92c943b4bd5adea))
+* **distrobox-git:** Return to /, not /root ([70505a2](https://github.com/EyeCantCU/Atlas/commit/70505a2039b9edbfbfcdcd8a8f68b55ec0b581f8))
+* Drop exa ([a8212b0](https://github.com/EyeCantCU/Atlas/commit/a8212b0fd047bd0febc9cf9e2bce75bcbf3cfe05))
+* **fonts:** Correct path for Intel One Mono ([b856ad0](https://github.com/EyeCantCU/Atlas/commit/b856ad0fec8ccb3adbed642abb16dc7f7819161a))
+* **gnome-ext:** Pin at GNOME 44 ([7e9940a](https://github.com/EyeCantCU/Atlas/commit/7e9940a4f273d1ab99155b7d383d7690fd033026))
+* **hide-universal-access:** Use same method for copying as other extensions ([1c97d92](https://github.com/EyeCantCU/Atlas/commit/1c97d92372df21da1d2fef4eacd978e11403e5d0))
+* **image-info:** Correct base image name and image flavor ([41a85ce](https://github.com/EyeCantCU/Atlas/commit/41a85ce305c943280ddbc82b1e814eaa04d27a88))
+* Inhereit bazzite image name in source image ([8d6fc57](https://github.com/EyeCantCU/Atlas/commit/8d6fc57274a05ba535b85860dda4f5d650cc674f))
+* **justfile:** Adapt for new format ([8d523fa](https://github.com/EyeCantCU/Atlas/commit/8d523fa7f7262aa7469f43000dc5068d95f79d5d))
+* **kinoite:** Set __GL_YIELD to usleep under NVIDIA (again) ([6a7de37](https://github.com/EyeCantCU/Atlas/commit/6a7de37a3ac3ca7402d0915b04980717e8800bfe))
+* **protonvpn:** Turn off gpgcheck ([92893fc](https://github.com/EyeCantCU/Atlas/commit/92893fc896c0daa5ae61664fbf486c6a48e5cc8b))
+* **protonvpn:** Use echo instead of cat ([9b3b729](https://github.com/EyeCantCU/Atlas/commit/9b3b729d667612f852ae341c92a7e0c9d7f32146))
+* **thoriubuntu:** Also install recommended fonts ([246bb6d](https://github.com/EyeCantCU/Atlas/commit/246bb6d7395977bf39cb614164b3429a1cca7ead))
+* **thoriubuntu:** Install MS corefonts ([324f468](https://github.com/EyeCantCU/Atlas/commit/324f4686bb8d9bc6f79025e66640f05ecd79ce0d))
+* **thoriubuntu:** Install pipewire ([77c5a8c](https://github.com/EyeCantCU/Atlas/commit/77c5a8c2a20f409ee8d8191279456b07858856d5))
+* **thoriubuntu:** Restore DMZ Black cursor theme ([286052f](https://github.com/EyeCantCU/Atlas/commit/286052f15b8e28958160dff84fe322ac9eed3728))
+* **thorium:** Auto enable HiDPI fixes on the Dell XPS 17 9700 ([bbed8f6](https://github.com/EyeCantCU/Atlas/commit/bbed8f67071add18be8d035bb13ee49be61013b4))
+* **thorium:** Move DMZ cursor workaround to HiDPI fixes and set scaling factor to 2 ([3eaf3f3](https://github.com/EyeCantCU/Atlas/commit/3eaf3f3b66aa186ab2e468add2d365cf0fb2ff84))
+* **thorium:** Properly display desktop icon in taskbar/dash2dock under Wayland ([c0342a1](https://github.com/EyeCantCU/Atlas/commit/c0342a1ab5898a5f145ee1ef3217802ec4437abe))
+* **thorium:** Restore Wayland, disable fractional scaling ([4b88694](https://github.com/EyeCantCU/Atlas/commit/4b88694a5aa59a86d94f86a88db9a234d08b8051))
+* **thorium:** Set ozone platform to X11 under GNOME NVIDIA ([934ff32](https://github.com/EyeCantCU/Atlas/commit/934ff326ed4d917d7f27182034d7fac34e086df8))
+* **ublue-update:** Disable dbus notifications without replacing base config ([370406a](https://github.com/EyeCantCU/Atlas/commit/370406a2eef23ce3c6cdd04be3784ee8d4826035))
+* **user-setup:** Always run after bazzite-user-setup ([3e8a476](https://github.com/EyeCantCU/Atlas/commit/3e8a476fb4bdbf7495cbe8afbadc48e989490244))
+* **user-setup:** Only enable supergfxctl GNOME extension on the XPS 17 9700 ([7cadf39](https://github.com/EyeCantCU/Atlas/commit/7cadf39968f73d15d2c5b0529e52137ca5c3be53))
+* **user-setup:** Retrieve image identifiers from image info ([392d30a](https://github.com/EyeCantCU/Atlas/commit/392d30a934d616fb83348631f16b7e6c8a72e7c9))
+
 ## [3.1.0](https://github.com/EyeCantCU/Atlas/compare/v3.0.0...v3.1.0) (2023-09-14)
 
 
