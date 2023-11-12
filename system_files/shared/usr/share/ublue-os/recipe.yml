@@ -5,6 +5,7 @@ main:
       - charm.sh
       - flatpaks.sh
       - image-info.sh
+      - protonvpn.sh
       - terra.sh
     # "Post" scripts run at the end of the build process.
     post:
