@@ -5,15 +5,10 @@ set -oue pipefail
 # Setup Proton VPN repo
 mkdir -p /etc/yum.repos.d
 
-cat > /etc/yum.repos.d/protonvpn.repo <<EOF
-#
-# ProtonVPN stable release
-#
-[protonvpn-fedora-stable]
+echo '[protonvpn-fedora-stable]
 name = ProtonVPN Fedora Stable repository
 baseurl = https://repo.protonvpn.com/fedora-$releasever-stable
 enabled = 1
 gpgcheck = 1
 repo_gpgcheck=1
-gpgkey = https://repo.protonvpn.com/fedora-$releasever-stable/public_key.asc
-EOF
+gpgkey = https://repo.protonvpn.com/fedora-$releasever-stable/public_key.asc' | sudo tee /etc/yum.repos.d/protonvpn.repo
