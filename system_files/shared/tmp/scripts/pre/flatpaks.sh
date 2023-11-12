@@ -12,7 +12,6 @@ echo com.github.iwalton3.jellyfin-media-player >> ${INSTALL}
 echo com.github.wwmm.easyeffects >> ${INSTALL}
 echo com.github.zocker_160.SyncThingy >> ${INSTALL}
 echo com.mastermindzh.tidal-hifi >> ${INSTALL}
-echo com.protonvpn.www >> ${INSTALL}
 echo com.usebottles.bottles >> ${INSTALL}
 echo io.freetubeapp.FreeTube >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
