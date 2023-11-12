@@ -70,13 +70,11 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   fi
 fi
 
-if grep -qz "thoriubuntu" <<< $(distrobox list); then
-  just install-thorium
-fi
+ujust enable-flatpak-theming
 
-# Give flatpaks icon access
-flatpak --user override --filesystem=/home/$USER/.icons/:ro
-flatpak --user override --filesystem=/usr/share/icons/:ro
+if grep -qz "thoriubuntu" <<< $(distrobox list); then
+  ujust install-thorium
+fi
 
 # Prevent future executions
 echo "Writing state file"
