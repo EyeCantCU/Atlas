@@ -20,9 +20,7 @@ install-thorium:
   distrobox-enter -n thoriubuntu -- 'bash -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections"'
   distrobox-enter -n thoriubuntu -- 'bash -c "sudo locale-gen && sudo wget -q https://dl.thorium.rocks/debian/dists/stable/thorium.list -P /etc/apt/sources.list.d/ && sudo apt update -y && sudo apt install thorium-browser dmz-cursor-theme pipewire wireplumber libspa-0.2-bluetooth ttf-mscorefonts-installer fonts-recommended -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app thorium-browser"'
   mv ~/.local/share/applications/thoriubuntu-thorium-browser.desktop ~/.local/share/applications/thorium-browser.desktop
-  if [[ "${XDG_SESSION_TYPE}" == "wayland" ]]; then
-    sed -i 's/Exec=.*/& --ozone-platform=wayland --disable-features=WaylandFractionalScaleV1/g' ~/.local/share/applications/thorium-browser.desktop
-  fi
+  sed -i 's/Exec=.*/& --ozone-platform=wayland --disable-features=WaylandFractionalScaleV1/g' ~/.local/share/applications/thorium-browser.desktop
   xdg-settings set default-web-browser thorium-browser.desktop
 
 install-dev-arch:
