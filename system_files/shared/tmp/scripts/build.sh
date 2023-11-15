@@ -85,6 +85,20 @@ if [[ ${#remove_rpms[@]} -gt 0 ]]; then
     echo "---"
 fi
 
+# Create symlinks to fix packages that create directories in /opt
+get_yaml_array OPTFIX '.${BUILD_TYPE}.rpm.optfix[]'
+if [[ ${#OPTFIX[@]} -gt 0 ]]; then
+    echo "Creating symlinks to fix packages that install to /opt"
+    # Create symlinks for each directory specified in recipe.yml
+    for OPTPKG in "${OPTFIX[@]}"; do
+        OPTPKG="${OPTPKG%\"}"
+        OPTPKG="${OPTPKG#\"}"
+        mkdir -p "/usr/lib/opt/${OPTPKG}"
+        ln -s "../../usr/lib/opt/${OPTPKG}" "/var/opt/${OPTPKG}"
+        echo "Created symlink for ${OPTPKG}"
+    done
+fi
+
 # Install RPMs.
 get_yaml_array install_rpms ".${BUILD_TYPE}.rpm.install[]"
 if [[ ${#install_rpms[@]} -gt 0 ]]; then

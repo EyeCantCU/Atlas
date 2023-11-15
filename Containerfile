@@ -18,6 +18,8 @@ COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 # Run the build script, then clean up temp files and finalize container build.
 RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
+    mkdir -p /var/opt && \
+    ln -s /var/opt /opt && \
     /tmp/scripts/build.sh main && \
     rm -rf /tmp/* /var/* && \
     mkdir -p /var/lib/duperemove && \

@@ -64,6 +64,9 @@ main:
       - xbindkeys
       - zenity
       - zsh
+    # Handle packages that use /opt
+    optfix:
+      - ventoy
     # These RPMs will be removed from the system image.
     remove:
       - distrobox
