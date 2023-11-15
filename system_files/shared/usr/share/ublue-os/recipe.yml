@@ -18,6 +18,7 @@ main:
     # A list of urls of ".repo" files that should be added to your system.
     # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
     repos:
+      - https://copr.fedorainfracloud.org/coprs/karlisk/ventoy/repo/fedora-%FEDORA_VERSION%/karlisk-ventoy-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%FEDORA_VERSION%/kylegospo-bazzite-fedora-%FEDORA_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-%FEDORA_VERSION%/kylegospo-chatGPT-shell-cli-fedora-%FEDORA_VERSION%.repo
     # These RPMs will be installed from your enabled repositories.
@@ -55,6 +56,7 @@ main:
       - ubuntu-nerd-fonts
       - ubuntumono-nerd-fonts
       - util-linux-user
+      - ventoy
       - virt-install
       - virt-manager
       - virt-top
