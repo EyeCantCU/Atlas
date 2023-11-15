@@ -1,3 +1,13 @@
+symlink-opt:
+  #!/usr/bin/env bash
+  PROGRAMS=$(ls /usr/lib/opt)
+  LINKED_PROGRAMS=$(ls /opt)
+  for program in "${PROGRAMS}";	do
+    if grep -qvz "${program}" <<< "${LINKED_PROGRAMS}"; then
+      sudo ln -s "/usr/lib/opt/${program}" "/opt/${program}"
+    fi
+  done
+
 install-thorium:
   #!/usr/bin/env bash
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
