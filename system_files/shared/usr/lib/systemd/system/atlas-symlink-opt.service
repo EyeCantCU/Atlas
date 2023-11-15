@@ -1,0 +1,10 @@
+[Unit]
+Description=Link programs to opt
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ujust symlink-opt
+
+[Install]
+WantedBy=multi-user.target

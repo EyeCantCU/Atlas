@@ -25,6 +25,7 @@ RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
     cp -rf /opt/* /usr/lib/opt/ && \
     rm -rf /tmp/* /var/* /opt/* && \
     mkdir -p /var/lib/duperemove && \
+    systemctl enable atlas-symlink-opt.service && \
     systemctl enable --global atlas-user-setup.service && \
     systemctl enable libvirtd.service && \
     if grep "nvidia" <<< ${IMAGE_NAME}; then \
