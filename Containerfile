@@ -21,7 +21,9 @@ RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
     mkdir -p /var/opt && \
     ln -s /var/opt /opt && \
     /tmp/scripts/build.sh main && \
-    rm -rf /tmp/* /var/* && \
+    mkdir -p /usr/lib/opt && \
+    cp -rf /opt/* /usr/lib/opt/ && \
+    rm -rf /tmp/* /var/* /opt/* && \
     mkdir -p /var/lib/duperemove && \
     systemctl enable --global atlas-user-setup.service && \
     systemctl enable libvirtd.service && \
