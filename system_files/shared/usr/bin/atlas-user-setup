@@ -72,7 +72,7 @@ fi
 
 ujust enable-flatpak-theming
 
-if grep -qz "thoriubuntu" <<< $(distrobox list); then
+if grep -qvz "thoriubuntu" <<< $(distrobox list); then
   ujust install-thorium
 fi
 
