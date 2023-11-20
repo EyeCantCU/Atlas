@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: [main, nvidia, surface, surface-nvidia]
+        image_flavor: [main, nvidia, deck, surface, surface-nvidia]
         base_name: [atlas]
         base_image_name: [kinoite, silverblue]
         major_version: [39]
