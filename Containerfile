@@ -20,7 +20,7 @@ RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
     chmod +x /usr/bin/yq && \
     mkdir -p /var/opt && \
     ln -s /var/opt /opt && \
-    /tmp/scripts/build.sh main && \
+    /tmp/scripts/build.sh && \
     mkdir -p /usr/lib/opt && \
     cp -rf /opt/* /usr/lib/opt/ && \
     rm -rf /tmp/* /var/* /opt/* && \
