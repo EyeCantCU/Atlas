@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.3.0](https://github.com/EyeCantCU/Atlas/compare/v3.2.0...v3.3.0) (2023-12-01)
+
+
+### Features
+
+* **ci:** Enable Deck images ([4c4f4f6](https://github.com/EyeCantCU/Atlas/commit/4c4f4f6fbfd0e43b765ec01f6889bd4d6398fa51))
+* Create opt symlinks on boot ([0e67c6e](https://github.com/EyeCantCU/Atlas/commit/0e67c6e85223a9e0e73e77562c26e99ccbdd793c))
+* Restore SNTP ([6e79501](https://github.com/EyeCantCU/Atlas/commit/6e7950167515f2a27ad6d6a9525bf4f0c4b8e712))
+* Ship ventoy ([129ef55](https://github.com/EyeCantCU/Atlas/commit/129ef553ddac3d3bd14952a0e14118ac0c3a1cab))
+
+
+### Bug Fixes
+
+* Allow installing packages that use /opt ([353eb01](https://github.com/EyeCantCU/Atlas/commit/353eb017a42a0500e6d268c7e443b8ffa10d11b6))
+* **ci:** Ensure image vendor is always lowercase ([3bf8e0a](https://github.com/EyeCantCU/Atlas/commit/3bf8e0afb2debe4b1791c218649befe256b2058d))
+* **deck:** Correct source image name ([d612a9f](https://github.com/EyeCantCU/Atlas/commit/d612a9f73fb7732b44b547efa6b7c7eb37fb86d2))
+* **flatpaks:** Handle remove list in script ([d5ca876](https://github.com/EyeCantCU/Atlas/commit/d5ca87634c5c1aae6f2288ab214d96d0cd55020c))
+* **flatpaks:** Point to new install file ([286f000](https://github.com/EyeCantCU/Atlas/commit/286f000067d8208e44c369ebc197e21aff8626c7))
+* **image-info:** Ensure image vendor is always lowercase ([d19ceaf](https://github.com/EyeCantCU/Atlas/commit/d19ceaf1f120bb2cb042378398f2d57899f07c12))
+* **image-info:** Syntax error ([3b14b86](https://github.com/EyeCantCU/Atlas/commit/3b14b86ac34af338b5956e1a04510523a135b816))
+* **optfix:** Correct symlink ([fde1568](https://github.com/EyeCantCU/Atlas/commit/fde1568c57b0a1d68a90a2a9aecb8e87a0bc7990))
+* Remove optfix, just copy contents of /var/opt ([f405330](https://github.com/EyeCantCU/Atlas/commit/f405330699f520f709984e5c02e52b2858a37424))
+* **thorium:** Disable fractional scaling and set ozone to Wayland regardless of session type ([d6a18a9](https://github.com/EyeCantCU/Atlas/commit/d6a18a9c407f1655fbc0ac4e256f3b187395b56f))
+* **user-setup:** Invert Thorium check ([6350e62](https://github.com/EyeCantCU/Atlas/commit/6350e62a4113ea9b12376d0f533127727082716b))
+
 ## [3.2.0](https://github.com/EyeCantCU/Atlas/compare/v3.1.0...v3.2.0) (2023-11-12)
 
 
