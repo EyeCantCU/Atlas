@@ -16,6 +16,8 @@ on:
       - '**.txt'
   merge_group:
   workflow_dispatch:
+env:
+    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
   push-ghcr:
@@ -61,11 +63,6 @@ jobs:
                   echo "SOURCE_IMAGE=${{ format('{0}{1}-{2}', 'bazzite', '${DESKTOP}', matrix.image_flavor) }}" >> $GITHUB_ENV
               fi
           fi
-
-          # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-          # https://github.com/macbre/push-to-ghcr/issues/12
-          echo "IMAGE_VENDOR=$(echo ${{ github.repository_owner }} | awk '{print tolower(@0)}')" >> $GITHUB_ENV
-          echo "IMAGE_REGISTRY=ghcr.io/${{ env.IMAGE_VENDOR }}" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -153,7 +150,7 @@ jobs:
           build-args: |
             IMAGE_NAME=${{ env.IMAGE_NAME }}
             IMAGE_FLAVOR=${{ matrix.image_flavor }}
-            IMAGE_VENDOR=${{ env.IMAGE_VENDOR }}
+            IMAGE_VENDOR=${{ github.repository_owner }}
             BASE_IMAGE_NAME=${{ matrix.base_image_name }}
             SOURCE_IMAGE=${{ env.SOURCE_IMAGE }}
             FEDORA_MAJOR_VERSION=${{ matrix.major_version }}
@@ -161,6 +158,14 @@ jobs:
           oci: false
           extra-args: |
             --target=${{ matrix.base_name }}
+
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v6
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
