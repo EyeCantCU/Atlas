@@ -3,8 +3,8 @@
 set -oue pipefail
 
 IMAGE_INFO="/usr/share/ublue-os/image-info.json"
-IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_VENDOR=$(echo "${IMAGE_VENDOR}" | awk '{print tolower($0)}')
+IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 
 case $FEDORA_MAJOR_VERSION in
   39)
