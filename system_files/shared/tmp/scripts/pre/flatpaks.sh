@@ -15,6 +15,7 @@ echo com.github.zocker_160.SyncThingy >> ${INSTALL}
 echo com.mastermindzh.tidal-hifi >> ${INSTALL}
 echo com.usebottles.bottles >> ${INSTALL}
 echo io.freetubeapp.FreeTube >> ${INSTALL}
+echo org.signal.Signal >> ${INSTALL}
 echo org.videolan.VLC >> ${INSTALL}
 
 if [[ "${BASE_IMAGE_NAME}" = "silverblue" ]]; then
