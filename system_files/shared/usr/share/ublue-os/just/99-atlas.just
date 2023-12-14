@@ -56,6 +56,13 @@ install-tabby:
   rpm-ostree install *linux-x64.rpm
   rm -f *linux-x64.rpm
 
+get-android-messages:
+  #!/usr/bin/env bash
+  wget $(curl -s https://api.github.com/repos/OrangeDrangon/android-messages-desktop/releases/latest | \
+    jq -r ".assets[] | select(.name | test(\"linux-x86_64.AppImage\")) | .browser_download_url") \
+    -O $HOME/Downloads/Android-Messages.AppImage
+  flatpak run it.mijorus.gearlever $HOME/Downloads/Android-Messages.AppImage
+
 get-upnote:
   echo 'Retrieving UpNote'
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
