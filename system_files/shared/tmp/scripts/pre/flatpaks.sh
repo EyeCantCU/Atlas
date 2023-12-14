@@ -3,6 +3,9 @@ set -oue pipefail
 INSTALL='/usr/share/ublue-os/bazzite/flatpak/install'
 REMOVE='/usr/share/ublue-os/bazzite/flatpak/remove'
 
+# Replace Firefox with Floorp
+sed -i 's/org.mozilla.firefox/one.ablaze.floorp/g' ${INSTALL}
+
 # Install
 echo ch.protonmail.protonmail-bridge >> ${INSTALL}
 echo com.bitwarden.desktop >> ${INSTALL}
