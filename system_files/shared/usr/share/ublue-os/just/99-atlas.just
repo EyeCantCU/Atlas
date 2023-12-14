@@ -8,6 +8,9 @@ symlink-opt:
     fi
   done
 
+floorp-enable-wayland:
+  sudo flatpak override --env=MOZ_ENABLE_WAYLAND=1 --socket=wayland one.ablaze.floorp
+
 install-thorium:
   #!/usr/bin/env bash
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
