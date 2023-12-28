@@ -72,8 +72,8 @@ fi
 
 ujust enable-flatpak-theming
 
-if grep -qvz "thoriubuntu" <<< $(distrobox list); then
-  ujust install-thorium
+if grep -qvz "bravebox" <<< $(distrobox list); then
+  ujust install-brave
 fi
 
 # Prevent future executions
