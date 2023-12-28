@@ -67,11 +67,6 @@ get-upnote:
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
   chmod +x ~/Desktop/UpNote.AppImage
 
-get-devpod:
-  echo 'Retrieving DevPod'
-  wget -q https://github.com/loft-sh/devpod/releases/latest/download/DevPod_linux_amd64.AppImage -O ~/Desktop/DevPod.AppImage
-  chmod +x ~/Desktop/DevPod.AppImage
-
 get-wallpapers:
   #!/usr/bin/env bash
   wallpapers=~/Pictures/Backgrounds

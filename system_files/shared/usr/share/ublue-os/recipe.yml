@@ -29,6 +29,7 @@ rpm:
     - btop
     - cascadiacode-nerd-fonts
     - chatgpt-shell-cli
+    - devpod
     - duperemove
     - eza
     - fd-find
