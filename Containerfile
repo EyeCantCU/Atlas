@@ -16,7 +16,8 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
+RUN sed -i 's@enabled=0@enabeld=1@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo && \
+    wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
     mkdir -p /var/opt && \
     ln -s /var/opt /opt && \
@@ -34,6 +35,7 @@ RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
     sed -i 's/dbus_notify.*/dbus_notify = false/' /usr/etc/ublue-update/ublue-update.toml && \
+    sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo && \
     echo "!include /usr/share/ublue-os/just/99-atlas.just" >> /usr/share/ublue-os/justfile && \
     ostree container commit && \
     mkdir -p /var/tmp && \
