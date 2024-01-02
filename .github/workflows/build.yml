@@ -61,6 +61,11 @@ jobs:
               fi
           fi
 
+      - name: Verify base image
+        uses: EyeCantCU/cosign-action/verify@v0.2.1
+        with:
+          image: ${{ env.SOURCE_IMAGE }}
+
       - name: Generate tags
         id: generate-tags
         shell: bash
