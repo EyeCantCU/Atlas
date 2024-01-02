@@ -39,9 +39,6 @@ jobs:
             is_latest_version: true
             is_stable_version: true
     steps:
-      - name: Maximize build space
-        uses: ublue-os/remove-unwanted-software@v6
-
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
@@ -136,6 +133,9 @@ jobs:
             org.opencontainers.image.description=A modification of Bazzite.
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/atlas/main/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
+
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@v6
 
       # Build image using Buildah action
       - name: Build Image
