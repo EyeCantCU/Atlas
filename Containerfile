@@ -17,6 +17,7 @@ COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN sed -i 's@enabled=0@enabeld=1@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo && \
+    wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
     wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
     mkdir -p /var/opt && \
