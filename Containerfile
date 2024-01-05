@@ -18,11 +18,18 @@ COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 # Setup repos
 RUN wget https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-$FEDORA_MAJOR_VERSION/atim-starship-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_atim-starship.repo && \
     wget https://copr.fedorainfracloud.org/coprs/karlisk/ventoy/repo/fedora-$FEDORA_MAJOR_VERSION/karlisk-ventoy-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_karlisk-ventoy.repo && \ 
-    wget https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-$FEDORA_MAJOR_VERSION/kylegospo-chatGPT-shell-cli-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo
+    wget https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-$FEDORA_MAJOR_VERSION/kylegospo-chatGPT-shell-cli-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo && \
+    wget https://terra.fyralabs.com/terra.repo -O /etc/yum.repos.d/terra.repo && \
+    sed -i 's@enabled=0@enabeld=1@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo && \
+    echo '[charm]\nname=Charm\nbaseurl=https://repo.charm.sh/yum/\nenabled=1\ngpgcheck=1\ngpgkey=https://repo.charm.sh/yum/gpg.key' | \
+    tee /etc/yum.repos.d/charm.repo && \
+    mkdir -p /etc/pki/rpm-gpg && \
+    wget https://repo.charm.sh/yum/gpg.key -O /etc/pki/rpm-gpg/RPM-GPG-KEY-charm-pubkey.gpg && \
+    echo '[protonvpn-fedora-stable]\nname = ProtonVPN Fedora Stable repository\nbaseurl = https://repo.protonvpn.com/fedora-$releasever-stable\nenabled = 1\ngpgcheck = 0\nrepo_gpgcheck=0\ngpgkey = https://repo.protonvpn.com/fedora-$releasever-stable/public_key.asc' | \
+    tee /etc/yum.repos.d/protonvpn.repo && \
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN sed -i 's@enabled=0@enabeld=1@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo && \
-    wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
+RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
     wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
     mkdir -p /var/opt && \
@@ -45,6 +52,9 @@ RUN sed -i 's@enabled=0@enabeld=1@g' /etc/yum.repos.d/_copr_ublue-os-staging.rep
     sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_atim-starship.repo && \
     sed	-i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_karlisk-ventoy.repo && \
     sed	-i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo &&	\
+    sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/terra.repo && \
+    sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/charm.repo && \
+    sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/protonvpn.repo && \
     echo "!include /usr/share/ublue-os/just/99-atlas.just" >> /usr/share/ublue-os/justfile && \
     ostree container commit && \
     mkdir -p /var/tmp && \
