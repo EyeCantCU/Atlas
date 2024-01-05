@@ -73,7 +73,7 @@ fi
 ujust enable-flatpak-theming
 
 if grep -qvz "bravebox" <<< $(distrobox list); then
-  ujust install-brave
+  browserbox --default --replace --wayland brave
 fi
 
 # Prevent future executions

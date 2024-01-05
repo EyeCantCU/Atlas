@@ -11,20 +11,6 @@ symlink-opt:
 floorp-enable-wayland:
   sudo flatpak override --env=MOZ_ENABLE_WAYLAND=1 --socket=wayland one.ablaze.floorp
 
-install-brave:
-  #!/usr/bin/env bash
-  IMAGE_INFO="/usr/share/ublue-os/image-info.json"
-  IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
-  if [[ "${IMAGE_FLAVOR}" =~ "nvidia" ]]; then
-    distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n bravebox --nvidia --yes
-  else
-    distrobox create -i quay.io/toolbx-images/ubuntu-toolbox:latest -n bravebox --yes
-  fi
-  distrobox-enter -n bravebox -- 'bash -c "echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && sudo locale-gen && sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo \"deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main\" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list && sudo apt update -y && sudo apt install brave-browser dmz-cursor-theme pipewire wireplumber libspa-0.2-bluetooth ttf-mscorefonts-installer fonts-recommended -y && sudo update-alternatives --set x-cursor-theme /usr/share/icons/DMZ-Black/cursor.theme && distrobox-export --app brave-browser --extra-flags \"--ozone-platform=wayland --disable-features=WaylandFractionalScaleV1\""'
-  sed -i 's/ \/bin\/sh -l -c //' ~/.local/share/applications/bravebox-brave-browser.desktop
-  mv ~/.local/share/applications/bravebox-brave-browser.desktop ~/.local/share/applications/brave-browser.desktop
-  xdg-settings set default-web-browser brave-browser.desktop
-
 install-dev-arch:
   #!/usr/bin/env bash
   KARGS=$(rpm-ostree kargs)
