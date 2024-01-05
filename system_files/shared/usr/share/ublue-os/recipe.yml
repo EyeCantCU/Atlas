@@ -3,10 +3,12 @@ scripts:
   pre:
     - flatpaks.sh
     - image-info.sh
+    - repositories.sh
   # "Post" scripts run at the end of the build process.
   post:
     - fonts.sh
     - hosts.sh
+    - repositories.sh
 # Custom RPM configuration.
 rpm:
   # These RPMs will be installed from your enabled repositories.
