@@ -35,12 +35,17 @@ rpm:
     - google-go-mono-fonts
     - guestfs-tools
     - ibm-plex-mono-fonts
+    - incus
+    - incus-agent
     - jetbrains-mono-fonts-all
     - libgcc
     - libgda
     - libgda-sqlite
     - libvirt-daemon-config-network
     - libvirt-daemon-kvm
+    - lxc
+    - lxd
+    - lxd-agent
     - micro
     - mozilla-fira-mono-fonts
     - p7zip
