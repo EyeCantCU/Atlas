@@ -29,16 +29,6 @@ if [[ ${#repos[@]} -gt 0 ]]; then
     echo "---"
 fi
 
-get_yaml_array repos ".${BASE_IMAGE_NAME}.rpm.repos[]"
-if [[ ${#repos[@]} -gt 0 ]]; then
-    echo "-- Adding ${BASE_IMAGE_NAME} repos defined in recipe.yml --"
-    for repo in "${repos[@]}"; do
-        repo="${repo//%FEDORA_VERSION%/${FEDORA_VERSION}}"
-        wget "${repo}" -P "/etc/yum.repos.d/"
-    done
-    echo "---"
-fi
-
 # Ensure that all script files are executable.
 find /tmp/scripts -type f -exec chmod +x {} \;
 

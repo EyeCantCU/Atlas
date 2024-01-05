@@ -9,9 +9,6 @@ scripts:
     - hosts.sh
 # Custom RPM configuration.
 rpm:
-  # A list of urls of ".repo" files that should be added to your system.
-  # Tip: Use `%FEDORA_VERSION%` instead of static Fedora version numbers.
-  repos:
   # These RPMs will be installed from your enabled repositories.
   install:
     - adobe-source-code-pro-fonts
@@ -64,7 +61,6 @@ kinoite:
     pre:
     post:
   rpm:
-    repos:
     install:
       - kommit
       - latte-dock-nightly
@@ -75,7 +71,6 @@ silverblue:
     post:
       - gnome-ext.sh
   rpm:
-    repos:
     install:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-caffeine
