@@ -1,0 +1,12 @@
+[Unit]
+Description=Add wheel members to needed groups
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/atlas-groups
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=default.target

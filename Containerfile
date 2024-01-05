@@ -29,6 +29,7 @@ RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox 
     rm -rf /tmp/* /var/* /opt/* && \
     systemctl enable docker.socket && \
     systemctl enable podman.socket && \
+    systemctl enable atlas-groups.service && \
     systemctl enable atlas-symlink-opt.service && \
     systemctl enable --global atlas-user-setup.service && \
     systemctl enable libvirtd.service && \
