@@ -45,6 +45,10 @@ rpm:
     - mozilla-fira-mono-fonts
     - p7zip
     - p7zip-plugins
+    - podman-compose
+    - podman-plugins
+    - podman-tui
+    - podmansh
     - powerline-fonts
     - proton-vpn-gnome-desktop
     - python3-libguestfs
@@ -63,7 +67,6 @@ rpm:
     - zsh
   # These RPMs will be removed from the system image.
   remove:
-    - podman-docker
 kinoite:
   scripts:
     pre:
