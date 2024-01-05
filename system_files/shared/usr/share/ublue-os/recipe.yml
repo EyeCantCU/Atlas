@@ -9,6 +9,7 @@ scripts:
     - fonts.sh
     - hosts.sh
     - repositories.sh
+    - starship.sh
 # Custom RPM configuration.
 rpm:
   # These RPMs will be installed from your enabled repositories.
@@ -43,7 +44,6 @@ rpm:
     - proton-vpn-gnome-desktop
     - python3-libguestfs
     - qemu-kvm
-    - starship
     - telnet
     - ubuntu-nerd-fonts
     - ubuntumono-nerd-fonts
