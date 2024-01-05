@@ -40,7 +40,7 @@ run_scripts() {
         echo "-- Running [${script_mode}] scripts defined in recipe.yml --"
         for script in "${buildscripts[@]}"; do
             echo "Running [${script_mode}]: ${script}"
-            "/tmp/scripts/${script_mode}/${script}" "${script_mode}"
+            "/tmp/scripts/${script}" "${script_mode}"
         done
         echo "---"
     fi
@@ -49,7 +49,7 @@ run_scripts() {
         echo "-- Running $BASE_IMAGE_NAME [${script_mode}] scripts defined in recipe.yml --"
         for script in "${buildscripts[@]}"; do
             echo "Running [${script_mode}]: ${script}"
-            "/tmp/scripts/${script_mode}/${script}" "${script_mode}"
+            "/tmp/scripts/${script}" "${script_mode}"
         done
         echo "---"
     fi
