@@ -25,6 +25,7 @@ if [[ "$1" == "pre" ]]; then
   # copr
   wget https://copr.fedorainfracloud.org/coprs/ganto/lxc4/repo/fedora-$FEDORA_MAJOR_VERSION/ganto-lxc4-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_ganto-lxc4.repo
   wget https://copr.fedorainfracloud.org/coprs/karlisk/ventoy/repo/fedora-$FEDORA_MAJOR_VERSION/karlisk-ventoy-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_karlisk-ventoy.repo
+  wget https://copr.fedorainfracloud.org/coprs/karmab/kcli/repo/fedora-$FEDORA_MAJOR_VERSION/karmab-kcli-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_karmab-kcli.repo
   wget https://copr.fedorainfracloud.org/coprs/kylegospo/chatGPT-shell-cli/repo/fedora-$FEDORA_MAJOR_VERSION/kylegospo-chatGPT-shell-cli-fedora-$FEDORA_MAJOR_VERSION.repo -O /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo
 
   # Eenable staging
@@ -45,14 +46,15 @@ if [[ "$1" == "pre" ]]; then
   wget https://terra.fyralabs.com/terra.repo -O /etc/yum.repos.d/terra.repo
 elif [[ "$1" == "post" ]]; then
   # Disable coprs
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_ganto-lxc4.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_karlisk-ventoy.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ganto-lxc4.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-staging.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_karlisk-ventoy.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_karmab-kcli.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-chatGPT-shell-cli.repo
 
   # Disable external repos
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/charm.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/docker-ce.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/protonvpn.repo
-  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/terra.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/charm.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/docker-ce.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/protonvpn.repo
+  sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/terra.repo
 fi

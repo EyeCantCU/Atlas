@@ -38,6 +38,7 @@ rpm:
     - incus
     - incus-agent
     - jetbrains-mono-fonts-all
+    - kcli
     - libgcc
     - libgda
     - libgda-sqlite
