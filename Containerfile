@@ -17,6 +17,8 @@ COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 
 # Build image
 RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
+    wget https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -O /tmp/docker-compose && \
+    install -c -m 0755 /tmp/docker-compose /usr/bin && \
     wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
     chmod +x /usr/bin/yq && \
     mkdir -p /var/opt && \
@@ -25,6 +27,8 @@ RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox 
     mkdir -p /usr/lib/opt && \
     cp -rf /opt/* /usr/lib/opt/ && \
     rm -rf /tmp/* /var/* /opt/* && \
+    systemctl enable docker.socket && \
+    systemctl enable podman.socket && \
     systemctl enable atlas-symlink-opt.service && \
     systemctl enable --global atlas-user-setup.service && \
     systemctl enable libvirtd.service && \

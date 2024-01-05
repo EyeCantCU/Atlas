@@ -34,6 +34,9 @@ if [[ "$1" == "pre" ]]; then
   mkdir -p /etc/pki/rpm-gpg
   wget https://repo.charm.sh/yum/gpg.key -O /etc/pki/rpm-gpg/RPM-GPG-KEY-charm-pubkey.gpg
 
+  # Docker CE
+  wget https://download.docker.com/linux/fedora/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+
   # ProtonVPN
   echo "$__protonvpn_repo" | tee /etc/yum.repos.d/protonvpn.repo
 
@@ -47,6 +50,7 @@ elif [[ "$1" == "post" ]]; then
 
   # Disable external repos
   sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/charm.repo
+  sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/docker-ce.repo
   sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/protonvpn.repo
   sed -i 's@enabled=1@enabeld=0@g' /etc/yum.repos.d/terra.repo
 fi

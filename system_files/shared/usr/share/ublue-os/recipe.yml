@@ -20,7 +20,12 @@ rpm:
     - btop
     - cascadiacode-nerd-fonts
     - chatgpt-shell-cli
+    - containerd.io
     - devpod
+    - docker-buildx-plugin
+    - docker-ce
+    - docker-ce-cli
+    - docker-compose-plugin
     - duperemove
     - eza
     - fd-find
@@ -58,6 +63,7 @@ rpm:
     - zsh
   # These RPMs will be removed from the system image.
   remove:
+    - podman-docker
 kinoite:
   scripts:
     pre:
