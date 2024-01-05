@@ -8,7 +8,6 @@ scripts:
     - terra.sh
   # "Post" scripts run at the end of the build process.
   post:
-    - distrobox.sh
     - fonts.sh
     - hosts.sh
 # Custom RPM configuration.
@@ -67,7 +66,6 @@ rpm:
     - zsh
   # These RPMs will be removed from the system image.
   remove:
-    - distrobox
 kinoite:
   scripts:
     pre:
