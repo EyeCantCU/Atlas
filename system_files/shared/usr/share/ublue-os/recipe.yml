@@ -21,6 +21,14 @@ rpm:
     - btop
     - cascadiacode-nerd-fonts
     - chatgpt-shell-cli
+    - cockpit-machines
+    - cockpit-networkmanager
+    - cockpit-ostree
+    - cockpit-pcp
+    - cockpit-podman
+    - cockpit-selinux
+    - cockpit-storaged
+    - cockpit-system
     - containerd.io
     - devpod
     - docker-buildx-plugin

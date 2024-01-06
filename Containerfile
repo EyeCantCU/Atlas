@@ -40,6 +40,8 @@ RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox 
     if grep "nvidia" <<< ${IMAGE_NAME}; then \
         systemctl enable supergfxd.service \
     ; fi && \
+    systemctl disable pmie.service && \
+    systemctl disable pmlogger.service && \
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
     sed -i 's/dbus_notify.*/dbus_notify = false/' /usr/etc/ublue-update/ublue-update.toml && \
