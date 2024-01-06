@@ -20,6 +20,7 @@ COPY --from=cgr.dev/chainguard/melange:latest /usr/bin/melange /usr/bin/melange
 
 # Build image
 RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
+    chmod +x /usr/bin/browserbox && \
     wget https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -O /tmp/docker-compose && \
     install -c -m 0755 /tmp/docker-compose /usr/bin && \
     wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
