@@ -17,6 +17,7 @@ rpm:
     - adobe-source-code-pro-fonts
     - android-tools
     - bat
+    - bootupd
     - btop
     - cascadiacode-nerd-fonts
     - chatgpt-shell-cli
