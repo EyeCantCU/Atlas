@@ -45,7 +45,7 @@ RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox 
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/user.conf && \
     sed -i 's/DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/' /etc/systemd/system.conf && \
     sed -i 's/dbus_notify.*/dbus_notify = false/' /usr/etc/ublue-update/ublue-update.toml && \
-    echo "!include /usr/share/ublue-os/just/99-atlas.just" >> /usr/share/ublue-os/justfile && \
+    echo "import \"/usr/share/ublue-os/just/99-atlas.just\"" >> /usr/share/ublue-os/justfile && \
     mkdir -p /var/tmp && \
     chmod -R 1777 /var/tmp && \
     mkdir -p /var/lib/bluetooth && \
