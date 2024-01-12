@@ -1,3 +1,13 @@
+# A new cloud-native terminal experience powered by Wolfi and Homebrew
+atlas-cli:
+    #!/usr/bin/env bash 
+    if [ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/atlas-cli/Cellar" ]; then 
+       mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/atlas-cli/Cellar" 
+    fi; 
+    distrobox-create --nvidia --image ghcr.io/eyecantcu/atlas-cli:latest -n atlas --volume "${XDG_DATA_HOME:-$HOME/.local/share}/atlas-cli/Cellar":/home/linuxbrew/.linuxbrew/Cellar:z
+    echo "Entering atlas-cli" 
+    distrobox enter -n atlas
+
 # Enable Cockpit for web-based system management | https://cockpit-project.org/
 cockpit:
     echo 'Enabling Cockpit'

@@ -1,0 +1,5 @@
+FROM ghcr.io/ublue-os/bluefin-cli:latest AS atlas-cli
+
+COPY system_files/shared/tmp/scripts/starship.sh /tmp/
+
+RUN /tmp/starship.sh

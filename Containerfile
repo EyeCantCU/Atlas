@@ -15,9 +15,6 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 # Copy system files
 COPY system_files/shared system_files/${BASE_IMAGE_NAME} /
 
-COPY --from=cgr.dev/chainguard/apko:latest /usr/bin/apko /usr/bin/apko
-COPY --from=cgr.dev/chainguard/melange:latest /usr/bin/melange /usr/bin/melange
-
 # Build image
 RUN wget https://raw.githubusercontent.com/EyeCantCU/browserbox/main/browserbox -O /usr/bin/browserbox && \
     chmod +x /usr/bin/browserbox && \
