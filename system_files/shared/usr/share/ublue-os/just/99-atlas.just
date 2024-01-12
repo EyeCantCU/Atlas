@@ -1,3 +1,4 @@
+# Enable Cockpit for web-based system management | https://cockpit-project.org/
 cockpit:
     echo 'Enabling Cockpit'
     echo 'PasswordAuthentication yes' | sudo tee /etc/ssh/sshd_config.d/02-enable-passwords.conf
@@ -50,6 +51,7 @@ podmansh-switch IMAGE:
     systemctl --user start podmansh.service
     echo "Image now switched to {{ IMAGE }}"
 
+# Install and configure Incus
 enable-incus:
   #!/usr/bin/env bash
   if [[ "$EUID" -eq 0 ]]; then
@@ -134,6 +136,7 @@ enable-incus:
   echo ""
   echo "Incus has been installed. You can now run 'incus' to manage your containers."
 
+# Symlink /usr/lib/opt to /opt
 symlink-opt:
   #!/usr/bin/env bash
   PROGRAMS=$(ls /usr/lib/opt)
@@ -144,9 +147,11 @@ symlink-opt:
     fi
   done
 
+# Enable Wayland in Floorp
 floorp-enable-wayland:
   sudo flatpak override --env=MOZ_ENABLE_WAYLAND=1 --socket=wayland one.ablaze.floorp
 
+# Install development distrobox
 install-dev-arch:
   #!/usr/bin/env bash
   KARGS=$(rpm-ostree kargs)
@@ -158,6 +163,7 @@ install-dev-arch:
     distrobox assemble create --file /usr/share/ublue-os/distrobox/dev-arch
   fi
 
+# Install distrobox geared towards Ham Radio
 install-ham-suse:
   #!/usr/bin/env bash
   KARGS=$(rpm-ostree kargs)
@@ -169,6 +175,7 @@ install-ham-suse:
     distrobox assemble create --file /usr/share/ublue-os/distrobox/ham-suse
   fi
 
+# Install tabby, an alternative terminal emulator
 install-tabby:
   #!/usr/bin/env bash
   cd /tmp
@@ -177,6 +184,7 @@ install-tabby:
   rpm-ostree install *linux-x64.rpm
   rm -f *linux-x64.rpm
 
+# Retrieve Android Messages AppImage
 get-android-messages:
   #!/usr/bin/env bash
   wget $(curl -s https://api.github.com/repos/OrangeDrangon/android-messages-desktop/releases/latest | \
@@ -184,11 +192,13 @@ get-android-messages:
     -O $HOME/Downloads/Android-Messages.AppImage
   flatpak run it.mijorus.gearlever $HOME/Downloads/Android-Messages.AppImage
 
+# Retrieve UpNote AppImage
 get-upnote:
   echo 'Retrieving UpNote'
   wget https://upnote.sfo3.cdn.digitaloceanspaces.com/UpNote.AppImage -P ~/Desktop
   chmod +x ~/Desktop/UpNote.AppImage
 
+# Retrieve wallpapers from multiple Linux distributions
 get-wallpapers:
   #!/usr/bin/env bash
   wallpapers=~/Pictures/Backgrounds
@@ -202,6 +212,7 @@ get-wallpapers:
   cp .. 
   rm -rf distro-wallpapers-main
 
+# Set Zsh as your login shell and install oh-my-zsh
 enable-zsh:
   #!/usr/bin/env bash
   echo 'Switching to Zsh'
@@ -221,6 +232,7 @@ enable-zsh:
   # Set permissions for Zsh
   chown $USER:$USER ~/.oh-my-zsh ~/.zshrc -R
 
+# Revert to bash, remove oh-my-zsh
 disable-zsh:
   echo 'Disabling Zsh'
   chsh -s $(which bash)
