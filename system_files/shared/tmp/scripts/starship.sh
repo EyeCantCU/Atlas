@@ -9,4 +9,6 @@ install -c -m 0755 /tmp/starship /usr/bin
 
 # Init
 echo 'eval "$(starship init bash)"' >> /etc/bashrc
-echo 'starship init fish | source' >> /etc/fish/config.fish
+if [[ -f /etc/fish/config.fish ]]; then
+  echo 'starship init fish | source' >> /etc/fish/config.fish
+fi
