@@ -29,7 +29,6 @@ if [[ $BASE_IMAGE_NAME =~ "silverblue"  ]]; then
   gnome-extensions enable pano@elhan.io
   gnome-extensions enable places-menu@gnome-shell-extensions.gcampax.github.com
   gnome-extensions enable reboottouefi@ubaygd.com
-  gnome-extensions enable rounded-window-corners@yilozt
   gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 
   echo 'Configuring theming'
