@@ -1,5 +1,55 @@
 # Changelog
 
+## [3.3.0](https://github.com/EyeCantCU/Atlas/compare/v3.2.0...v3.3.0) (2024-01-29)
+
+
+### Features
+
+* Add apko and melange ([0c0bdd1](https://github.com/EyeCantCU/Atlas/commit/0c0bdd1dac0dd34897763518ec8070c5d0e2a939))
+* Add podman niceties (plugins, tui, utilities, sh) ([7c183d9](https://github.com/EyeCantCU/Atlas/commit/7c183d945f293b343348597ce7786f2b33029aae))
+* Add service to add admin users to needed groups ([f0e6b7d](https://github.com/EyeCantCU/Atlas/commit/f0e6b7d340221212e0ad364e8593cf8f9ef2ca52))
+* **ci:** Enable Deck images ([4c4f4f6](https://github.com/EyeCantCU/Atlas/commit/4c4f4f6fbfd0e43b765ec01f6889bd4d6398fa51))
+* **ci:** Verify base image before building ([58714ad](https://github.com/EyeCantCU/Atlas/commit/58714ad806e0ed28b5879a39de72f3ae1961636b))
+* Create opt symlinks on boot ([0e67c6e](https://github.com/EyeCantCU/Atlas/commit/0e67c6e85223a9e0e73e77562c26e99ccbdd793c))
+* **flatpaks:** Install Floorp instead of Firefox ([b1bb5ed](https://github.com/EyeCantCU/Atlas/commit/b1bb5ed6e0fc8dcc8c873575f50685678349daf5))
+* **flatpaks:** Ship Signal ([7f921a8](https://github.com/EyeCantCU/Atlas/commit/7f921a8262ac740e6b804a0a23e2f09f71e5b2de))
+* Implement distrobox derived from Bluefin CLI (Wolfi with brew) ([3960ae6](https://github.com/EyeCantCU/Atlas/commit/3960ae6da873b05df5cfcafe2260b48056cb3eec))
+* Init Starship for bash/fish/Zsh, retrieve binary directly ([389c95f](https://github.com/EyeCantCU/Atlas/commit/389c95f604b06c135cfb20bc447fa3f3b601e130))
+* Install and enable Docker (engine & compose) ([db37359](https://github.com/EyeCantCU/Atlas/commit/db37359f35afa0c368e4648334a3e9218890efbe))
+* **just:** Add script to enable incus ([ec2a840](https://github.com/EyeCantCU/Atlas/commit/ec2a840d59c01eb347881412e97e8536bb67d28a))
+* Restore SNTP ([6e79501](https://github.com/EyeCantCU/Atlas/commit/6e7950167515f2a27ad6d6a9525bf4f0c4b8e712))
+* Ship bootupd ([3a10779](https://github.com/EyeCantCU/Atlas/commit/3a10779d863a2dad83a91c65e69c8fb9bea95de7))
+* Ship browserbox ([b2d4ade](https://github.com/EyeCantCU/Atlas/commit/b2d4adebb7949b1fc7d065b25e279ca7334f6b99))
+* Ship cockpit ([fa71e7c](https://github.com/EyeCantCU/Atlas/commit/fa71e7c99749b6b2060d5569dda3051055a26a91))
+* Ship DevPod from staging ([4f4b3d1](https://github.com/EyeCantCU/Atlas/commit/4f4b3d11d46c5b4d2b8be33952cbebe7504f1271))
+* Ship kcli ([03a2403](https://github.com/EyeCantCU/Atlas/commit/03a2403178ca97b488136ac4d2ab8f6952f599b9))
+* Ship lxc with lxd and incus ([0ec3487](https://github.com/EyeCantCU/Atlas/commit/0ec348788a0a79deb611cd49b7f6f8ec68f9cd2a))
+* Ship starship ([c4834ad](https://github.com/EyeCantCU/Atlas/commit/c4834ade3f41c5a129b4013eec7bc625ecd9afa6))
+* Ship ventoy ([129ef55](https://github.com/EyeCantCU/Atlas/commit/129ef553ddac3d3bd14952a0e14118ac0c3a1cab))
+* Switch to Brave, drop Thorium ([680f53e](https://github.com/EyeCantCU/Atlas/commit/680f53e77640f887684defba1815d30e1cfe3b1b))
+
+
+### Bug Fixes
+
+* Allow installing packages that use /opt ([353eb01](https://github.com/EyeCantCU/Atlas/commit/353eb017a42a0500e6d268c7e443b8ffa10d11b6))
+* **atlas-user-setup:** Don't disable dash2dock intellihide, exposes mutter bug ([f505f28](https://github.com/EyeCantCU/Atlas/commit/f505f2824fe585a78db1f29daf6f4059ee09967f))
+* **build:** Correctly implement pre/post script logic ([9de46cb](https://github.com/EyeCantCU/Atlas/commit/9de46cbd9bdb3eeeb01b3eef224742f49da71378))
+* **ci:** Ensure image vendor is always lowercase ([3bf8e0a](https://github.com/EyeCantCU/Atlas/commit/3bf8e0afb2debe4b1791c218649befe256b2058d))
+* **deck:** Correct source image name ([d612a9f](https://github.com/EyeCantCU/Atlas/commit/d612a9f73fb7732b44b547efa6b7c7eb37fb86d2))
+* **flatpaks:** Handle remove list in script ([d5ca876](https://github.com/EyeCantCU/Atlas/commit/d5ca87634c5c1aae6f2288ab214d96d0cd55020c))
+* **flatpaks:** Point to new install file ([286f000](https://github.com/EyeCantCU/Atlas/commit/286f000067d8208e44c369ebc197e21aff8626c7))
+* **image-info:** Ensure image vendor is always lowercase ([d19ceaf](https://github.com/EyeCantCU/Atlas/commit/d19ceaf1f120bb2cb042378398f2d57899f07c12))
+* **image-info:** Make lowercase before setting ref ([0c384f7](https://github.com/EyeCantCU/Atlas/commit/0c384f75952a24854da216b8ce7c529ea1b85519))
+* **image-info:** Syntax error ([3b14b86](https://github.com/EyeCantCU/Atlas/commit/3b14b86ac34af338b5956e1a04510523a135b816))
+* **just:** !include -&gt; import ([a14296c](https://github.com/EyeCantCU/Atlas/commit/a14296c3c40acf8bb0238094e04a480103bb6cef))
+* **optfix:** Correct symlink ([fde1568](https://github.com/EyeCantCU/Atlas/commit/fde1568c57b0a1d68a90a2a9aecb8e87a0bc7990))
+* **release-please:** Evaluate release_created as string ([ce2db73](https://github.com/EyeCantCU/Atlas/commit/ce2db73960bc4dc32c9f7812682723aef8ce1308))
+* **release-please:** Set release type to simple ([5c1fa32](https://github.com/EyeCantCU/Atlas/commit/5c1fa328bceabf333865dbbdb66a5cf0f562135e))
+* Remove optfix, just copy contents of /var/opt ([f405330](https://github.com/EyeCantCU/Atlas/commit/f405330699f520f709984e5c02e52b2858a37424))
+* **starship:** Only write to fish config if it exists ([06a38ad](https://github.com/EyeCantCU/Atlas/commit/06a38ade5ca4eebdd6e84c83723dc5289b6b6cdd))
+* **thorium:** Disable fractional scaling and set ozone to Wayland regardless of session type ([d6a18a9](https://github.com/EyeCantCU/Atlas/commit/d6a18a9c407f1655fbc0ac4e256f3b187395b56f))
+* **user-setup:** Invert Thorium check ([6350e62](https://github.com/EyeCantCU/Atlas/commit/6350e62a4113ea9b12376d0f533127727082716b))
+
 ## [3.2.0](https://github.com/EyeCantCU/Atlas/compare/v3.1.0...v3.2.0) (2023-11-12)
 
 
