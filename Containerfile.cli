@@ -1,7 +1,3 @@
-FROM ghcr.io/ublue-os/bluefin-cli:latest AS atlas-cli
+FROM ghcr.io/ublue-os/bluefin-dx-cli:latest AS atlas-cli
 
-COPY system_files/shared/tmp/scripts/starship.sh /tmp/
-
-RUN apk upgrade --no-cache && \
-    apk add apko melange && \
-    /tmp/starship.sh
+RUN apk upgrade --no-cache
