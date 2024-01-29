@@ -1,3 +1,9 @@
 FROM ghcr.io/ublue-os/bluefin-dx-cli:latest AS atlas-cli
 
-RUN apk upgrade --no-cache
+RUN apk upgrade --no-cache && \
+    apk add \
+        ctop \
+        helm \
+        htop \
+        nano \
+        terraform
